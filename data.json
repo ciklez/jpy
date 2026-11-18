@@ -3,166 +3,973 @@
  "rate": 37,
  "days": [
   {
-   "id": "d0", "n": 0, "date": "2026-11-19", "city": "air",
+   "id": "d0",
+   "n": 0,
+   "date": "2026-11-19",
+   "city": "air",
    "title": "Kuala Lumpur to Ho Chi Minh",
    "note": "Have the Visit Japan Web QR codes screenshotted before you board. Airport wifi is not a plan.",
    "items": [
-    {"id": "d0-b", "kind": "Breakfast", "t": "08:00", "title": "Breakfast at home", "desc": "", "notes": "", "amt": 0, "done": false},
-    {"id": "d0-l", "kind": "Lunch", "t": "12:30", "title": "Lunch", "desc": "", "notes": "", "amt": 0, "done": false},
-    {"id": "d0-1", "kind": "Activity", "t": "16:50", "title": "At KLIA Terminal 1", "desc": "Check in for VN678. One checked bag each.", "notes": "", "amt": 0, "done": false},
-    {"id": "d0-d", "kind": "Dinner", "t": "18:30", "title": "Dinner airside at KLIA", "desc": "Eat before boarding. The transit is late at night.", "notes": "", "amt": 0, "done": false},
-    {"id": "d0-2", "kind": "Activity", "t": "19:50", "title": "VN678 departs", "desc": "Lands at Tan Son Nhat Terminal 2 at 20:55.", "notes": "", "amt": 0, "done": false},
-    {"id": "d0-3", "kind": "Activity", "t": "20:55", "title": "Transit, 3 hours 10 minutes", "desc": "Stay airside. No Vietnam transit visa is needed because neither leg flies between two Vietnamese cities. Snack, then sleep on VN320.", "notes": "", "amt": 0, "done": false},
-    {"id": "d0-4", "kind": "Activity", "t": "00:05", "title": "VN320 to Osaka", "desc": "Overnight to Kansai, arriving 07:00.", "notes": "", "amt": 0, "done": false}
+    {
+     "id": "d0-b",
+     "kind": "Breakfast",
+     "t": "08:00",
+     "title": "Breakfast at home",
+     "desc": "",
+     "notes": "",
+     "amt": 5555,
+     "done": false
+    },
+    {
+     "id": "d0-l",
+     "kind": "Lunch",
+     "t": "12:30",
+     "title": "Lunch",
+     "desc": "",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d0-1",
+     "kind": "Activity",
+     "t": "16:50",
+     "title": "At KLIA Terminal 1",
+     "desc": "Check in for VN678. One checked bag each.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d0-d",
+     "kind": "Dinner",
+     "t": "18:30",
+     "title": "Dinner airside at KLIA",
+     "desc": "Eat before boarding. The transit is late at night.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d0-2",
+     "kind": "Activity",
+     "t": "19:50",
+     "title": "VN678 departs",
+     "desc": "Lands at Tan Son Nhat Terminal 2 at 20:55.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d0-3",
+     "kind": "Activity",
+     "t": "20:55",
+     "title": "Transit, 3 hours 10 minutes",
+     "desc": "Stay airside. No Vietnam transit visa is needed because neither leg flies between two Vietnamese cities. Snack, then sleep on VN320.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d0-4",
+     "kind": "Activity",
+     "t": "00:05",
+     "title": "VN320 to Osaka",
+     "desc": "Overnight to Kansai, arriving 07:00.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    }
    ]
   },
   {
-   "id": "d1", "n": 1, "date": "2026-11-20", "city": "osaka",
+   "id": "d1",
+   "n": 1,
+   "date": "2026-11-20",
+   "city": "osaka",
    "title": "Land in Osaka",
    "note": "Cap today at about 12,000 steps and be in bed by 22:30. Treating the red-eye arrival as a full sightseeing day is the classic way to wreck a Japan trip.",
    "items": [
-    {"id": "d1-1", "kind": "Activity", "t": "07:00", "title": "Kansai arrival", "desc": "Joint Kiosk with your QR code, then bags. Buy two ICOCA cards at the station counter and load ¥5,000 each, or add Suica to the iPhone wallet.", "notes": "", "amt": 0, "done": false},
-    {"id": "d1-2", "kind": "Activity", "t": "08:30", "title": "To Namba, drop the bags", "desc": "Nankai Airport Express, 45 minutes, ¥970. Leave the bags at Fourz Hotel Kintetsu Osaka Namba (check-in is 15:00).", "notes": "", "amt": 0, "done": false},
-    {"id": "d1-b", "kind": "Breakfast", "t": "10:00", "title": "Happy Pancake, Shinsaibashi", "desc": "About 10 minutes on foot north of Namba. Souffle pancakes made to order, so expect a 20 to 30 minute cook time. Reserve online if you can; walk-in queues get long.", "notes": "", "amt": 0, "done": false},
-    {"id": "d1-3", "kind": "Activity", "t": "11:30", "title": "Easy walk", "desc": "Shinsaibashi arcade, then Kuromon Ichiba Market for a few bites, or Shinsekai and Tsutenkaku. Keep it slow.", "notes": "", "amt": 0, "done": false},
-    {"id": "d1-l", "kind": "Lunch", "t": "13:30", "title": "Kushikatsu in Shinsekai", "desc": "Or grazing at Kuromon. Light, you had pancakes.", "notes": "", "amt": 0, "done": false},
-    {"id": "d1-4", "kind": "Activity", "t": "15:00", "title": "Check in and sleep", "desc": "Ninety minutes. You will have been awake about 30 hours and this nap is what makes Days 2 and 3 work.", "notes": "", "amt": 0, "done": false},
-    {"id": "d1-5", "kind": "Activity", "t": "17:00", "title": "Dotonbori", "desc": "Glico sign, Ebisu bridge, Hozenji Yokocho lanterns. Do not queue longer than 20 minutes for anything tonight.", "notes": "", "amt": 0, "done": false},
-    {"id": "d1-d", "kind": "Dinner", "t": "19:00", "title": "Dinner in Dotonbori", "desc": "Takoyaki, okonomiyaki, kushikatsu.", "notes": "", "amt": 0, "done": false}
+    {
+     "id": "d1-1",
+     "kind": "Activity",
+     "t": "07:00",
+     "title": "Kansai arrival",
+     "desc": "Joint Kiosk with your QR code, then bags. Buy two ICOCA cards at the station counter and load ¥5,000 each, or add Suica to the iPhone wallet.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d1-2",
+     "kind": "Activity",
+     "t": "08:30",
+     "title": "To Namba, drop the bags",
+     "desc": "Nankai Airport Express, 45 minutes, ¥970. Leave the bags at Fourz Hotel Kintetsu Osaka Namba (check-in is 15:00).",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d1-b",
+     "kind": "Breakfast",
+     "t": "10:00",
+     "title": "Happy Pancake, Shinsaibashi",
+     "desc": "About 10 minutes on foot north of Namba. Souffle pancakes made to order, so expect a 20 to 30 minute cook time. Reserve online if you can; walk-in queues get long.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d1-3",
+     "kind": "Activity",
+     "t": "11:30",
+     "title": "Easy walk",
+     "desc": "Shinsaibashi arcade, then Kuromon Ichiba Market for a few bites, or Shinsekai and Tsutenkaku. Keep it slow.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d1-l",
+     "kind": "Lunch",
+     "t": "13:30",
+     "title": "Kushikatsu in Shinsekai",
+     "desc": "Or grazing at Kuromon. Light, you had pancakes.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d1-4",
+     "kind": "Activity",
+     "t": "15:00",
+     "title": "Check in and sleep",
+     "desc": "Ninety minutes. You will have been awake about 30 hours and this nap is what makes Days 2 and 3 work.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d1-5",
+     "kind": "Activity",
+     "t": "17:00",
+     "title": "Dotonbori",
+     "desc": "Glico sign, Ebisu bridge, Hozenji Yokocho lanterns. Do not queue longer than 20 minutes for anything tonight.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d1-d",
+     "kind": "Dinner",
+     "t": "19:00",
+     "title": "Dinner in Dotonbori",
+     "desc": "Takoyaki, okonomiyaki, kushikatsu.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    }
    ]
   },
   {
-   "id": "d2", "n": 2, "date": "2026-11-21", "city": "osaka",
+   "id": "d2",
+   "n": 2,
+   "date": "2026-11-21",
+   "city": "osaka",
    "title": "Osaka at an easy pace",
    "note": "The morning is free now that Osaka Castle is out. Nara still fits if you want it: Kintetsu Nara line direct from Osaka Namba, 40 minutes, ¥680. Leave 07:30, deer and Todai-ji by 09:00, back by 14:00 for Umeda at sunset.",
    "items": [
-    {"id": "d2-b", "kind": "Breakfast", "t": "08:30", "title": "Breakfast near Namba", "desc": "Slow start.", "notes": "", "amt": 0, "done": false},
-    {"id": "d2-1", "kind": "Activity", "t": "10:00", "title": "Nakanoshima", "desc": "Riverside, the Central Public Hall and the rose garden, walking north-west toward Umeda.", "notes": "", "amt": 0, "done": false},
-    {"id": "d2-l", "kind": "Lunch", "t": "11:30", "title": "Lunch in Umeda", "desc": "Eat at 11:15 or after 14:00, never between. Grand Front Osaka and the station basements are easy.", "notes": "", "amt": 0, "done": false},
-    {"id": "d2-2", "kind": "Activity", "t": "13:00", "title": "Umeda browsing", "desc": "Hankyu and Daimaru department stores, Grand Front, the HEP Five Ferris wheel.", "notes": "", "amt": 0, "done": false},
-    {"id": "d2-3", "kind": "Activity", "t": "16:00", "title": "Umeda Sky Building", "desc": "Floating Garden Observatory, about ¥2,000. The 16:00 slot gets daylight, the 16:47 sunset and the night skyline on one ticket.", "notes": "", "amt": 0, "done": false},
-    {"id": "d2-d", "kind": "Dinner", "t": "18:00", "title": "Dinner at Ohatsu Tenjin Dori", "desc": "Or back in Namba. The Tombori River Cruise is an easy 20 minute sit-down afterwards.", "notes": "", "amt": 0, "done": false}
+    {
+     "id": "d2-b",
+     "kind": "Breakfast",
+     "t": "08:30",
+     "title": "Breakfast near Namba",
+     "desc": "Slow start.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d2-1",
+     "kind": "Activity",
+     "t": "10:00",
+     "title": "Nakanoshima",
+     "desc": "Riverside, the Central Public Hall and the rose garden, walking north-west toward Umeda.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d2-l",
+     "kind": "Lunch",
+     "t": "11:30",
+     "title": "Lunch in Umeda",
+     "desc": "Eat at 11:15 or after 14:00, never between. Grand Front Osaka and the station basements are easy.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d2-2",
+     "kind": "Activity",
+     "t": "13:00",
+     "title": "Umeda browsing",
+     "desc": "Hankyu and Daimaru department stores, Grand Front, the HEP Five Ferris wheel.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d2-3",
+     "kind": "Activity",
+     "t": "16:00",
+     "title": "Umeda Sky Building",
+     "desc": "Floating Garden Observatory, about ¥2,000. The 16:00 slot gets daylight, the 16:47 sunset and the night skyline on one ticket.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d2-d",
+     "kind": "Dinner",
+     "t": "18:00",
+     "title": "Dinner at Ohatsu Tenjin Dori",
+     "desc": "Or back in Namba. The Tombori River Cruise is an easy 20 minute sit-down afterwards.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    }
    ]
   },
   {
-   "id": "d3", "n": 3, "date": "2026-11-22", "city": "kyoto",
+   "id": "d3",
+   "n": 3,
+   "date": "2026-11-22",
+   "city": "kyoto",
    "title": "Move to Kyoto",
    "note": "Sunday 22 and Monday 23 are the Sunday and public holiday of a three-day weekend landing on peak foliage. These are the two hardest days of the trip.",
    "items": [
-    {"id": "d3-b", "kind": "Breakfast", "t": "07:00", "title": "Konbini breakfast", "desc": "Grab and go before the train.", "notes": "", "amt": 0, "done": false},
-    {"id": "d3-1", "kind": "Activity", "t": "07:30", "title": "Leave Namba", "desc": "Midosuji subway to Umeda, then the JR Special Rapid. About 50 minutes and ¥820 all in. Kyoto Station by 08:30.", "notes": "", "amt": 0, "done": false},
-    {"id": "d3-2", "kind": "Activity", "t": "08:30", "title": "Bags first", "desc": "Hotel early drop, or a Kyoto Station coin locker. Lockers are full by 10:00 this season, so do this before anything else.", "notes": "", "amt": 0, "done": false},
-    {"id": "d3-3", "kind": "Activity", "t": "09:00", "title": "Fushimi Inari", "desc": "Two stops on the JR Nara line, free and always open. Walk past the busy lower gates up to the Yotsutsuji viewpoint, about 45 minutes. Most visitors turn back well before that.", "notes": "", "amt": 0, "done": false},
-    {"id": "d3-l", "kind": "Lunch", "t": "12:00", "title": "Lunch near Fushimi Inari", "desc": "Kitsune udon or inari sushi around the shrine.", "notes": "", "amt": 0, "done": false},
-    {"id": "d3-4", "kind": "Activity", "t": "13:00", "title": "Nishiki Market", "desc": "Then the Teramachi arcades. Covered and crowd tolerant, which is what you want on a holiday Sunday.", "notes": "", "amt": 0, "done": false},
-    {"id": "d3-5", "kind": "Activity", "t": "15:30", "title": "Hotel, rest", "desc": "Do not skip this one.", "notes": "", "amt": 0, "done": false},
-    {"id": "d3-6", "kind": "Activity", "t": "19:00", "title": "Eikan-do lit up", "desc": "Night illumination runs about 17:30 to 21:00, ¥600 to ¥700. Arrive around 19:30 rather than at opening; the first wave clears and the queue collapses.", "notes": "", "amt": 0, "done": false},
-    {"id": "d3-d", "kind": "Dinner", "t": "20:30", "title": "Dinner in Gion or Pontocho", "desc": "", "notes": "", "amt": 0, "done": false}
+    {
+     "id": "d3-b",
+     "kind": "Breakfast",
+     "t": "07:00",
+     "title": "Konbini breakfast",
+     "desc": "Grab and go before the train.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d3-1",
+     "kind": "Activity",
+     "t": "07:30",
+     "title": "Leave Namba",
+     "desc": "Midosuji subway to Umeda, then the JR Special Rapid. About 50 minutes and ¥820 all in. Kyoto Station by 08:30.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d3-2",
+     "kind": "Activity",
+     "t": "08:30",
+     "title": "Bags first",
+     "desc": "Hotel early drop, or a Kyoto Station coin locker. Lockers are full by 10:00 this season, so do this before anything else.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d3-3",
+     "kind": "Activity",
+     "t": "09:00",
+     "title": "Fushimi Inari",
+     "desc": "Two stops on the JR Nara line, free and always open. Walk past the busy lower gates up to the Yotsutsuji viewpoint, about 45 minutes. Most visitors turn back well before that.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d3-l",
+     "kind": "Lunch",
+     "t": "12:00",
+     "title": "Lunch near Fushimi Inari",
+     "desc": "Kitsune udon or inari sushi around the shrine.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d3-4",
+     "kind": "Activity",
+     "t": "13:00",
+     "title": "Nishiki Market",
+     "desc": "Then the Teramachi arcades. Covered and crowd tolerant, which is what you want on a holiday Sunday.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d3-5",
+     "kind": "Activity",
+     "t": "15:30",
+     "title": "Hotel, rest",
+     "desc": "Do not skip this one.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d3-6",
+     "kind": "Activity",
+     "t": "19:00",
+     "title": "Eikan-do lit up",
+     "desc": "Night illumination runs about 17:30 to 21:00, ¥600 to ¥700. Arrive around 19:30 rather than at opening; the first wave clears and the queue collapses.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d3-d",
+     "kind": "Dinner",
+     "t": "20:30",
+     "title": "Dinner in Gion or Pontocho",
+     "desc": "",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    }
    ]
   },
   {
-   "id": "d4", "n": 4, "date": "2026-11-23", "city": "kyoto",
+   "id": "d4",
+   "n": 4,
+   "date": "2026-11-23",
+   "city": "kyoto",
    "title": "Kiyomizu at dawn, Sagano train",
    "note": "Public holiday. Arashiyama will be busy by mid-morning, so use the Tenryu-ji north gate straight into the bamboo grove and keep moving. Avoid Kyoto city buses all day: subway, JR and taxis only.",
    "items": [
-    {"id": "d4-1", "kind": "Activity", "t": "06:00", "title": "Kiyomizu-dera", "desc": "Opens 06:00. At the gate by 06:15 you share the wooden stage with about thirty people instead of two thousand. Walk down Sannenzaka and Ninenzaka at 07:15 while they are still empty.", "notes": "", "amt": 0, "done": false},
-    {"id": "d4-b", "kind": "Breakfast", "t": "07:45", "title": "Coffee and breakfast in Higashiyama", "desc": "Around Ninenzaka or a konbini on the way down.", "notes": "", "amt": 0, "done": false},
-    {"id": "d4-2", "kind": "Activity", "t": "08:30", "title": "Yasaka Shrine and Maruyama Park", "desc": "Short loop, still quiet at this hour.", "notes": "", "amt": 0, "done": false},
-    {"id": "d4-3", "kind": "Activity", "t": "09:30", "title": "To Arashiyama", "desc": "To Kyoto Station, then the JR Sagano line to Saga-Arashiyama, 15 minutes. Allow about 45 minutes door to door. A taxi is fine for two if the timing slips.", "notes": "", "amt": 0, "done": false},
-    {"id": "d4-4", "kind": "Activity", "t": "10:30", "title": "Tenryu-ji and the bamboo grove", "desc": "Garden about ¥500. The Sogenchi pond against the autumn hillside, then out the north gate into the bamboo grove. Togetsukyo bridge after.", "notes": "", "amt": 0, "done": false},
-    {"id": "d4-l", "kind": "Lunch", "t": "12:00", "title": "Lunch in Arashiyama", "desc": "Yudofu (simmered tofu) or soba. Eat by 12:30 so you are not rushing for the train.", "notes": "", "amt": 0, "done": false},
-    {"id": "d4-5", "kind": "Activity", "t": "14:00", "title": "Sagano Romantic Train", "desc": "Be at Torokko Saga station (next to JR Saga-Arashiyama) by 13:30 with your tickets ready. About 25 minutes along the Hozu gorge to Torokko Kameoka. Walk about 10 minutes to JR Umahori and ride the Sagano line back to Kyoto.", "notes": "", "amt": 0, "done": false},
-    {"id": "d4-6", "kind": "Activity", "t": "16:00", "title": "Back in Kyoto, rest", "desc": "Early night. Tomorrow you check out and move to Tokyo.", "notes": "", "amt": 0, "done": false},
-    {"id": "d4-d", "kind": "Dinner", "t": "18:30", "title": "Dinner at Kyoto Station", "desc": "Ramen Koji on the 10th floor, or Kyoto Tower.", "notes": "", "amt": 0, "done": false}
+    {
+     "id": "d4-1",
+     "kind": "Activity",
+     "t": "06:00",
+     "title": "Kiyomizu-dera",
+     "desc": "Opens 06:00. At the gate by 06:15 you share the wooden stage with about thirty people instead of two thousand. Walk down Sannenzaka and Ninenzaka at 07:15 while they are still empty.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d4-b",
+     "kind": "Breakfast",
+     "t": "07:45",
+     "title": "Coffee and breakfast in Higashiyama",
+     "desc": "Around Ninenzaka or a konbini on the way down.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d4-2",
+     "kind": "Activity",
+     "t": "08:30",
+     "title": "Yasaka Shrine and Maruyama Park",
+     "desc": "Short loop, still quiet at this hour.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d4-3",
+     "kind": "Activity",
+     "t": "09:30",
+     "title": "To Arashiyama",
+     "desc": "To Kyoto Station, then the JR Sagano line to Saga-Arashiyama, 15 minutes. Allow about 45 minutes door to door. A taxi is fine for two if the timing slips.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d4-4",
+     "kind": "Activity",
+     "t": "10:30",
+     "title": "Tenryu-ji and the bamboo grove",
+     "desc": "Garden about ¥500. The Sogenchi pond against the autumn hillside, then out the north gate into the bamboo grove. Togetsukyo bridge after.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d4-l",
+     "kind": "Lunch",
+     "t": "12:00",
+     "title": "Lunch in Arashiyama",
+     "desc": "Yudofu (simmered tofu) or soba. Eat by 12:30 so you are not rushing for the train.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d4-5",
+     "kind": "Activity",
+     "t": "14:00",
+     "title": "Sagano Romantic Train",
+     "desc": "Be at Torokko Saga station (next to JR Saga-Arashiyama) by 13:30 with your tickets ready. About 25 minutes along the Hozu gorge to Torokko Kameoka. Walk about 10 minutes to JR Umahori and ride the Sagano line back to Kyoto.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d4-6",
+     "kind": "Activity",
+     "t": "16:00",
+     "title": "Back in Kyoto, rest",
+     "desc": "Early night. Tomorrow you check out and move to Tokyo.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d4-d",
+     "kind": "Dinner",
+     "t": "18:30",
+     "title": "Dinner at Kyoto Station",
+     "desc": "Ramen Koji on the 10th floor, or Kyoto Tower.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    }
    ]
   },
   {
-   "id": "d5", "n": 5, "date": "2026-11-24", "city": "kyoto",
+   "id": "d5",
+   "n": 5,
+   "date": "2026-11-24",
+   "city": "kyoto",
    "title": "Uji, then the bullet train",
    "note": "Reserve the 16:30 Shinkansen ahead (Smart EX). Sunset is around 16:30, so Mount Fuji will be dark by the time you pass it.",
    "items": [
-    {"id": "d5-b", "kind": "Breakfast", "t": "07:30", "title": "Breakfast near the hotel", "desc": "Check out, leave the bags at the hotel or in a Kyoto Station locker.", "notes": "", "amt": 0, "done": false},
-    {"id": "d5-1", "kind": "Activity", "t": "08:30", "title": "To Uji", "desc": "JR Nara line from Kyoto Station, about 20 to 30 minutes, ¥240.", "notes": "", "amt": 0, "done": false},
-    {"id": "d5-2", "kind": "Activity", "t": "09:00", "title": "Byodo-in Phoenix Hall", "desc": "Opens 08:30, about ¥700. The interior tour of the Phoenix Hall is a separate timed ticket sold on site, so buy it first.", "notes": "", "amt": 0, "done": false},
-    {"id": "d5-3", "kind": "Activity", "t": "10:30", "title": "Byodoin Omotesando and the river", "desc": "Matcha houses along the approach, the Uji bridge, Ujigami Shrine across the river.", "notes": "", "amt": 0, "done": false},
-    {"id": "d5-l", "kind": "Lunch", "t": "11:45", "title": "Matcha lunch in Uji", "desc": "Matcha soba and a parfait. Ahead of the noon rush.", "notes": "", "amt": 0, "done": false},
-    {"id": "d5-4", "kind": "Activity", "t": "13:30", "title": "Back to Kyoto, collect bags", "desc": "Last browse at Kyoto Station (Porta, Isetan). Buy an ekiben for the train.", "notes": "", "amt": 0, "done": false},
-    {"id": "d5-5", "kind": "Activity", "t": "16:30", "title": "Shinkansen to Tokyo", "desc": "About 2 hours 15 minutes on a Nozomi. Then the Yamanote or Keihin-Tohoku line to Ueno, eight minutes. Check in at Four Points Flex by Sheraton Tokyo Ueno.", "notes": "", "amt": 0, "done": false},
-    {"id": "d5-d", "kind": "Dinner", "t": "19:30", "title": "Dinner at Ameyoko", "desc": "Market under the tracks, five minutes from the hotel. Easy first Tokyo evening.", "notes": "", "amt": 0, "done": false}
+    {
+     "id": "d5-b",
+     "kind": "Breakfast",
+     "t": "07:30",
+     "title": "Breakfast near the hotel",
+     "desc": "Check out, leave the bags at the hotel or in a Kyoto Station locker.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d5-1",
+     "kind": "Activity",
+     "t": "08:30",
+     "title": "To Uji",
+     "desc": "JR Nara line from Kyoto Station, about 20 to 30 minutes, ¥240.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d5-2",
+     "kind": "Activity",
+     "t": "09:00",
+     "title": "Byodo-in Phoenix Hall",
+     "desc": "Opens 08:30, about ¥700. The interior tour of the Phoenix Hall is a separate timed ticket sold on site, so buy it first.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d5-3",
+     "kind": "Activity",
+     "t": "10:30",
+     "title": "Byodoin Omotesando and the river",
+     "desc": "Matcha houses along the approach, the Uji bridge, Ujigami Shrine across the river.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d5-l",
+     "kind": "Lunch",
+     "t": "11:45",
+     "title": "Matcha lunch in Uji",
+     "desc": "Matcha soba and a parfait. Ahead of the noon rush.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d5-4",
+     "kind": "Activity",
+     "t": "13:30",
+     "title": "Back to Kyoto, collect bags",
+     "desc": "Last browse at Kyoto Station (Porta, Isetan). Buy an ekiben for the train.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d5-5",
+     "kind": "Activity",
+     "t": "16:30",
+     "title": "Shinkansen to Tokyo",
+     "desc": "About 2 hours 15 minutes on a Nozomi. Then the Yamanote or Keihin-Tohoku line to Ueno, eight minutes. Check in at Four Points Flex by Sheraton Tokyo Ueno.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d5-d",
+     "kind": "Dinner",
+     "t": "19:30",
+     "title": "Dinner at Ameyoko",
+     "desc": "Market under the tracks, five minutes from the hotel. Easy first Tokyo evening.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    }
    ]
   },
   {
-   "id": "d6", "n": 6, "date": "2026-11-25", "city": "tokyo",
+   "id": "d6",
+   "n": 6,
+   "date": "2026-11-25",
+   "city": "tokyo",
    "title": "Mount Fuji, Rikugien at night",
    "note": "Lake-level colour usually peaks in early November, so the maples may be past their best. What you gain is a snow-capped Fuji and clearer winter air. Book the return bus before the outbound one.",
    "items": [
-    {"id": "d6-0", "kind": "Activity", "t": "Night", "title": "Decide the night before", "desc": "Check the Fujigoko webcams and the forecast at 21:00 on the 24th. Clear morning, go. Thick cloud, swap this day with Saturday and do Tokyo instead.", "notes": "", "amt": 0, "done": false},
-    {"id": "d6-b", "kind": "Breakfast", "t": "06:15", "title": "Konbini breakfast", "desc": "Eat on the way or at Busta Shinjuku.", "notes": "", "amt": 0, "done": false},
-    {"id": "d6-1", "kind": "Activity", "t": "06:30", "title": "Leave Ueno for Busta Shinjuku", "desc": "The 07:25 highway bus reaches Kawaguchiko about 09:10 and is the last slot before expressway traffic builds. About ¥2,200 each way.", "notes": "", "amt": 0, "done": false},
-    {"id": "d6-2", "kind": "Activity", "t": "09:15", "title": "Oishi Park", "desc": "Buy the Fuji Five Lakes bus pass, about ¥1,700, then the Red Line to the north shore. Fuji holds its shape through the morning and hides in cloud after that, so go here first.", "notes": "", "amt": 0, "done": false},
-    {"id": "d6-3", "kind": "Activity", "t": "10:45", "title": "Kawaguchiko Ropeway", "desc": "To Tenjoyama, about ¥1,000 return.", "notes": "", "amt": 0, "done": false},
-    {"id": "d6-l", "kind": "Lunch", "t": "12:00", "title": "Hoto for lunch", "desc": "The local hand-cut udon in miso broth.", "notes": "", "amt": 0, "done": false},
-    {"id": "d6-4", "kind": "Activity", "t": "13:30", "title": "Pick one", "desc": "Maple Corridor by the lake, or the Fujikyu line to Shimo-Yoshida and 398 steps up to Chureito Pagoda. One, not both.", "notes": "", "amt": 0, "done": false},
-    {"id": "d6-5", "kind": "Activity", "t": "15:30", "title": "Return bus to Shinjuku", "desc": "Arrives Shinjuku about 17:15 to 18:15 depending on traffic.", "notes": "", "amt": 0, "done": false},
-    {"id": "d6-6", "kind": "Activity", "t": "18:30", "title": "Rikugien evening illumination", "desc": "JR Yamanote line from Shinjuku to Komagome, about 20 minutes, then 7 minutes on foot to the Somei gate. Lit-up maples around the pond. About ¥300, open to around 21:00 with last entry around 20:30. Check this year's dates before you go.", "notes": "", "amt": 0, "done": false},
-    {"id": "d6-d", "kind": "Dinner", "t": "20:30", "title": "Dinner near Komagome or Ueno", "desc": "Komagome to Ueno is about 10 minutes on the Yamanote line.", "notes": "", "amt": 0, "done": false}
+    {
+     "id": "d6-0",
+     "kind": "Activity",
+     "t": "Night",
+     "title": "Decide the night before",
+     "desc": "Check the Fujigoko webcams and the forecast at 21:00 on the 24th. Clear morning, go. Thick cloud, swap this day with Saturday and do Tokyo instead.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d6-b",
+     "kind": "Breakfast",
+     "t": "06:15",
+     "title": "Konbini breakfast",
+     "desc": "Eat on the way or at Busta Shinjuku.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d6-1",
+     "kind": "Activity",
+     "t": "06:30",
+     "title": "Leave Ueno for Busta Shinjuku",
+     "desc": "The 07:25 highway bus reaches Kawaguchiko about 09:10 and is the last slot before expressway traffic builds. About ¥2,200 each way.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d6-2",
+     "kind": "Activity",
+     "t": "09:15",
+     "title": "Oishi Park",
+     "desc": "Buy the Fuji Five Lakes bus pass, about ¥1,700, then the Red Line to the north shore. Fuji holds its shape through the morning and hides in cloud after that, so go here first.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d6-3",
+     "kind": "Activity",
+     "t": "10:45",
+     "title": "Kawaguchiko Ropeway",
+     "desc": "To Tenjoyama, about ¥1,000 return.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d6-l",
+     "kind": "Lunch",
+     "t": "12:00",
+     "title": "Hoto for lunch",
+     "desc": "The local hand-cut udon in miso broth.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d6-4",
+     "kind": "Activity",
+     "t": "13:30",
+     "title": "Pick one",
+     "desc": "Maple Corridor by the lake, or the Fujikyu line to Shimo-Yoshida and 398 steps up to Chureito Pagoda. One, not both.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d6-5",
+     "kind": "Activity",
+     "t": "15:30",
+     "title": "Return bus to Shinjuku",
+     "desc": "Arrives Shinjuku about 17:15 to 18:15 depending on traffic.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d6-6",
+     "kind": "Activity",
+     "t": "18:30",
+     "title": "Rikugien evening illumination",
+     "desc": "JR Yamanote line from Shinjuku to Komagome, about 20 minutes, then 7 minutes on foot to the Somei gate. Lit-up maples around the pond. About ¥300, open to around 21:00 with last entry around 20:30. Check this year's dates before you go.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d6-d",
+     "kind": "Dinner",
+     "t": "20:30",
+     "title": "Dinner near Komagome or Ueno",
+     "desc": "Komagome to Ueno is about 10 minutes on the Yamanote line.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    }
    ]
   },
   {
-   "id": "d7", "n": 7, "date": "2026-11-26", "city": "tokyo",
+   "id": "d7",
+   "n": 7,
+   "date": "2026-11-26",
+   "city": "tokyo",
    "title": "Tokyo DisneySea",
    "note": "Have the app installed, logged in and both tickets linked before you arrive. Fantasy Springs runs entirely through the app and is issued within minutes of opening.",
    "items": [
-    {"id": "d7-b", "kind": "Breakfast", "t": "06:30", "title": "Konbini breakfast", "desc": "", "notes": "", "amt": 0, "done": false},
-    {"id": "d7-1", "kind": "Activity", "t": "07:00", "title": "Leave Ueno", "desc": "To Tokyo Station, JR Keiyo line to Maihama, then the Disney Resort Line. Allow 20 minutes inside Tokyo Station alone; the Keiyo platforms are a long underground walk. At the gate by 08:15 for a 09:00 opening.", "notes": "", "amt": 0, "done": false},
-    {"id": "d7-2", "kind": "Activity", "t": "09:00", "title": "Ride order", "desc": "Soaring: Fantastic Flight, Journey to the Center of the Earth, Tower of Terror, Indiana Jones, Toy Story Mania, then Fantasy Springs. Venetian Gondolas once at dusk.", "notes": "", "amt": 0, "done": false},
-    {"id": "d7-l", "kind": "Lunch", "t": "11:15", "title": "Lunch in the park", "desc": "Mobile order in the app to skip the queue.", "notes": "", "amt": 0, "done": false},
-    {"id": "d7-d", "kind": "Dinner", "t": "17:30", "title": "Dinner in the park", "desc": "Before you claim a spot for the night show.", "notes": "", "amt": 0, "done": false},
-    {"id": "d7-3", "kind": "Activity", "t": "19:00", "title": "Hold a harbour spot", "desc": "Take a position about 40 minutes before the night show. Mediterranean Harbor is the best viewing bowl in any Disney park.", "notes": "", "amt": 0, "done": false}
+    {
+     "id": "d7-b",
+     "kind": "Breakfast",
+     "t": "06:30",
+     "title": "Konbini breakfast",
+     "desc": "",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d7-1",
+     "kind": "Activity",
+     "t": "07:00",
+     "title": "Leave Ueno",
+     "desc": "To Tokyo Station, JR Keiyo line to Maihama, then the Disney Resort Line. Allow 20 minutes inside Tokyo Station alone; the Keiyo platforms are a long underground walk. At the gate by 08:15 for a 09:00 opening.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d7-2",
+     "kind": "Activity",
+     "t": "09:00",
+     "title": "Ride order",
+     "desc": "Soaring: Fantastic Flight, Journey to the Center of the Earth, Tower of Terror, Indiana Jones, Toy Story Mania, then Fantasy Springs. Venetian Gondolas once at dusk.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d7-l",
+     "kind": "Lunch",
+     "t": "11:15",
+     "title": "Lunch in the park",
+     "desc": "Mobile order in the app to skip the queue.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d7-d",
+     "kind": "Dinner",
+     "t": "17:30",
+     "title": "Dinner in the park",
+     "desc": "Before you claim a spot for the night show.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d7-3",
+     "kind": "Activity",
+     "t": "19:00",
+     "title": "Hold a harbour spot",
+     "desc": "Take a position about 40 minutes before the night show. Mediterranean Harbor is the best viewing bowl in any Disney park.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    }
    ]
   },
   {
-   "id": "d8", "n": 8, "date": "2026-11-27", "city": "tokyo",
+   "id": "d8",
+   "n": 8,
+   "date": "2026-11-27",
+   "city": "tokyo",
    "title": "Doraemon, then west Tokyo",
    "note": "",
    "items": [
-    {"id": "d8-b", "kind": "Breakfast", "t": "07:30", "title": "Breakfast near Ueno", "desc": "", "notes": "", "amt": 0, "done": false},
-    {"id": "d8-1", "kind": "Activity", "t": "08:30", "title": "To Kawasaki", "desc": "JR to Shinjuku, Odakyu line to Noborito about 18 minutes, then the shuttle bus, ¥220 and ten minutes. About 70 minutes door to door. Noborito is itself a Doraemon-themed station.", "notes": "", "amt": 0, "done": false},
-    {"id": "d8-2", "kind": "Activity", "t": "10:00", "title": "Fujiko F. Fujio Museum", "desc": "Your 10:00 slot, about ¥1,000. Timed and advance only. Allow two and a half hours. The rooftop has the Anywhere Door, Pisuke's pond and the concrete pipes in the vacant lot. Themed cafe and a shop with goods sold nowhere else.", "notes": "", "amt": 0, "done": false},
-    {"id": "d8-l", "kind": "Lunch", "t": "13:00", "title": "Lunch at the museum cafe or in Shinjuku", "desc": "", "notes": "", "amt": 0, "done": false},
-    {"id": "d8-3", "kind": "Activity", "t": "14:00", "title": "Shinjuku Gyoen", "desc": "¥500, last entry about 15:30. Late November is when the ginkgo avenue and the maples peak here.", "notes": "", "amt": 0, "done": false},
-    {"id": "d8-4", "kind": "Activity", "t": "16:00", "title": "Shibuya Sky", "desc": "Scramble crossing first, then your booked slot, about ¥3,000. 16:00 gets daylight, the 16:30 sunset and the lit city on one ticket.", "notes": "", "amt": 0, "done": false},
-    {"id": "d8-d", "kind": "Dinner", "t": "18:00", "title": "Dinner in Shibuya or Harajuku", "desc": "Or Omoide Yokocho back in Shinjuku for grilled skewers in a lane of tiny bars.", "notes": "", "amt": 0, "done": false}
+    {
+     "id": "d8-b",
+     "kind": "Breakfast",
+     "t": "07:30",
+     "title": "Breakfast near Ueno",
+     "desc": "",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d8-1",
+     "kind": "Activity",
+     "t": "08:30",
+     "title": "To Kawasaki",
+     "desc": "JR to Shinjuku, Odakyu line to Noborito about 18 minutes, then the shuttle bus, ¥220 and ten minutes. About 70 minutes door to door. Noborito is itself a Doraemon-themed station.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d8-2",
+     "kind": "Activity",
+     "t": "10:00",
+     "title": "Fujiko F. Fujio Museum",
+     "desc": "Your 10:00 slot, about ¥1,000. Timed and advance only. Allow two and a half hours. The rooftop has the Anywhere Door, Pisuke's pond and the concrete pipes in the vacant lot. Themed cafe and a shop with goods sold nowhere else.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d8-l",
+     "kind": "Lunch",
+     "t": "13:00",
+     "title": "Lunch at the museum cafe or in Shinjuku",
+     "desc": "",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d8-3",
+     "kind": "Activity",
+     "t": "14:00",
+     "title": "Shinjuku Gyoen",
+     "desc": "¥500, last entry about 15:30. Late November is when the ginkgo avenue and the maples peak here.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d8-4",
+     "kind": "Activity",
+     "t": "16:00",
+     "title": "Shibuya Sky",
+     "desc": "Scramble crossing first, then your booked slot, about ¥3,000. 16:00 gets daylight, the 16:30 sunset and the lit city on one ticket.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d8-d",
+     "kind": "Dinner",
+     "t": "18:00",
+     "title": "Dinner in Shibuya or Harajuku",
+     "desc": "Or Omoide Yokocho back in Shinjuku for grilled skewers in a lane of tiny bars.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    }
    ]
   },
   {
-   "id": "d9", "n": 9, "date": "2026-11-28", "city": "tokyo",
+   "id": "d9",
+   "n": 9,
+   "date": "2026-11-28",
+   "city": "tokyo",
    "title": "Old Tokyo and the shopping run",
    "note": "Deliberately central and low commitment so it can absorb a swap if Fuji has to move. Reserve the Skyliner for tomorrow morning today.",
    "items": [
-    {"id": "d9-1", "kind": "Activity", "t": "07:00", "title": "Asakusa", "desc": "Senso-ji and the Kaminarimon gate. Nakamise is deserted before 08:30 and unwalkable by 11:00. Photograph first, shop later.", "notes": "", "amt": 0, "done": false},
-    {"id": "d9-b", "kind": "Breakfast", "t": "08:30", "title": "Breakfast in Asakusa", "desc": "", "notes": "", "amt": 0, "done": false},
-    {"id": "d9-2", "kind": "Activity", "t": "09:30", "title": "Skytree and Solamachi", "desc": "Walk up Sumida Park. Solamachi opens 10:00 and has the Doraemon Mirai Department Store, no ticket needed. The Tembo Deck is optional at about ¥2,400.", "notes": "", "amt": 0, "done": false},
-    {"id": "d9-l", "kind": "Lunch", "t": "11:30", "title": "Lunch at Solamachi", "desc": "", "notes": "", "amt": 0, "done": false},
-    {"id": "d9-3", "kind": "Activity", "t": "13:00", "title": "One district only", "desc": "Akihabara, Ginza, or Tokyo Station Character Street. Saturday crowds mean one, not three.", "notes": "", "amt": 0, "done": false},
-    {"id": "d9-4", "kind": "Activity", "t": "15:30", "title": "Ueno shopping run", "desc": "Ginkgo avenue in the park, then Ameyoko, Don Quijote and a drugstore sweep. Every receipt goes in one envelope for the airport tax refund.", "notes": "", "amt": 0, "done": false},
-    {"id": "d9-d", "kind": "Dinner", "t": "18:00", "title": "Last dinner in Tokyo", "desc": "", "notes": "", "amt": 0, "done": false},
-    {"id": "d9-5", "kind": "Activity", "t": "19:30", "title": "Pack properly", "desc": "Weigh both bags, lay out tomorrow's clothes and passports, set two alarms. You are up at 04:45.", "notes": "", "amt": 0, "done": false}
+    {
+     "id": "d9-1",
+     "kind": "Activity",
+     "t": "07:00",
+     "title": "Asakusa",
+     "desc": "Senso-ji and the Kaminarimon gate. Nakamise is deserted before 08:30 and unwalkable by 11:00. Photograph first, shop later.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d9-b",
+     "kind": "Breakfast",
+     "t": "08:30",
+     "title": "Breakfast in Asakusa",
+     "desc": "",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d9-2",
+     "kind": "Activity",
+     "t": "09:30",
+     "title": "Skytree and Solamachi",
+     "desc": "Walk up Sumida Park. Solamachi opens 10:00 and has the Doraemon Mirai Department Store, no ticket needed. The Tembo Deck is optional at about ¥2,400.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d9-l",
+     "kind": "Lunch",
+     "t": "11:30",
+     "title": "Lunch at Solamachi",
+     "desc": "",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d9-3",
+     "kind": "Activity",
+     "t": "13:00",
+     "title": "One district only",
+     "desc": "Akihabara, Ginza, or Tokyo Station Character Street. Saturday crowds mean one, not three.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d9-4",
+     "kind": "Activity",
+     "t": "15:30",
+     "title": "Ueno shopping run",
+     "desc": "Ginkgo avenue in the park, then Ameyoko, Don Quijote and a drugstore sweep. Every receipt goes in one envelope for the airport tax refund.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d9-d",
+     "kind": "Dinner",
+     "t": "18:00",
+     "title": "Last dinner in Tokyo",
+     "desc": "",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d9-5",
+     "kind": "Activity",
+     "t": "19:30",
+     "title": "Pack properly",
+     "desc": "Weigh both bags, lay out tomorrow's clothes and passports, set two alarms. You are up at 04:45.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    }
    ]
   },
   {
-   "id": "d10", "n": 10, "date": "2026-11-29", "city": "air",
+   "id": "d10",
+   "n": 10,
+   "date": "2026-11-29",
+   "city": "air",
    "title": "Narita and home",
    "note": "If the tax refund queue looks longer than an hour, walk away and check in. The flight is worth far more than the tax.",
    "items": [
-    {"id": "d10-1", "kind": "Activity", "t": "04:45", "title": "Up", "desc": "Final sweep of the room: safe, bathroom, charger, under the bed.", "notes": "", "amt": 0, "done": false},
-    {"id": "d10-2", "kind": "Activity", "t": "05:20", "title": "Skyliner to Narita", "desc": "Walk to Keisei Ueno. First Skyliner is around 05:40 to 06:00 and reaches Terminal 1 in about 45 minutes, roughly ¥2,580 each. Confirm the Sunday first departure when you reserve.", "notes": "", "amt": 0, "done": false},
-    {"id": "d10-3", "kind": "Activity", "t": "06:45", "title": "Tax refund", "desc": "Before you check bags; customs may want to see the goods. Passport, boarding pass, receipts, unopened items. Allow 45 to 60 minutes.", "notes": "", "amt": 0, "done": false},
-    {"id": "d10-b", "kind": "Breakfast", "t": "07:45", "title": "Breakfast at Narita", "desc": "After check-in, airside.", "notes": "", "amt": 0, "done": false},
-    {"id": "d10-4", "kind": "Activity", "t": "07:30", "title": "Check in", "desc": "Vietnam Airlines, Terminal 1. Confirm bags are tagged through to Kuala Lumpur and mention the 60 minute connection at Hanoi.", "notes": "", "amt": 0, "done": false},
-    {"id": "d10-5", "kind": "Activity", "t": "09:30", "title": "VN311", "desc": "Hanoi at 13:50, then VN681 at 14:50 into Kuala Lumpur at 19:10. Move briskly at Noi Bai and do not shop.", "notes": "", "amt": 0, "done": false},
-    {"id": "d10-l", "kind": "Lunch", "t": "11:00", "title": "Lunch on board", "desc": "", "notes": "", "amt": 0, "done": false},
-    {"id": "d10-d", "kind": "Dinner", "t": "20:00", "title": "Dinner at home", "desc": "", "notes": "", "amt": 0, "done": false}
+    {
+     "id": "d10-1",
+     "kind": "Activity",
+     "t": "04:45",
+     "title": "Up",
+     "desc": "Final sweep of the room: safe, bathroom, charger, under the bed.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d10-2",
+     "kind": "Activity",
+     "t": "05:20",
+     "title": "Skyliner to Narita",
+     "desc": "Walk to Keisei Ueno. First Skyliner is around 05:40 to 06:00 and reaches Terminal 1 in about 45 minutes, roughly ¥2,580 each. Confirm the Sunday first departure when you reserve.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d10-3",
+     "kind": "Activity",
+     "t": "06:45",
+     "title": "Tax refund",
+     "desc": "Before you check bags; customs may want to see the goods. Passport, boarding pass, receipts, unopened items. Allow 45 to 60 minutes.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d10-b",
+     "kind": "Breakfast",
+     "t": "07:45",
+     "title": "Breakfast at Narita",
+     "desc": "After check-in, airside.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d10-4",
+     "kind": "Activity",
+     "t": "07:30",
+     "title": "Check in",
+     "desc": "Vietnam Airlines, Terminal 1. Confirm bags are tagged through to Kuala Lumpur and mention the 60 minute connection at Hanoi.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d10-5",
+     "kind": "Activity",
+     "t": "09:30",
+     "title": "VN311",
+     "desc": "Hanoi at 13:50, then VN681 at 14:50 into Kuala Lumpur at 19:10. Move briskly at Noi Bai and do not shop.",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d10-l",
+     "kind": "Lunch",
+     "t": "11:00",
+     "title": "Lunch on board",
+     "desc": "",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    },
+    {
+     "id": "d10-d",
+     "kind": "Dinner",
+     "t": "20:00",
+     "title": "Dinner at home",
+     "desc": "",
+     "notes": "",
+     "amt": 0,
+     "done": false
+    }
    ]
   }
  ]
