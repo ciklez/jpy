@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F5F2ED">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Japan 2026">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="robots" content="noindex, nofollow">
+<title>Japan 2026</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script>
+/* set theme before first paint */
+(function(){try{var p=JSON.parse(localStorage.getItem("jp2_theme"));}catch(e){p=null;}
+var t=p||(window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");
+document.documentElement.setAttribute("data-theme",t);})();
+</script>
+<style>
+:root{
+  --bg:#F5F2ED; --surface:#FFFFFF; --surface2:#F8F5F0; --sunk:#EFEAE2; --line:#E7E0D5;
+  --ink:#1F1C19; --dim:#6A635A; --faint:#9C948A;
+  --accent:#D8432A; --accent-ink:#FFFFFF; --accent-soft:#FBE6DF;
+  --ok:#2F8A57; --ok-soft:#E2F2E8; --warn:#B7791F;
+  --osaka:#E0563C; --kyoto:#C08A12; --tokyo:#4B5BD0; --air:#6E7684;
+  --bf:#A86A12; --bf-bg:#FCEFD8; --lu:#2F8A57; --lu-bg:#E2F2E8;
+  --di:#5B4BC4; --di-bg:#ECE9FB; --sn:#6E7684; --sn-bg:#ECEEF1;
+  --shadow:0 1px 2px rgba(31,28,25,.05),0 4px 14px rgba(31,28,25,.06);
+  --r:16px;
+  color-scheme:light;
+}
+[data-theme="dark"]{
+  --bg:#101113; --surface:#1A1B1E; --surface2:#202125; --sunk:#141517; --line:#2C2E33;
+  --ink:#ECEAE6; --dim:#A9A39B; --faint:#77716B;
+  --accent:#FF6B4E; --accent-ink:#1A0F0C; --accent-soft:#3A1E17;
+  --ok:#4CC587; --ok-soft:#173022; --warn:#F0B655;
+  --osaka:#FF7C62; --kyoto:#E9B444; --tokyo:#8C9BFF; --air:#9AA1AD;
+  --bf:#F0B655; --bf-bg:#33270F; --lu:#5FD08F; --lu-bg:#16301F;
+  --di:#A99BFF; --di-bg:#251F45; --sn:#A9B0BB; --sn-bg:#25282D;
+  --shadow:0 1px 0 rgba(255,255,255,.03),0 6px 18px rgba(0,0,0,.35);
+  color-scheme:dark;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Hiragino Sans","Noto Sans JP",sans-serif;
+  font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased;
+  padding-bottom:calc(70px + env(safe-area-inset-bottom));overflow-x:hidden}
+h1,h2,h3{margin:0;letter-spacing:-.01em}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer;padding:0}
+input,textarea,select{font:inherit;color:var(--ink)}
+.wrap{max-width:640px;margin:0 auto;padding:0 16px}
+.hide{display:none!important}
+
+/* ---------- header ---------- */
+.top{position:sticky;top:0;z-index:30;background:var(--bg);background:color-mix(in srgb,var(--bg) 88%,transparent);
+  -webkit-backdrop-filter:saturate(1.4) blur(14px);backdrop-filter:saturate(1.4) blur(14px);
+  border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top)}
+.topin{display:flex;align-items:center;gap:10px;height:56px}
+.logo{width:34px;height:34px;border-radius:10px;background:var(--accent);color:#fff;
+  display:grid;place-items:center;font-weight:700;font-size:17px;flex:0 0 auto}
+.title{font-size:16px;font-weight:700;line-height:1.15}
+.sub{font-size:12px;color:var(--dim);line-height:1.3}
+.pill{margin-left:auto;display:flex;align-items:center;gap:6px;height:32px;padding:0 11px;
+  border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:12px;color:var(--dim);
+  max-width:46vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--faint);flex:0 0 auto}
+.pill.ok .dot{background:var(--ok)} .pill.wait .dot{background:var(--warn)}
+.pill.err .dot{background:var(--accent)} .pill.busy .dot{background:var(--warn);animation:pulse 1s infinite}
+@keyframes pulse{50%{opacity:.3}}
+.iconbtn{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;
+  background:var(--surface);border:1px solid var(--line);color:var(--dim);flex:0 0 auto}
+.iconbtn svg{width:18px;height:18px}
+
+/* ---------- day strip ---------- */
+.strip{display:flex;gap:8px;overflow-x:auto;padding:4px 16px 12px;scrollbar-width:none;
+  scroll-snap-type:x proximity;max-width:640px;margin:0 auto}
+.strip::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;scroll-snap-align:center;width:58px;padding:7px 0 8px;border-radius:14px;
+  background:var(--surface);border:1px solid var(--line);text-align:center;position:relative}
+.chip .cw{display:block;font-size:11px;color:var(--faint);font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.chip .cn{display:block;font-size:19px;font-weight:700;line-height:1.15;font-variant-numeric:tabular-nums}
+.chip .cc{display:block;width:6px;height:6px;border-radius:50%;margin:4px auto 0;background:var(--c)}
+.chip.on{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.chip.on .cw{color:color-mix(in srgb,var(--bg) 70%,transparent)}
+.chip.today:after{content:"Today";position:absolute;left:50%;top:-7px;transform:translateX(-50%);
+  font-size:9px;font-weight:700;background:var(--accent);color:#fff;border-radius:6px;padding:0 5px;line-height:14px}
+.chip.alldone .cn{color:var(--ok)}
+.chip.on.alldone .cn{color:var(--bg)}
+[data-c="osaka"]{--c:var(--osaka)} [data-c="kyoto"]{--c:var(--kyoto)}
+[data-c="tokyo"]{--c:var(--tokyo)} [data-c="air"]{--c:var(--air)}
+
+/* ---------- day summary ---------- */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
+.dayhead{margin-top:14px;padding:16px;position:relative;overflow:hidden}
+.dayhead:before{content:"";position:absolute;inset:0 auto 0 0;width:5px;background:var(--c)}
+.dl{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--dim)}
+.city{margin-left:auto;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;
+  color:var(--c);background:color-mix(in srgb,var(--c) 14%,transparent)}
+.dayhead h1{font-size:22px;font-weight:750;margin-top:4px;line-height:1.2}
+.prog{display:flex;align-items:center;gap:10px;margin-top:12px;font-size:12px;color:var(--dim);white-space:nowrap}
+.bar{flex:1;height:7px;border-radius:9px;background:var(--sunk);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--ok);border-radius:9px;transition:width .3s ease}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.stat{background:var(--surface2);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.stat .k{font-size:11.5px;color:var(--faint)}
+.stat .v{font-size:19px;font-weight:750;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.stat .s{font-size:12px;color:var(--dim);font-variant-numeric:tabular-nums}
+.callout{margin-top:10px;padding:11px 13px;border-radius:12px;font-size:13px;color:var(--dim);
+  background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 22%,transparent)}
+.callout b{color:var(--accent)}
+
+/* ---------- itinerary cards ---------- */
+.list{margin-top:14px;display:flex;flex-direction:column;gap:10px}
+.it{display:flex;gap:12px;padding:14px 14px 12px;transition:opacity .2s ease}
+.tick{flex:0 0 30px;width:30px;height:30px;border-radius:50%;border:2px solid var(--line);
+  display:grid;place-items:center;color:transparent;margin-top:1px;transition:all .15s ease}
+.tick svg{width:16px;height:16px}
+.tick:active{transform:scale(.9)}
+.it.done .tick{background:var(--ok);border-color:var(--ok);color:#fff}
+.main{flex:1;min-width:0}
+.meta{display:flex;align-items:center;gap:8px;min-height:20px}
+.time{font-size:12.5px;font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums}
+.badge{font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:999px;letter-spacing:.02em}
+.k-Breakfast .badge{color:var(--bf);background:var(--bf-bg)}
+.k-Lunch .badge{color:var(--lu);background:var(--lu-bg)}
+.k-Dinner .badge{color:var(--di);background:var(--di-bg)}
+.k-Snack .badge{color:var(--sn);background:var(--sn-bg)}
+.it h3{font-size:15.5px;font-weight:650;line-height:1.3;margin-top:2px;word-wrap:break-word}
+.it .desc{margin:4px 0 0;font-size:13.5px;color:var(--dim);line-height:1.5}
+.it .notes{margin:7px 0 0;font-size:13px;color:var(--ink);background:var(--surface2);
+  border:1px solid var(--line);border-radius:10px;padding:7px 10px;white-space:pre-wrap}
+.it .notes:before{content:"Notes · ";color:var(--faint);font-weight:600}
+.it.k-Breakfast .notes:before,.it.k-Lunch .notes:before,.it.k-Dinner .notes:before,.it.k-Snack .notes:before{content:"We had · "}
+.it .hint{margin:6px 0 0;font-size:12.5px;color:var(--faint)}
+.it.done h3{color:var(--dim)}
+.it.done .desc,.it.done .hint{display:none}
+.it.open .desc{display:block}
+.foot{display:flex;align-items:center;gap:8px;margin-top:10px}
+.amt{display:flex;align-items:center;gap:2px;height:36px;padding:0 4px 0 11px;border-radius:10px;
+  background:var(--surface2);border:1px solid var(--line);width:128px}
+.amt span{color:var(--faint);font-weight:600}
+.amt input{border:0;background:transparent;width:100%;height:100%;outline:0;font-size:15px;
+  font-weight:650;font-variant-numeric:tabular-nums;padding:0 4px}
+.amt:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.rm{font-size:12px;color:var(--faint);font-variant-numeric:tabular-nums;white-space:nowrap}
+.edit{margin-left:auto;height:34px;padding:0 12px;border-radius:10px;font-size:13px;font-weight:600;color:var(--dim)}
+.edit:active{background:var(--sunk)}
+.add{width:100%;margin-top:12px;height:50px;border-radius:var(--r);border:1.5px dashed var(--line);
+  color:var(--dim);font-weight:650;font-size:14px;display:flex;align-items:center;justify-content:center;gap:8px}
+.add:active{background:var(--surface)}
+.empty{padding:28px 16px;text-align:center;color:var(--faint);font-size:14px}
+
+/* ---------- help ---------- */
+.sec{display:flex;align-items:baseline;gap:8px;margin:24px 2px 10px}
+.sec h2{font-size:17px;font-weight:700}
+.sec span{font-size:12px;color:var(--faint)}
+.pad{padding:4px 16px}
+.kv{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14px}
+.kv:last-child{border-bottom:0}
+.kv .k{flex:0 0 98px;color:var(--dim);font-size:13px}
+.kv .v{flex:1;min-width:0}
+.kv .v small{display:block;color:var(--dim);font-size:12.5px;margin-top:2px}
+.tel{color:var(--accent);font-weight:750;text-decoration:none;font-size:16px}
+.rule{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.rule:last-child{border-bottom:0}
+.num{flex:0 0 26px;height:26px;border-radius:8px;background:var(--accent-soft);color:var(--accent);
+  display:grid;place-items:center;font-size:12.5px;font-weight:750}
+.rule b{display:block;font-size:14px}
+.rule p{margin:2px 0 0;font-size:13px;color:var(--dim)}
+.ph{padding:11px 0;border-bottom:1px solid var(--line)}
+.ph:last-child{border-bottom:0}
+.ph .jp{font-size:17px;font-weight:650}
+.ph .ro{font-size:13px;color:var(--dim);font-style:italic}
+.ph .en{font-size:13px;color:var(--faint)}
+.foottxt{text-align:center;font-size:11.5px;color:var(--faint);padding:24px 0 8px}
+
+/* ---------- bottom tabs ---------- */
+.tabs{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;justify-content:center;
+  background:var(--surface);background:color-mix(in srgb,var(--surface) 92%,transparent);
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
+.tab{flex:1;max-width:220px;padding:8px 0 9px;display:flex;flex-direction:column;align-items:center;gap:2px;
+  font-size:11.5px;font-weight:650;color:var(--faint)}
+.tab svg{width:22px;height:22px}
+.tab.on{color:var(--accent)}
+.pane{display:none}.pane.on{display:block}
+
+/* ---------- sheets ---------- */
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.42);z-index:60;opacity:0;pointer-events:none;transition:opacity .2s ease}
+.scrim.on{opacity:1;pointer-events:auto}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:61;max-width:640px;margin:0 auto;
+  background:var(--surface);border-radius:20px 20px 0 0;border:1px solid var(--line);border-bottom:0;
+  padding:8px 18px calc(18px + env(safe-area-inset-bottom));max-height:92vh;overflow-y:auto;
+  transform:translateY(105%);transition:transform .25s cubic-bezier(.2,.8,.2,1);overscroll-behavior:contain}
+.sheet.on{transform:none}
+.grab{width:40px;height:5px;border-radius:3px;background:var(--line);margin:2px auto 12px}
+.sheet h2{font-size:18px;font-weight:700;margin-bottom:12px}
+.fl{display:block;font-size:12.5px;font-weight:600;color:var(--dim);margin-top:12px}
+.fl input,.fl textarea,.fl select{display:block;width:100%;margin-top:5px;background:var(--surface2);
+  border:1px solid var(--line);border-radius:11px;padding:11px 12px;font-size:16px;outline:0}
+.fl textarea{resize:vertical;min-height:44px;line-height:1.45}
+.fl input:focus,.fl textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button{height:34px;padding:0 13px;border-radius:999px;border:1px solid var(--line);
+  background:var(--surface2);font-size:13px;font-weight:600;color:var(--dim)}
+.seg button.on{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.chkrow{display:flex;align-items:center;gap:10px;margin-top:14px;font-size:15px;font-weight:600}
+.chkrow input{width:22px;height:22px;accent-color:var(--ok)}
+.btns{display:flex;gap:8px;margin-top:20px}
+.b{height:46px;padding:0 18px;border-radius:12px;font-weight:700;font-size:15px}
+.b.primary{background:var(--accent);color:var(--accent-ink);flex:1}
+.b.ghost{background:var(--sunk);color:var(--ink)}
+.b.danger{color:var(--accent);background:var(--accent-soft)}
+.b:active{transform:scale(.97)}
+.note{font-size:12.5px;color:var(--dim);margin-top:8px}
+.statusbox{background:var(--surface2);border:1px solid var(--line);border-radius:12px;padding:11px 13px;font-size:13.5px}
+
+/* ---------- PIN lock ---------- */
+.lock{position:fixed;inset:0;z-index:100;background:var(--bg);display:flex;flex-direction:column;
+  align-items:center;justify-content:center;padding:24px 24px calc(24px + env(safe-area-inset-bottom))}
+.lock .logo{width:58px;height:58px;border-radius:17px;font-size:28px}
+.lock h1{font-size:22px;margin-top:16px}
+.lock p{color:var(--dim);margin:4px 0 0;font-size:14px}
+.pins{display:flex;gap:18px;margin:28px 0 30px}
+.pins i{width:15px;height:15px;border-radius:50%;border:2px solid var(--faint);transition:all .12s}
+.pins i.f{background:var(--ink);border-color:var(--ink)}
+.pins.bad{animation:shake .35s}
+@keyframes shake{20%,60%{transform:translateX(-9px)}40%,80%{transform:translateX(9px)}}
+.pad3{display:grid;grid-template-columns:repeat(3,76px);gap:14px}
+.pad3 button{height:76px;border-radius:50%;background:var(--surface);border:1px solid var(--line);
+  font-size:27px;font-weight:500;box-shadow:var(--shadow)}
+.pad3 button:active{background:var(--sunk)}
+.pad3 button.nob{background:none;border:0;box-shadow:none;font-size:15px;color:var(--dim)}
+.toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom));transform:translateX(-50%) translateY(20px);
+  background:var(--ink);color:var(--bg);font-size:13.5px;font-weight:600;padding:10px 16px;border-radius:12px;
+  opacity:0;pointer-events:none;transition:all .2s ease;z-index:70;max-width:calc(100vw - 32px)}
+.toast.on{opacity:1;transform:translateX(-50%)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<!-- PIN lock -->
+<div class="lock" id="lock">
+  <div class="logo">旅</div>
+  <h1>Japan 2026</h1>
+  <p>Enter the PIN</p>
+  <div class="pins" id="pins"><i></i><i></i><i></i></div>
+  <div class="pad3" id="pad">
+    <button>1</button><button>2</button><button>3</button>
+    <button>4</button><button>5</button><button>6</button>
+    <button>7</button><button>8</button><button>9</button>
+    <button class="nob" data-k="clr">Clear</button><button>0</button><button class="nob" data-k="del">Delete</button>
+  </div>
+</div>
+
+<header class="top">
+  <div class="wrap topin">
+    <div class="logo">旅</div>
+    <div style="min-width:0">
+      <div class="title">Japan 2026</div>
+      <div class="sub" id="sub">19 – 29 Nov</div>
+    </div>
+    <button class="pill" id="syncBtn" aria-label="Sync and settings"><i class="dot"></i><span id="syncTxt">Loading</span></button>
+    <button class="iconbtn" id="themeBtn" aria-label="Toggle dark mode"></button>
+  </div>
+  <div class="strip" id="strip"></div>
+</header>
+
+<main>
+  <section class="pane on" id="p-days">
+    <div class="wrap" id="dayview"><div class="empty">Loading the trip…</div></div>
+  </section>
+
+  <section class="pane" id="p-help">
+    <div class="wrap">
+      <div class="sec"><h2>If something goes wrong</h2></div>
+      <div class="card pad">
+        <div class="kv"><div class="k">Police</div><div class="v"><a class="tel" href="tel:110">110</a></div></div>
+        <div class="kv"><div class="k">Fire, ambulance</div><div class="v"><a class="tel" href="tel:119">119</a></div></div>
+        <div class="kv"><div class="k">Visitor hotline</div><div class="v"><a class="tel" href="tel:05038162787">050-3816-2787</a><small>JNTO, English, 24 hours. Medical help, accidents, lost property.</small></div></div>
+        <div class="kv"><div class="k">Insurance</div><div class="v">Etiqa. Policy number and 24-hour assistance line saved in both phones, plus one printed copy.</div></div>
+        <div class="kv"><div class="k">Embassy</div><div class="v">Embassy of Malaysia, Nanpeidai-cho, Shibuya-ku, Tokyo. Number on the Wisma Putra site.</div></div>
+        <div class="kv"><div class="k">Lost item</div><div class="v">Report at the nearest station office with the time and the line. It usually turns up within two days.</div></div>
+        <div class="kv"><div class="k">Earthquake</div><div class="v">Stay inside, get under a table, away from glass. Phone alerts fire a few seconds early.</div></div>
+      </div>
+
+      <div class="sec"><h2>Where you sleep</h2></div>
+      <div class="card pad">
+        <div class="kv"><div class="k">20 – 22 Nov</div><div class="v">Fourz Hotel Kintetsu Osaka Namba</div></div>
+        <div class="kv"><div class="k">22 – 24 Nov</div><div class="v">Kyoto hotel (see Agoda)</div></div>
+        <div class="kv"><div class="k">24 – 29 Nov</div><div class="v">Four Points Flex by Sheraton Tokyo Ueno</div></div>
+        <div class="kv"><div class="k">Flights</div><div class="v">Vietnam Airlines, one checked bag each. Booking refs are in the airline and Agoda apps.</div></div>
+      </div>
+
+      <div class="sec"><h2>Rules that save the trip</h2></div>
+      <div class="card pad" id="rules"></div>
+
+      <div class="sec"><h2>Worth knowing</h2></div>
+      <div class="card pad" id="facts"></div>
+
+      <div class="sec"><h2>Enough Japanese</h2></div>
+      <div class="card pad" id="phr"></div>
+
+      <div class="foottxt">Tap the sync pill at the top for settings.</div>
+    </div>
+  </section>
+</main>
+
+<nav class="tabs">
+  <button class="tab on" data-p="days"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>Days</button>
+  <button class="tab" data-p="help"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 8v8M8 12h8"/></svg>Help</button>
+</nav>
+
+<!-- edit sheet -->
+<div class="scrim" id="scrim"></div>
+<div class="sheet" id="edSheet" role="dialog" aria-modal="true" aria-labelledby="edTitle">
+  <div class="grab"></div>
+  <h2 id="edTitle">Edit card</h2>
+  <div class="seg" id="edKind">
+    <button data-k="Activity">Activity</button><button data-k="Breakfast">Breakfast</button>
+    <button data-k="Lunch">Lunch</button><button data-k="Dinner">Dinner</button><button data-k="Snack">Snack</button>
+  </div>
+  <div class="row2">
+    <label class="fl">Time<input id="edTime" placeholder="14:00" autocomplete="off"></label>
+    <label class="fl">Spent (¥)<input id="edAmt" inputmode="numeric" placeholder="0" autocomplete="off"></label>
+  </div>
+  <label class="fl">Title<input id="edName" placeholder="Where or what" autocomplete="off"></label>
+  <label class="fl">Plan / details<textarea id="edDesc" rows="3" placeholder="Directions, tickets, tips"></textarea></label>
+  <label class="fl" id="edNotesL"><span id="edNotesLbl">Notes</span><textarea id="edNotes" rows="2"></textarea></label>
+  <label class="chkrow"><input type="checkbox" id="edDone"> Done</label>
+  <div class="btns">
+    <button class="b danger" id="edDel">Delete</button>
+    <button class="b ghost" id="edCancel">Cancel</button>
+    <button class="b primary" id="edSave">Save</button>
+  </div>
+</div>
+
+<!-- settings sheet -->
+<div class="sheet" id="setSheet" role="dialog" aria-modal="true" aria-labelledby="setTitle">
+  <div class="grab"></div>
+  <h2 id="setTitle">Sync and settings</h2>
+  <div class="statusbox" id="setStatus"></div>
+  <label class="fl">Exchange rate: RM1 = ¥<input id="setRate" inputmode="decimal"></label>
+  <div class="sec" style="margin-top:20px"><h2 style="font-size:15px">GitHub sync</h2><span>shared by both phones</span></div>
+  <div class="row2">
+    <label class="fl" style="margin-top:0">Owner<input id="setOwner" autocomplete="off" autocapitalize="off" spellcheck="false"></label>
+    <label class="fl" style="margin-top:0">Repo<input id="setRepo" autocomplete="off" autocapitalize="off" spellcheck="false"></label>
+  </div>
+  <label class="fl">Data branch<input id="setBranch" autocomplete="off" autocapitalize="off" spellcheck="false"></label>
+  <label class="fl">Access token<input id="setToken" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="github_pat_…"></label>
+  <p class="note">The token stays on this phone. Use a fine-grained token limited to this repo with Contents: read and write.</p>
+  <div class="btns">
+    <button class="b ghost" id="setLink">Copy setup link</button>
+    <button class="b primary" id="setSave">Save and sync</button>
+  </div>
+  <p class="note">The setup link carries the token, so send it only to your wife's phone. Opening it there switches on sync in one tap.</p>
+  <div class="btns">
+    <button class="b ghost" id="setLock" style="flex:1">Lock app</button>
+    <button class="b ghost" id="setClose" style="flex:1">Close</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+"use strict";
+var PIN = "777";
+var CFG_DEFAULT_BRANCH = "data";
+
+/* ---------------- storage ---------------- */
+var LS = {
+  get: function(k, d){ try{ var v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); }catch(e){ return d; } },
+  set: function(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} },
+  del: function(k){ try{ localStorage.removeItem(k); }catch(e){} }
+};
+function $(id){ return document.getElementById(id); }
+function esc(s){ return String(s == null ? "" : s).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
+function clone(o){ return JSON.parse(JSON.stringify(o)); }
+function uid(){ return "c" + Date.now().toString(36) + Math.random().toString(36).slice(2, 6); }
+function toast(msg){ var t = $("toast"); t.textContent = msg; t.classList.add("on"); clearTimeout(toast._t); toast._t = setTimeout(function(){ t.classList.remove("on"); }, 2200); }
+
+/* ---------------- PIN lock ---------------- */
+(function(){
+  var until = LS.get("jp2_unlock", 0);
+  if (until > Date.now()) { $("lock").classList.add("hide"); return; }
+  var entry = "";
+  function draw(){ var dots = $("pins").children; for (var i = 0; i < 3; i++) dots[i].classList.toggle("f", i < entry.length); }
+  function press(k){
+    if (k === "del") entry = entry.slice(0, -1);
+    else if (k === "clr") entry = "";
+    else if (entry.length < 3) entry += k;
+    draw();
+    if (entry.length === 3) {
+      if (entry === PIN) {
+        LS.set("jp2_unlock", Date.now() + 30 * 86400000);
+        setTimeout(function(){ $("lock").classList.add("hide"); }, 120);
+      } else {
+        var p = $("pins"); p.classList.remove("bad"); void p.offsetWidth; p.classList.add("bad");
+        if (navigator.vibrate) navigator.vibrate(120);
+        setTimeout(function(){ entry = ""; draw(); }, 350);
+      }
+    }
+  }
+  $("pad").addEventListener("click", function(e){
+    var b = e.target.closest("button"); if (!b) return;
+    press(b.dataset.k || b.textContent.trim());
+  });
+  document.addEventListener("keydown", function(e){
+    if ($("lock").classList.contains("hide")) return;
+    if (/^[0-9]$/.test(e.key)) press(e.key); else if (e.key === "Backspace") press("del");
+  });
+})();
+
+/* ---------------- theme ---------------- */
+var SUN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>';
+var MOON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>';
+var themePref = LS.get("jp2_theme", null);
+var mq = window.matchMedia ? matchMedia("(prefers-color-scheme: dark)") : null;
+function curTheme(){ return themePref || (mq && mq.matches ? "dark" : "light"); }
+function applyTheme(){
+  var t = curTheme();
+  document.documentElement.setAttribute("data-theme", t);
+  $("themeBtn").innerHTML = t === "dark" ? SUN : MOON;
+  $("themeBtn").setAttribute("aria-label", t === "dark" ? "Switch to light mode" : "Switch to dark mode");
+  document.querySelector('meta[name="theme-color"]').setAttribute("content", t === "dark" ? "#101113" : "#F5F2ED");
+}
+$("themeBtn").onclick = function(){ themePref = curTheme() === "dark" ? "light" : "dark"; LS.set("jp2_theme", themePref); applyTheme(); };
+if (mq && mq.addEventListener) mq.addEventListener("change", function(){ if (!themePref) applyTheme(); });
+applyTheme();
+
+/* ---------------- tabs ---------------- */
+document.querySelectorAll(".tab").forEach(function(t){
+  t.onclick = function(){
+    document.querySelectorAll(".tab").forEach(function(x){ x.classList.toggle("on", x === t); });
+    document.querySelectorAll(".pane").forEach(function(x){ x.classList.toggle("on", x.id === "p-" + t.dataset.p); });
+    $("strip").classList.toggle("hide", t.dataset.p !== "days");
+    window.scrollTo(0, 0);
+  };
+});
+
+/* ---------------- config ---------------- */
+function guessRepo(){
+  var h = location.hostname, parts = location.pathname.split("/").filter(Boolean), o = "", r = "";
+  if (/\.github\.io$/i.test(h)) {
+    o = h.split(".")[0];
+    r = parts.length && !/\.[a-z0-9]+$/i.test(parts[0]) ? parts[0] : h;
+  }
+  return { owner: o, repo: r };
+}
+var cfg = (function(){
+  var g = guessRepo(), s = LS.get("jp2_cfg", {});
+  return {
+    owner: s.owner || g.owner, repo: s.repo || g.repo,
+    branch: s.branch || CFG_DEFAULT_BRANCH, path: s.path || "data.json", token: s.token || ""
+  };
+})();
+function saveCfg(){ LS.set("jp2_cfg", cfg); }
+/* one-tap setup link: index.html#t=TOKEN */
+(function(){
+  var m = location.hash.match(/^#t=(.+)$/);
+  if (m) {
+    cfg.token = decodeURIComponent(m[1]).trim(); saveCfg();
+    try{ history.replaceState(null, "", location.pathname + location.search); }catch(e){ location.hash = ""; }
+    setTimeout(function(){ toast("Sync is set up on this phone"); }, 600);
+  }
+})();
+
+/* ---------------- data model ----------------
+   base = last copy from GitHub, ops = local changes not yet pushed.
+   What you see = base with ops replayed on top, so two phones merge cleanly. */
+var base = LS.get("jp2_base", null);
+var sha = LS.get("jp2_sha", null);
+var ops = LS.get("jp2_ops", []);
+var doc = null;
+var lastSync = LS.get("jp2_last", 0);
+
+function findDay(d, id){ for (var i = 0; i < d.days.length; i++) if (d.days[i].id === id) return d.days[i]; return null; }
+function findItem(day, id){ for (var i = 0; i < day.items.length; i++) if (day.items[i].id === id) return i; return -1; }
+function applyOps(d, list){
+  if (!d) return d;
+  list.forEach(function(o){
+    if (o.op === "rate") { d.rate = o.v; return; }
+    var day = findDay(d, o.d); if (!day) return;
+    var i = o.i ? findItem(day, o.i) : -1;
+    if (o.op === "set" && i >= 0) { for (var k in o.f) day.items[i][k] = o.f[k]; }
+    else if (o.op === "add" && findItem(day, o.item.id) < 0) day.items.push(clone(o.item));
+    else if (o.op === "del" && i >= 0) day.items.splice(i, 1);
+  });
+  return d;
+}
+function persist(){ LS.set("jp2_base", base); LS.set("jp2_sha", sha); LS.set("jp2_ops", ops); LS.set("jp2_last", lastSync); }
+function rebuild(){ doc = base ? applyOps(clone(base), ops) : null; }
+function commit(op){
+  op.at = Date.now();
+  ops.push(op); persist(); rebuild(); render(); scheduleSync(1200);
+}
+
+/* ---------------- GitHub sync ---------------- */
+function b64ToUtf8(b){ var bin = atob(b.replace(/\s/g, "")); var u = new Uint8Array(bin.length); for (var i = 0; i < bin.length; i++) u[i] = bin.charCodeAt(i); return new TextDecoder().decode(u); }
+function utf8ToB64(s){ var u = new TextEncoder().encode(s), bin = "", CH = 0x8000; for (var i = 0; i < u.length; i += CH) bin += String.fromCharCode.apply(null, u.subarray(i, i + CH)); return btoa(bin); }
+function api(path, opt){
+  opt = opt || {};
+  var h = { "Accept": "application/vnd.github+json" };
+  if (cfg.token) h["Authorization"] = "Bearer " + cfg.token;
+  if (opt.body) h["Content-Type"] = "application/json";
+  return fetch("https://api.github.com/repos/" + encodeURIComponent(cfg.owner) + "/" + encodeURIComponent(cfg.repo) + path,
+    { method: opt.method || "GET", headers: h, body: opt.body ? JSON.stringify(opt.body) : undefined, cache: "no-store" });
+}
+function httpErr(r, what){
+  var e = new Error(r.status === 401 ? "Token rejected. Check it in settings." :
+    r.status === 403 ? "GitHub refused (" + what + "). Token may lack write access or rate limit hit." :
+    r.status === 404 ? "Repo or file not found. Check owner and repo." : "GitHub error " + r.status);
+  e.status = r.status; return e;
+}
+async function ensureBranch(){
+  var r = await api(""); if (!r.ok) throw httpErr(r, "repo");
+  var def = (await r.json()).default_branch;
+  if (def === cfg.branch) return;
+  r = await api("/git/ref/heads/" + encodeURIComponent(def)); if (!r.ok) throw httpErr(r, "branch");
+  var head = (await r.json()).object.sha;
+  r = await api("/git/refs", { method: "POST", body: { ref: "refs/heads/" + cfg.branch, sha: head } });
+  if (!r.ok && r.status !== 422) throw httpErr(r, "create branch");
+}
+async function getRemote(triedBranch){
+  var r = await api("/contents/" + cfg.path + "?ref=" + encodeURIComponent(cfg.branch) + "&_=" + Date.now());
+  if (r.status === 404) {
+    if (cfg.token && !triedBranch) { await ensureBranch(); return getRemote(true); }
+    if (!cfg.token) {
+      /* no token and no data branch yet: fall back to the file on the main branch */
+      var r2 = await api("/contents/" + cfg.path + "?_=" + Date.now());
+      if (r2.ok) { var j2 = await r2.json(); return { doc: JSON.parse(b64ToUtf8(j2.content)), sha: null }; }
+    }
+    return null;
+  }
+  if (!r.ok) throw httpErr(r, "read");
+  var j = await r.json();
+  return { doc: JSON.parse(b64ToUtf8(j.content)), sha: j.sha };
+}
+async function putRemote(d, curSha){
+  var n = ops.length;
+  var body = { message: "Trip update (" + n + " change" + (n === 1 ? "" : "s") + ")", content: utf8ToB64(JSON.stringify(d, null, 1) + "\n"), branch: cfg.branch };
+  if (curSha) body.sha = curSha;
+  var r = await api("/contents/" + cfg.path, { method: "PUT", body: body });
+  if (r.status === 409 || r.status === 422) return { conflict: true };
+  if (!r.ok) throw httpErr(r, "write");
+  return { sha: (await r.json()).content.sha };
+}
+
+var syncing = false, again = false, syncTimer = null, status = { s: "idle", msg: "" };
+function scheduleSync(ms){ clearTimeout(syncTimer); syncTimer = setTimeout(sync, ms || 0); }
+async function sync(){
+  if (!cfg.owner || !cfg.repo) { setStatus("local"); return; }
+  if (syncing) { again = true; return; }
+  syncing = true;
+  if (ops.length || status.s === "idle") setStatus("busy");
+  var before = JSON.stringify(doc);
+  try {
+    if (navigator.onLine === false) throw { offline: true };
+    for (var attempt = 0; attempt < 5; attempt++) {
+      var remote = await getRemote(false);
+      var sent = ops.slice();
+      if (!remote) {
+        if (!cfg.token) throw new Error("No trip data on GitHub yet.");
+        var seed = applyOps(clone(base), sent);
+        var c = await putRemote(seed, null);
+        if (c.conflict) continue;
+        base = seed; sha = c.sha; ops = ops.slice(sent.length);
+      } else if (!cfg.token || sent.length === 0) {
+        base = remote.doc; sha = remote.sha; break;
+      } else {
+        var merged = applyOps(clone(remote.doc), sent);
+        var res = await putRemote(merged, remote.sha);
+        if (res.conflict) continue;
+        base = merged; sha = res.sha; ops = ops.slice(sent.length);
+      }
+      if (ops.length === 0) break;
+    }
+    lastSync = Date.now(); persist();
+    setStatus(cfg.token ? (ops.length ? "wait" : "ok") : "local");
+  } catch (e) {
+    persist();
+    setStatus(e && e.offline ? "offline" : "err", e && e.message ? e.message : String(e));
+  }
+  syncing = false;
+  rebuild();
+  if (JSON.stringify(doc) !== before) render();
+  if (again) { again = false; scheduleSync(300); }
+}
+function ago(t){
+  if (!t) return "never";
+  var s = Math.round((Date.now() - t) / 1000);
+  if (s < 60) return "just now"; if (s < 3600) return Math.round(s / 60) + " min ago";
+  return Math.round(s / 3600) + " h ago";
+}
+function setStatus(s, msg){
+  status = { s: s, msg: msg || "" };
+  var p = $("syncBtn"), t = $("syncTxt"), n = ops.length;
+  p.className = "pill";
+  if (s === "busy") { p.classList.add("busy"); t.textContent = "Syncing"; }
+  else if (s === "ok") { p.classList.add("ok"); t.textContent = "Synced"; }
+  else if (s === "wait") { p.classList.add("wait"); t.textContent = n + " to sync"; }
+  else if (s === "offline") { p.classList.add("wait"); t.textContent = n ? "Offline · " + n + " saved" : "Offline"; }
+  else if (s === "err") { p.classList.add("err"); t.textContent = "Sync error"; }
+  else { p.classList.add("wait"); t.textContent = "This phone only"; }
+  if ($("setSheet").classList.contains("on")) drawStatus();
+}
+function drawStatus(){
+  var n = ops.length, lines = [];
+  if (!cfg.token) lines.push("<b>Not syncing.</b> Changes stay on this phone until you add a token below.");
+  else if (status.s === "err") lines.push("<b>Sync error.</b> " + esc(status.msg));
+  else if (status.s === "offline") lines.push("<b>Offline.</b> Changes are saved here and will sync when you reconnect.");
+  else lines.push("<b>Syncing with GitHub.</b> " + esc(cfg.owner + "/" + cfg.repo) + " on branch " + esc(cfg.branch) + ".");
+  lines.push("Last sync: " + ago(lastSync) + (n ? " · " + n + " change" + (n === 1 ? "" : "s") + " waiting" : ""));
+  $("setStatus").innerHTML = lines.join("<br>");
+}
+
+/* ---------------- money helpers ---------------- */
+function rate(){ return doc && doc.rate > 0 ? doc.rate : 37; }
+function yen(n){ return "¥" + Math.round(n || 0).toLocaleString("en-US"); }
+function rm(n){ return "RM" + ((n || 0) / rate()).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+function parseAmt(v){ var n = parseInt(String(v).replace(/[^\d]/g, ""), 10); return isNaN(n) ? 0 : n; }
+function dayTotal(day){ return day.items.reduce(function(a, it){ return a + (it.amt || 0); }, 0); }
+
+/* ---------------- rendering ---------------- */
+var DOW = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+var MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+var CITY = { osaka: "Osaka", kyoto: "Kyoto", tokyo: "Tokyo", air: "Travel" };
+function pd(s){ var p = s.split("-"); return new Date(+p[0], +p[1] - 1, +p[2]); }
+function todayISO(){ var d = new Date(); return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); }
+function timeKey(t){
+  var m = /^(\d{1,2})[:.](\d{2})$/.exec(String(t || "").trim());
+  if (!m) return null;
+  var k = +m[1] * 60 + +m[2];
+  return +m[1] < 4 ? k + 1440 : k; /* 00:05 is after midnight, not breakfast */
+}
+function sorted(items){
+  var prev = -1;
+  var rows = items.map(function(it, idx){
+    var k = timeKey(it.t);
+    if (k === null) k = prev + 0.01;
+    prev = k;
+    return { it: it, k: k, idx: idx };
+  });
+  rows.sort(function(a, b){ return a.k - b.k || a.idx - b.idx; });
+  return rows.map(function(r){ return r.it; });
+}
+
+var cur = null;   /* selected day id */
+var openDesc = {}; /* done cards expanded by tap */
+var pendingRender = false;
+
+function render(){
+  if (!doc) return;
+  /* don't blow away an amount the user is typing */
+  var a = document.activeElement;
+  if (a && a.closest && a.closest("#dayview") && a.tagName === "INPUT") { pendingRender = true; return; }
+  pendingRender = false;
+  if (!cur || !findDay(doc, cur)) cur = pickDay();
+  drawStrip(); drawDay(); drawSub();
+}
+function pickDay(){
+  var t = todayISO(), days = doc.days;
+  for (var i = 0; i < days.length; i++) if (days[i].date === t) return days[i].id;
+  var saved = LS.get("jp2_day", null);
+  if (saved && findDay(doc, saved)) return saved;
+  return t > days[days.length - 1].date ? days[days.length - 1].id : days[0].id;
+}
+function drawSub(){
+  var t = todayISO(), days = doc.days, s;
+  var first = days[0].date, last = days[days.length - 1].date;
+  if (t < first) { var n = Math.round((pd(first) - pd(t)) / 86400000); s = n + " day" + (n === 1 ? "" : "s") + " to go · 19 – 29 Nov"; }
+  else if (t > last) s = "Trip complete · " + yen(days.reduce(function(a, d){ return a + dayTotal(d); }, 0)) + " spent";
+  else { var d = days.filter(function(x){ return x.date === t; })[0]; s = d ? "Today is Day " + d.n + " · " + (CITY[d.city] || "") : "19 – 29 Nov"; }
+  $("sub").textContent = s;
+}
+function drawStrip(){
+  var t = todayISO();
+  $("strip").innerHTML = doc.days.map(function(d){
+    var dt = pd(d.date), done = d.items.length && d.items.every(function(x){ return x.done; });
+    return '<button class="chip' + (d.id === cur ? " on" : "") + (d.date === t ? " today" : "") + (done ? " alldone" : "") +
+      '" data-c="' + esc(d.city) + '" data-d="' + esc(d.id) + '" aria-label="Day ' + d.n + '">' +
+      '<span class="cw">' + DOW[dt.getDay()] + '</span><span class="cn">' + dt.getDate() + '</span><span class="cc"></span></button>';
+  }).join("");
+  var on = $("strip").querySelector(".chip.on"), st = $("strip");
+  if (on) st.scrollLeft = on.offsetLeft - st.clientWidth / 2 + on.offsetWidth / 2;
+}
+function drawDay(){
+  var d = findDay(doc, cur), dt = pd(d.date);
+  var items = sorted(d.items);
+  var done = items.filter(function(x){ return x.done; }).length;
+  var tot = dayTotal(d);
+  var trip = doc.days.reduce(function(a, x){ return a + dayTotal(x); }, 0);
+  var h = '<div class="card dayhead" data-c="' + esc(d.city) + '">' +
+    '<div class="dl">Day ' + d.n + ' · ' + DOW[dt.getDay()] + ' ' + dt.getDate() + ' ' + MON[dt.getMonth()] +
+    '<span class="city">' + esc(CITY[d.city] || d.city) + '</span></div>' +
+    '<h1>' + esc(d.title) + '</h1>' +
+    '<div class="prog"><div class="bar"><i style="width:' + (items.length ? Math.round(done / items.length * 100) : 0) + '%"></i></div>' +
+    done + ' of ' + items.length + ' done</div>' +
+    '<div class="stats"><div class="stat"><div class="k">Spent today</div><div class="v">' + yen(tot) + '</div><div class="s">≈ ' + rm(tot) + '</div></div>' +
+    '<div class="stat"><div class="k">Whole trip</div><div class="v">' + yen(trip) + '</div><div class="s">≈ ' + rm(trip) + '</div></div></div>' +
+    '</div>';
+  if (d.note) h += '<div class="callout"><b>Heads up.</b> ' + esc(d.note) + '</div>';
+  h += '<div class="list">';
+  if (!items.length) h += '<div class="card empty">No cards for this day yet.</div>';
+  items.forEach(function(it){
+    var meal = it.kind && it.kind !== "Activity";
+    h += '<article class="card it k-' + esc(it.kind || "Activity") + (it.done ? " done" : "") + (openDesc[it.id] ? " open" : "") + '" data-i="' + esc(it.id) + '">' +
+      '<button class="tick" aria-label="' + (it.done ? "Mark not done" : "Mark done") + '" aria-pressed="' + !!it.done + '">' +
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></button>' +
+      '<div class="main">' +
+      '<div class="meta">' + (it.t ? '<span class="time">' + esc(it.t) + '</span>' : '') + (meal ? '<span class="badge">' + esc(it.kind) + '</span>' : '') + '</div>' +
+      '<h3>' + (it.title ? esc(it.title) : '<span style="color:var(--faint)">' + esc(it.kind || "Untitled") + '</span>') + '</h3>' +
+      (it.desc ? '<p class="desc">' + esc(it.desc) + '</p>' : '') +
+      (it.notes ? '<p class="notes">' + esc(it.notes) + '</p>' : (meal && !it.done ? '<p class="hint">Tap to add what you ate</p>' : '')) +
+      '<div class="foot"><label class="amt"><span>¥</span><input inputmode="numeric" placeholder="0" aria-label="Amount spent in yen" value="' + (it.amt ? Number(it.amt).toLocaleString("en-US") : "") + '"></label>' +
+      '<span class="rm">' + (it.amt ? "≈ " + rm(it.amt) : "") + '</span>' +
+      '<button class="edit">Edit</button></div>' +
+      '</div></article>';
+  });
+  h += '</div><button class="add" id="addBtn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>Add card</button>';
+  $("dayview").innerHTML = h;
+}
+
+/* ---------------- interactions ---------------- */
+$("strip").addEventListener("click", function(e){
+  var c = e.target.closest(".chip"); if (!c) return;
+  cur = c.dataset.d; LS.set("jp2_day", cur); openDesc = {};
+  render(); window.scrollTo(0, 0);
+});
+$("dayview").addEventListener("click", function(e){
+  if (e.target.closest("#addBtn")) { openEditor(null); return; }
+  var card = e.target.closest(".it"); if (!card) return;
+  var id = card.dataset.i, day = findDay(doc, cur), it = day.items[findItem(day, id)];
+  if (!it) return;
+  if (e.target.closest(".tick")) {
+    commit({ op: "set", d: cur, i: id, f: { done: !it.done } });
+    if (!it.done && navigator.vibrate) navigator.vibrate(15);
+    return;
+  }
+  if (e.target.closest(".amt")) return;
+  if (e.target.closest(".edit")) { openEditor(it); return; }
+  if (it.done && it.desc && !openDesc[id]) { openDesc[id] = true; card.classList.add("open"); return; }
+  openEditor(it);
+});
+$("dayview").addEventListener("change", function(e){
+  if (!e.target.matches(".amt input")) return;
+  var id = e.target.closest(".it").dataset.i, day = findDay(doc, cur), it = day.items[findItem(day, id)];
+  var v = parseAmt(e.target.value);
+  if (it && v !== (it.amt || 0)) commit({ op: "set", d: cur, i: id, f: { amt: v } });
+});
+$("dayview").addEventListener("keydown", function(e){
+  if (e.key === "Enter" && e.target.matches(".amt input")) e.target.blur();
+});
+$("dayview").addEventListener("focusout", function(){
+  setTimeout(function(){ if (pendingRender) render(); }, 0);
+});
+
+/* ---------------- editor sheet ---------------- */
+var editing = null, edKind = "Activity";
+function openSheet(id){
+  $("scrim").classList.add("on"); $(id).classList.add("on"); $(id).scrollTop = 0;
+  document.body.style.overflow = "hidden";
+}
+function closeSheets(){
+  $("scrim").classList.remove("on");
+  document.querySelectorAll(".sheet").forEach(function(s){ s.classList.remove("on"); });
+  document.body.style.overflow = "";
+  if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
+}
+$("scrim").onclick = closeSheets;
+document.addEventListener("keydown", function(e){ if (e.key === "Escape") closeSheets(); });
+function setKind(k){
+  edKind = k;
+  $("edKind").querySelectorAll("button").forEach(function(b){ b.classList.toggle("on", b.dataset.k === k); });
+  var meal = k !== "Activity";
+  $("edNotesLbl").textContent = meal ? "What we had" : "Notes";
+  $("edNotes").placeholder = meal ? "Dishes, drinks, would we go back?" : "Anything worth remembering";
+}
+$("edKind").addEventListener("click", function(e){ var b = e.target.closest("button"); if (b) setKind(b.dataset.k); });
+function openEditor(it){
+  editing = it ? it.id : null;
+  $("edTitle").textContent = it ? "Edit card" : "New card";
+  setKind(it ? (it.kind || "Activity") : "Activity");
+  $("edTime").value = it ? (it.t || "") : "";
+  $("edAmt").value = it && it.amt ? it.amt : "";
+  $("edName").value = it ? (it.title || "") : "";
+  $("edDesc").value = it ? (it.desc || "") : "";
+  $("edNotes").value = it ? (it.notes || "") : "";
+  $("edDone").checked = it ? !!it.done : false;
+  $("edDel").classList.toggle("hide", !it);
+  openSheet("edSheet");
+  if (!it) setTimeout(function(){ $("edName").focus(); }, 260);
+}
+$("edCancel").onclick = closeSheets;
+$("edSave").onclick = function(){
+  var t = $("edTime").value.trim().replace(".", ":");
+  if (/^\d{1,2}:\d{2}$/.test(t) && t.length === 4) t = "0" + t;
+  var f = {
+    kind: edKind, t: t, title: $("edName").value.trim(), desc: $("edDesc").value.trim(),
+    notes: $("edNotes").value.trim(), amt: parseAmt($("edAmt").value), done: $("edDone").checked
+  };
+  if (editing) {
+    var day = findDay(doc, cur), old = day.items[findItem(day, editing)], diff = {}, any = false;
+    for (var k in f) if (!old || old[k] !== f[k]) { diff[k] = f[k]; any = true; }
+    if (any) commit({ op: "set", d: cur, i: editing, f: diff });
+  } else {
+    if (!f.title && !f.desc && !f.notes && !f.amt && f.kind === "Activity") { $("edName").focus(); return; }
+    f.id = uid();
+    commit({ op: "add", d: cur, item: f });
+    toast("Card added");
+  }
+  closeSheets();
+};
+$("edDel").onclick = function(){
+  if (!editing) return;
+  var day = findDay(doc, cur), it = day.items[findItem(day, editing)];
+  if (!confirm('Delete "' + ((it && it.title) || "this card") + '"? This removes it from both phones.')) return;
+  commit({ op: "del", d: cur, i: editing });
+  closeSheets(); toast("Card deleted");
+};
+
+/* ---------------- settings sheet ---------------- */
+$("syncBtn").onclick = function(){
+  $("setRate").value = rate();
+  $("setOwner").value = cfg.owner; $("setRepo").value = cfg.repo;
+  $("setBranch").value = cfg.branch; $("setToken").value = cfg.token;
+  drawStatus(); openSheet("setSheet");
+};
+$("setClose").onclick = closeSheets;
+$("setSave").onclick = function(){
+  var r = parseFloat($("setRate").value);
+  if (r > 0 && r !== rate()) commit({ op: "rate", v: r });
+  var nb = $("setBranch").value.trim() || CFG_DEFAULT_BRANCH;
+  var changedRepo = $("setOwner").value.trim() !== cfg.owner || $("setRepo").value.trim() !== cfg.repo || nb !== cfg.branch;
+  cfg.owner = $("setOwner").value.trim(); cfg.repo = $("setRepo").value.trim();
+  cfg.branch = nb; cfg.token = $("setToken").value.trim();
+  saveCfg();
+  if (changedRepo) { sha = null; persist(); }
+  sync().then(function(){ drawStatus(); if (status.s === "ok") toast("Synced"); });
+};
+$("setLink").onclick = function(){
+  var tok = $("setToken").value.trim() || cfg.token;
+  if (!tok) { toast("Add a token first"); return; }
+  var link = location.origin + location.pathname + "#t=" + encodeURIComponent(tok);
+  if (navigator.share) { navigator.share({ title: "Japan 2026", text: "Open this on your phone to turn on sync", url: link }).catch(function(){}); return; }
+  if (navigator.clipboard) navigator.clipboard.writeText(link).then(function(){ toast("Link copied"); }, function(){ prompt("Copy this link", link); });
+  else prompt("Copy this link", link);
+};
+$("setLock").onclick = function(){ LS.del("jp2_unlock"); location.reload(); };
+
+/* ---------------- help content ---------------- */
+var RULES = [
+  ["Be at the first site by 08:00", "Kiyomizu-dera at 06:15 against 10:00 is thirty people against two thousand. Nothing else you do comes close."],
+  ["Eat at 11:15 or after 14:00", "Lunch service runs 12:00 to 13:30 and queues at the good places triple inside it."],
+  ["No Kyoto city buses in November", "Standing room only and stuck in traffic. Subway, JR and taxis, which are reasonable for two."],
+  ["21 to 23 November is a holiday block", "Monday 23 is Labour Thanksgiving. Domestic travel peaks and Shinkansen seats sell out."],
+  ["Reserve every long-distance seat", "Shinkansen, the Sagano train and the Kawaguchiko bus all sell out in autumn."],
+  ["Agree a meeting point before you go in", "Signal inside temple grounds and at Disney is unreliable. Name the spot and the time at the gate."],
+  ["Last trains stop around 00:00", "Set a 23:15 alarm on any late night. A taxi across central Tokyo runs ¥3,000 to ¥6,000."]
+];
+var FACTS = [
+  ["Cash", "Carry about ¥100,000 between you. Draw it from a 7-Eleven, Japan Post or FamilyMart ATM. Cash only at small restaurants, temples, Kawaguchiko buses, market stalls and coin lockers."],
+  ["IC card", "ICOCA or Suica covers trains, subways, buses, convenience stores and lockers nationwide. Keep at least ¥2,000 on each."],
+  ["Card terminals", "Always pay in yen, never in ringgit, when a terminal offers you the choice."],
+  ["Tax refund", "Pay full price, show your passport so the sale is recorded, then reclaim 10% at Narita before check-in on 29 Nov. Minimum ¥5,000 per shop per day. Keep receipts in one envelope and consumables sealed."],
+  ["Sunset", "Around 16:50 in Kansai and 16:30 in Tokyo. Outdoor sightseeing has to finish by mid-afternoon."],
+  ["Medicine", "Japan bans some cold and sinus medicines with pseudoephedrine, and anything with codeine."],
+  ["Tipping", "There is none. Do not try."]
+];
+var PHR = [
+  ["すみません", "Sumimasen", "Excuse me, and also sorry. The most useful word in Japan."],
+  ["ありがとうございます", "Arigatou gozaimasu", "Thank you."],
+  ["これをください", "Kore o kudasai", "This one please. Point at it."],
+  ["いくらですか", "Ikura desu ka", "How much is it?"],
+  ["英語のメニューはありますか", "Eigo no menyuu wa arimasu ka", "Do you have an English menu?"],
+  ["カードは使えますか", "Kaado wa tsukaemasu ka", "Can I pay by card?"],
+  ["駅はどこですか", "Eki wa doko desu ka", "Where is the station?"],
+  ["免税できますか", "Menzei dekimasu ka", "Can I get tax-free?"],
+  ["水をください", "Mizu o kudasai", "Water please."],
+  ["大丈夫です", "Daijoubu desu", "I am fine, no thank you."]
+];
+$("rules").innerHTML = RULES.map(function(r, i){ return '<div class="rule"><div class="num">' + (i + 1) + '</div><div><b>' + esc(r[0]) + '</b><p>' + esc(r[1]) + '</p></div></div>'; }).join("");
+$("facts").innerHTML = FACTS.map(function(f){ return '<div class="kv"><div class="k">' + esc(f[0]) + '</div><div class="v">' + esc(f[1]) + '</div></div>'; }).join("");
+$("phr").innerHTML = PHR.map(function(p){ return '<div class="ph"><div class="jp" lang="ja">' + p[0] + '</div><div class="ro">' + p[1] + '</div><div class="en">' + p[2] + '</div></div>'; }).join("");
+
+/* ---------------- boot ---------------- */
+async function boot(){
+  if (!base) {
+    try {
+      var r = await fetch("data.json", { cache: "no-store" });
+      if (r.ok) { base = await r.json(); persist(); }
+    } catch (e) {}
+  }
+  rebuild();
+  if (doc) render();
+  else $("dayview").innerHTML = '<div class="card empty" style="margin-top:16px">Could not load the trip. Connect to the internet and reopen.</div>';
+  setStatus(cfg.token ? (ops.length ? "wait" : "ok") : "local");
+  sync();
+  setInterval(function(){
+    if (document.visibilityState === "visible" && !document.querySelector(".sheet.on")) sync();
+  }, cfg.token ? 45000 : 180000);
+}
+document.addEventListener("visibilitychange", function(){ if (document.visibilityState === "visible") { if (doc) render(); scheduleSync(200); } });
+window.addEventListener("online", function(){ scheduleSync(200); });
+window.addEventListener("offline", function(){ setStatus("offline"); });
+boot();
+
+if ("serviceWorker" in navigator && location.protocol === "https:") {
+  navigator.serviceWorker.register("sw.js").catch(function(){});
+}
+</script>
+</body>
+</html>
