@@ -68,7 +68,7 @@
      "desc": "Stay airside. No Vietnam transit visa is needed because neither leg flies between two Vietnamese cities. Snack, then sleep on VN320.",
      "notes": "",
      "amt": 0,
-     "done": false
+     "done": true
     },
     {
      "id": "d0-4",
@@ -78,7 +78,7 @@
      "desc": "Overnight to Kansai, arriving 07:00.",
      "notes": "",
      "amt": 0,
-     "done": false
+     "done": true
     },
     {
      "kind": "Activity",
