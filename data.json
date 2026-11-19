@@ -79,6 +79,16 @@
      "notes": "",
      "amt": 0,
      "done": false
+    },
+    {
+     "kind": "Activity",
+     "t": "",
+     "title": "Buy",
+     "desc": "Cigarette - $3\n2x Neck Pillow - $16\nMint - $3",
+     "notes": "",
+     "amt": 3518,
+     "done": false,
+     "id": "cmwnom3km7lus"
     }
    ]
   },
