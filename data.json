@@ -48,7 +48,7 @@
      "desc": "Eat before boarding. The transit is late at night.",
      "notes": "Muffin and Coffee",
      "amt": 1110,
-     "done": false
+     "done": true
     },
     {
      "id": "d0-2",
