@@ -178,7 +178,7 @@
      "desc": "",
      "notes": "",
      "amt": 3900,
-     "done": false
+     "done": true
     },
     {
      "kind": "Snack",
