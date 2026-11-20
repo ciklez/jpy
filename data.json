@@ -174,10 +174,10 @@
      "id": "d1-d",
      "kind": "Dinner",
      "t": "19:00",
-     "title": "Dinner in Dotonbori",
-     "desc": "Takoyaki, okonomiyaki, kushikatsu.",
+     "title": "Dinner at Ichiran",
+     "desc": "",
      "notes": "",
-     "amt": 0,
+     "amt": 3900,
      "done": false
     },
     {
