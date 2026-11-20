@@ -151,16 +151,6 @@
      "done": false
     },
     {
-     "id": "d1-l",
-     "kind": "Lunch",
-     "t": "13:30",
-     "title": "Happy Pancake",
-     "desc": "",
-     "notes": "",
-     "amt": 2950,
-     "done": false
-    },
-    {
      "id": "d1-4",
      "kind": "Activity",
      "t": "15:00",
