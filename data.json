@@ -219,6 +219,16 @@
      "amt": 2200,
      "done": false,
      "id": "cmwofrlvvrfnh"
+    },
+    {
+     "kind": "Snack",
+     "t": "",
+     "title": "",
+     "desc": "",
+     "notes": "Coffee + Takoyaki",
+     "amt": 1250,
+     "done": true,
+     "id": "cmwoi1crsr35t"
     }
    ]
   },
