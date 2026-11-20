@@ -319,6 +319,16 @@
      "notes": "",
      "amt": 0,
      "done": false
+    },
+    {
+     "kind": "Breakfast",
+     "t": "",
+     "title": "Onigiri",
+     "desc": "",
+     "notes": "Onigiri",
+     "amt": 797,
+     "done": true,
+     "id": "cmwpn0e3ts7l6"
     }
    ]
   },
