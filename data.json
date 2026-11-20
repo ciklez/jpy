@@ -199,6 +199,16 @@
      "amt": 900,
      "done": true,
      "id": "cmwo904wn9upu"
+    },
+    {
+     "kind": "Activity",
+     "t": "",
+     "title": "Buy Plaster and Vape",
+     "desc": "",
+     "notes": "",
+     "amt": 5740,
+     "done": true,
+     "id": "cmwod5h5tr4f6"
     }
    ]
   },
