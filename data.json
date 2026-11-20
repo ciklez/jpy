@@ -189,6 +189,16 @@
      "notes": "",
      "amt": 0,
      "done": false
+    },
+    {
+     "kind": "Snack",
+     "t": "",
+     "title": "Macha",
+     "desc": "",
+     "notes": "Iced Matcha Drink",
+     "amt": 900,
+     "done": false,
+     "id": "cmwo904wn9upu"
     }
    ]
   },
