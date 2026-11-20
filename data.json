@@ -229,6 +229,16 @@
      "amt": 1250,
      "done": true,
      "id": "cmwoi1crsr35t"
+    },
+    {
+     "kind": "Snack",
+     "t": "",
+     "title": "",
+     "desc": "",
+     "notes": "Donut",
+     "amt": 366,
+     "done": true,
+     "id": "cmwouvqc6ncsq"
     }
    ]
   },
