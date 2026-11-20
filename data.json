@@ -239,6 +239,16 @@
      "amt": 366,
      "done": true,
      "id": "cmwouvqc6ncsq"
+    },
+    {
+     "kind": "Activity",
+     "t": "",
+     "title": "Buy",
+     "desc": "Alcohol",
+     "notes": "",
+     "amt": 557,
+     "done": true,
+     "id": "cmwow7pl979fp"
     }
    ]
   },
