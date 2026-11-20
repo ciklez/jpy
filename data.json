@@ -209,6 +209,16 @@
      "amt": 5740,
      "done": true,
      "id": "cmwod5h5tr4f6"
+    },
+    {
+     "kind": "Snack",
+     "t": "",
+     "title": "",
+     "desc": "",
+     "notes": "2x egg tart",
+     "amt": 760,
+     "done": false,
+     "id": "cmwodgyt9f68y"
     }
    ]
   },
