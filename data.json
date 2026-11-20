@@ -266,9 +266,9 @@
      "t": "08:30",
      "title": "Breakfast near Namba",
      "desc": "Slow start.",
-     "notes": "",
-     "amt": 0,
-     "done": false
+     "notes": "Breakfast @7E",
+     "amt": 957,
+     "done": true
     },
     {
      "id": "d2-1",
