@@ -569,6 +569,16 @@
      "notes": "",
      "amt": 0,
      "done": false
+    },
+    {
+     "kind": "Snack",
+     "t": "",
+     "title": "Coffee @7E",
+     "desc": "",
+     "notes": "",
+     "amt": 220,
+     "done": true,
+     "id": "cmwqzqfja8rff"
     }
    ]
   },
