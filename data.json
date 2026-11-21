@@ -329,6 +329,16 @@
      "amt": 779,
      "done": true,
      "id": "cmwpn0e3ts7l6"
+    },
+    {
+     "kind": "Activity",
+     "t": "",
+     "title": "Train to Umeda",
+     "desc": "",
+     "notes": "",
+     "amt": 480,
+     "done": true,
+     "id": "cmwpn1fi8yo08"
     }
    ]
   },
