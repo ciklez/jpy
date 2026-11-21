@@ -429,6 +429,16 @@
      "amt": 1000,
      "done": true,
      "id": "cmwpxtfvzwizt"
+    },
+    {
+     "kind": "Activity",
+     "t": "",
+     "title": "Obanyaki",
+     "desc": "",
+     "notes": "",
+     "amt": 300,
+     "done": true,
+     "id": "cmwpyaua7ltq8"
     }
    ]
   },
