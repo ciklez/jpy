@@ -449,6 +449,16 @@
      "amt": 1500,
      "done": true,
      "id": "cmwpytf9w8ano"
+    },
+    {
+     "kind": "Activity",
+     "t": "",
+     "title": "Knife and Mug",
+     "desc": "",
+     "notes": "",
+     "amt": 7010,
+     "done": true,
+     "id": "cmwq6dcxo2vh5"
     }
    ]
   },
