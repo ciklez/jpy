@@ -419,6 +419,16 @@
      "amt": 400,
      "done": true,
      "id": "cmwpxo3ajwcmw"
+    },
+    {
+     "kind": "Activity",
+     "t": "",
+     "title": "Matcha Latte @ Shiki",
+     "desc": "",
+     "notes": "",
+     "amt": 1000,
+     "done": true,
+     "id": "cmwpxtfvzwizt"
     }
    ]
   },
