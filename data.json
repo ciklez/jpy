@@ -409,6 +409,16 @@
      "amt": 1200,
      "done": true,
      "id": "cmwpxca9pqn63"
+    },
+    {
+     "kind": "Snack",
+     "t": "",
+     "title": "Melon bread",
+     "desc": "",
+     "notes": "",
+     "amt": 400,
+     "done": true,
+     "id": "cmwpxo3ajwcmw"
     }
    ]
   },
