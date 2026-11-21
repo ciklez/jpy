@@ -379,6 +379,16 @@
      "amt": 120,
      "done": true,
      "id": "cmwptbfqby7me"
+    },
+    {
+     "kind": "Snack",
+     "t": "",
+     "title": "Candied Strawberry",
+     "desc": "",
+     "notes": "",
+     "amt": 1000,
+     "done": false,
+     "id": "cmwpv5669zri9"
     }
    ]
   },
