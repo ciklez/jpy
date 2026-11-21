@@ -359,6 +359,16 @@
      "amt": 990,
      "done": true,
      "id": "cmwpsg3gttuv1"
+    },
+    {
+     "kind": "Activity",
+     "t": "",
+     "title": "Crepe",
+     "desc": "",
+     "notes": "",
+     "amt": 1350,
+     "done": true,
+     "id": "cmwpshjohvlz6"
     }
    ]
   },
