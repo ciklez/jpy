@@ -339,6 +339,16 @@
      "amt": 480,
      "done": true,
      "id": "cmwpn1fi8yo08"
+    },
+    {
+     "kind": "Activity",
+     "t": "",
+     "title": "Shopping at GU",
+     "desc": "",
+     "notes": "",
+     "amt": 4300,
+     "done": false,
+     "id": "cmwps3xjldqn0"
     }
    ]
   },
