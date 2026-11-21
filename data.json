@@ -314,11 +314,11 @@
      "id": "d2-d",
      "kind": "Dinner",
      "t": "18:00",
-     "title": "Dinner at Ohatsu Tenjin Dori",
-     "desc": "Or back in Namba. The Tombori River Cruise is an easy 20 minute sit-down afterwards.",
+     "title": "Dinner at inori",
+     "desc": "",
      "notes": "",
-     "amt": 0,
-     "done": false
+     "amt": 6400,
+     "done": true
     },
     {
      "kind": "Breakfast",
