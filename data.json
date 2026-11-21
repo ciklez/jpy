@@ -399,6 +399,16 @@
      "amt": 1000,
      "done": true,
      "id": "cmwpxbyzdwyuc"
+    },
+    {
+     "kind": "Snack",
+     "t": "",
+     "title": "Sushi",
+     "desc": "",
+     "notes": "",
+     "amt": 1200,
+     "done": true,
+     "id": "cmwpxca9pqn63"
     }
    ]
   },
