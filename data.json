@@ -389,6 +389,16 @@
      "amt": 1000,
      "done": true,
      "id": "cmwpv5669zri9"
+    },
+    {
+     "kind": "Snack",
+     "t": "",
+     "title": "Eel",
+     "desc": "",
+     "notes": "",
+     "amt": 1000,
+     "done": true,
+     "id": "cmwpxbyzdwyuc"
     }
    ]
   },
