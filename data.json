@@ -439,6 +439,16 @@
      "amt": 300,
      "done": true,
      "id": "cmwpyaua7ltq8"
+    },
+    {
+     "kind": "Activity",
+     "t": "",
+     "title": "Leg patch",
+     "desc": "",
+     "notes": "",
+     "amt": 1500,
+     "done": true,
+     "id": "cmwpytf9w8ano"
     }
    ]
   },
