@@ -369,6 +369,16 @@
      "amt": 1350,
      "done": true,
      "id": "cmwpshjohvlz6"
+    },
+    {
+     "kind": "Snack",
+     "t": "",
+     "title": "",
+     "desc": "",
+     "notes": "Sparkling water",
+     "amt": 120,
+     "done": true,
+     "id": "cmwptbfqby7me"
     }
    ]
   },
