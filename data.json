@@ -111,16 +111,6 @@
    "note": "Cap today at about 12,000 steps and be in bed by 22:30. Treating the red-eye arrival as a full sightseeing day is the classic way to wreck a Japan trip.",
    "items": [
     {
-     "id": "d1-1",
-     "kind": "Activity",
-     "t": "07:00",
-     "title": "Kansai arrival",
-     "desc": "Joint Kiosk with your QR code, then bags. Buy two ICOCA cards at the station counter and load ¥5,000 each, or add Suica to the iPhone wallet.",
-     "notes": "",
-     "amt": 15000,
-     "done": true
-    },
-    {
      "id": "d1-2",
      "kind": "Activity",
      "t": "08:30",
