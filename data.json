@@ -459,6 +459,16 @@
      "amt": 7010,
      "done": true,
      "id": "cmwq6dcxo2vh5"
+    },
+    {
+     "kind": "Activity",
+     "t": "",
+     "title": "Lotion",
+     "desc": "",
+     "notes": "",
+     "amt": 318,
+     "done": true,
+     "id": "cmwqbf6c0abuu"
     }
    ]
   },
