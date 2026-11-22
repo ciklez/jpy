@@ -629,6 +629,16 @@
      "amt": 460,
      "done": true,
      "id": "cmwrcwk36ztc4"
+    },
+    {
+     "kind": "Snack",
+     "t": "",
+     "title": "Water",
+     "desc": "",
+     "notes": "",
+     "amt": 120,
+     "done": true,
+     "id": "cmwrd7kvisqmm"
     }
    ]
   },
