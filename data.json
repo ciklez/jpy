@@ -554,11 +554,11 @@
      "id": "d3-d",
      "kind": "Dinner",
      "t": "20:30",
-     "title": "Dinner in Gion or Pontocho",
+     "title": "Dinner in Porta Dining @ KYK",
      "desc": "",
      "notes": "",
-     "amt": 0,
-     "done": false
+     "amt": 4010,
+     "done": true
     },
     {
      "kind": "Snack",
