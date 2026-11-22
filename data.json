@@ -679,6 +679,16 @@
      "amt": 1600,
      "done": true,
      "id": "cmwritsxeez3k"
+    },
+    {
+     "kind": "Activity",
+     "t": "",
+     "title": "Lawson",
+     "desc": "",
+     "notes": "",
+     "amt": 788,
+     "done": true,
+     "id": "cmwrn3tnah2sn"
     }
    ]
   },
