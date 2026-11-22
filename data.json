@@ -229,6 +229,16 @@
      "amt": 557,
      "done": true,
      "id": "cmwow7pl979fp"
+    },
+    {
+     "kind": "Activity",
+     "t": "",
+     "title": "Hotel Tax",
+     "desc": "",
+     "notes": "",
+     "amt": 800,
+     "done": true,
+     "id": "cmwriuaiejber"
     }
    ]
   },
