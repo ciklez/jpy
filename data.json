@@ -649,6 +649,16 @@
      "amt": 700,
      "done": true,
      "id": "cmwrfmpsdf2jg"
+    },
+    {
+     "kind": "Activity",
+     "t": "",
+     "title": "Tshirt",
+     "desc": "",
+     "notes": "",
+     "amt": 7000,
+     "done": true,
+     "id": "cmwrfvkbp40hc"
     }
    ]
   },
