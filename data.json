@@ -538,7 +538,7 @@
      "desc": "Do not skip this one.",
      "notes": "",
      "amt": 0,
-     "done": false
+     "done": true
     },
     {
      "id": "d3-6",
