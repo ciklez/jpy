@@ -589,6 +589,16 @@
      "amt": 480,
      "done": true,
      "id": "cmwr6qenp4knp"
+    },
+    {
+     "kind": "Snack",
+     "t": "",
+     "title": "Coffee",
+     "desc": "",
+     "notes": "",
+     "amt": 820,
+     "done": true,
+     "id": "cmwr790dov0yg"
     }
    ]
   },
