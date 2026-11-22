@@ -481,16 +481,6 @@
    "note": "Sunday 22 and Monday 23 are the Sunday and public holiday of a three-day weekend landing on peak foliage. These are the two hardest days of the trip.",
    "items": [
     {
-     "id": "d3-b",
-     "kind": "Breakfast",
-     "t": "07:00",
-     "title": "Konbini breakfast",
-     "desc": "Grab and go before the train.",
-     "notes": "",
-     "amt": 0,
-     "done": false
-    },
-    {
      "id": "d3-1",
      "kind": "Activity",
      "t": "07:30",
