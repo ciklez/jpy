@@ -498,7 +498,7 @@
      "desc": "Hotel early drop, or a Kyoto Station coin locker. Lockers are full by 10:00 this season, so do this before anything else.",
      "notes": "",
      "amt": 2200,
-     "done": false
+     "done": true
     },
     {
      "id": "d3-3",
@@ -508,7 +508,7 @@
      "desc": "Two stops on the JR Nara line, free and always open. Walk past the busy lower gates up to the Yotsutsuji viewpoint, about 45 minutes. Most visitors turn back well before that.",
      "notes": "",
      "amt": 0,
-     "done": false
+     "done": true
     },
     {
      "id": "d3-l",
