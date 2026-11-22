@@ -689,6 +689,16 @@
      "amt": 788,
      "done": true,
      "id": "cmwrn3tnah2sn"
+    },
+    {
+     "kind": "Snack",
+     "t": "",
+     "title": "Sir Thomas Lipton",
+     "desc": "",
+     "notes": "Cake",
+     "amt": 620,
+     "done": true,
+     "id": "cmwroh8r3q2th"
     }
    ]
   },
