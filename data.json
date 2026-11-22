@@ -487,8 +487,8 @@
      "title": "Leave Namba",
      "desc": "Midosuji subway to Umeda, then the JR Special Rapid. About 50 minutes and ¥820 all in. Kyoto Station by 08:30.",
      "notes": "",
-     "amt": 0,
-     "done": false
+     "amt": 1360,
+     "done": true
     },
     {
      "id": "d3-2",
