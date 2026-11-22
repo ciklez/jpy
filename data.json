@@ -699,6 +699,16 @@
      "amt": 620,
      "done": true,
      "id": "cmwroh8r3q2th"
+    },
+    {
+     "kind": "Snack",
+     "t": "",
+     "title": "Starbucks",
+     "desc": "",
+     "notes": "",
+     "amt": 589,
+     "done": true,
+     "id": "cmwrrzaontq29"
     }
    ]
   },
