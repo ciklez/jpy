@@ -559,6 +559,16 @@
      "amt": 220,
      "done": true,
      "id": "cmwqzqfja8rff"
+    },
+    {
+     "kind": "Snack",
+     "t": "",
+     "title": "",
+     "desc": "",
+     "notes": "Rice Cake",
+     "amt": 440,
+     "done": true,
+     "id": "cmwr5ctopfpu2"
     }
    ]
   },
