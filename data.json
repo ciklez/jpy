@@ -639,6 +639,16 @@
      "amt": 120,
      "done": true,
      "id": "cmwrd7kvisqmm"
+    },
+    {
+     "kind": "Snack",
+     "t": "",
+     "title": "",
+     "desc": "",
+     "notes": "Matcha",
+     "amt": 700,
+     "done": true,
+     "id": "cmwrfmpsdf2jg"
     }
    ]
   },
