@@ -1412,5 +1412,33 @@
     }
    ]
   }
- ]
+ ],
+ "budget": {
+  "total": 17000,
+  "prepaid": [
+   {
+    "l": "Flights for 2",
+    "rm": 4400
+   },
+   {
+    "l": "Hotels, all nights",
+    "rm": 4100
+   },
+   {
+    "l": "Tokyo DisneySea, RM550 × 2",
+    "rm": 545
+   },
+   {
+    "l": "Mount Fuji, RM500 × 2",
+    "rm": 454.8
+   },
+   {
+    "l": "Shinkansen, RM700 × 2",
+    "rm": 700
+   }
+  ],
+  "cash": 159000,
+  "cashBase": 106854,
+  "cashDate": "2026-11-23"
+ }
 }
