@@ -899,6 +899,16 @@
      "amt": 920,
      "done": true,
      "id": "cmwt988cr2b3l"
+    },
+    {
+     "kind": "Purchase",
+     "t": "21:45",
+     "title": "Lawson",
+     "desc": "",
+     "notes": "",
+     "amt": 902,
+     "done": true,
+     "id": "cmwt9ehqivll3"
     }
    ]
   },
