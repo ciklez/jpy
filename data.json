@@ -718,7 +718,7 @@
      "desc": "Opens 06:00. At the gate by 06:15 you share the wooden stage with about thirty people instead of two thousand. Walk down Sannenzaka and Ninenzaka at 07:15 while they are still empty.",
      "notes": "",
      "amt": 0,
-     "done": false
+     "done": true
     },
     {
      "id": "d4-b",
