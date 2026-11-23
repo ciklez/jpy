@@ -829,6 +829,16 @@
      "amt": 460,
      "done": true,
      "id": "cmwslzarzf9ku"
+    },
+    {
+     "kind": "Activity",
+     "t": "",
+     "title": "Cigarette",
+     "desc": "",
+     "notes": "",
+     "amt": 470,
+     "done": true,
+     "id": "cmwsnpwzp05b6"
     }
    ]
   },
