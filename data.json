@@ -819,6 +819,16 @@
      "amt": 980,
      "done": true,
      "id": "cmwslem4uj5af"
+    },
+    {
+     "kind": "Activity",
+     "t": "",
+     "title": "Train to Arasiyaman",
+     "desc": "",
+     "notes": "",
+     "amt": 460,
+     "done": true,
+     "id": "cmwslzarzf9ku"
     }
    ]
   },
