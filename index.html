@@ -98,12 +98,9 @@ input,textarea,select{font:inherit;color:var(--ink)}
 
 /* ---------- day summary ---------- */
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
-.dayhead{margin-top:14px;padding:16px;position:relative;overflow:hidden}
-.dayhead:before{content:"";position:absolute;inset:0 auto 0 0;width:5px;background:var(--c)}
 .dl{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--dim)}
 .city{margin-left:auto;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;
   color:var(--c);background:color-mix(in srgb,var(--c) 14%,transparent)}
-.dayhead h1{font-size:22px;font-weight:750;margin-top:4px;line-height:1.2}
 .prog{display:flex;align-items:center;gap:10px;margin-top:12px;font-size:12px;color:var(--dim);white-space:nowrap}
 .bar{flex:1;height:7px;border-radius:9px;background:var(--sunk);overflow:hidden}
 .bar i{display:block;height:100%;background:var(--ok);border-radius:9px;transition:width .3s ease}
@@ -116,44 +113,74 @@ input,textarea,select{font:inherit;color:var(--ink)}
   background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 22%,transparent)}
 .callout b{color:var(--accent)}
 
-/* ---------- itinerary cards ---------- */
-.list{margin-top:14px;display:flex;flex-direction:column;gap:10px}
-.it{display:flex;gap:12px;padding:14px 14px 12px;transition:opacity .2s ease}
-.tick{flex:0 0 30px;width:30px;height:30px;border-radius:50%;border:2px solid var(--line);
-  display:grid;place-items:center;color:transparent;margin-top:1px;transition:all .15s ease}
-.tick svg{width:16px;height:16px}
+/* ---------- money summary (health colour: --h is a hue, 140 green to 0 red) ---------- */
+.dhead{margin-top:14px;padding:0 2px}
+.dhead h1{font-size:20px;font-weight:750;line-height:1.25;margin-top:3px}
+.hc{--hc:hsl(var(--h) 62% 40%);--hs:hsl(var(--h) 70% 94%)}
+[data-theme="dark"] .hc{--hc:hsl(var(--h) 68% 60%);--hs:hsl(var(--h) 45% 14%)}
+.money{margin-top:10px;padding:16px;background:linear-gradient(160deg,var(--hs),var(--surface) 70%);border-color:color-mix(in srgb,var(--hc) 30%,var(--line))}
+.money .k{font-size:12.5px;font-weight:650;color:var(--dim)}
+.money .big{font-size:36px;font-weight:800;letter-spacing:-.03em;line-height:1.1;margin-top:2px;color:var(--hc);font-variant-numeric:tabular-nums}
+.money .sub2{font-size:13px;color:var(--dim);font-variant-numeric:tabular-nums;margin-top:2px}
+.gauge{position:relative;height:10px;border-radius:9px;margin-top:14px;background:var(--sunk);overflow:hidden}
+.gauge i{position:absolute;inset:0 auto 0 0;border-radius:9px;background:var(--hc);transition:width .3s ease}
+.gscale{display:flex;justify-content:space-between;font-size:11px;color:var(--faint);margin-top:5px;font-variant-numeric:tabular-nums}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+.trio>div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:9px 10px;min-width:0}
+.trio .k{font-size:11px;color:var(--faint);font-weight:600;white-space:nowrap}
+.trio .v{font-size:15.5px;font-weight:750;font-variant-numeric:tabular-nums;letter-spacing:-.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.trio .v.hcol{color:var(--hc)}
+.trio .s{font-size:11px;color:var(--dim);font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* ---------- itinerary cards: simple box, tap to expand ---------- */
+.list{margin-top:14px;display:flex;flex-direction:column;gap:8px}
+.it{padding:0;overflow:hidden;transition:opacity .2s ease}
+.it .row{display:flex;align-items:center;gap:11px;padding:12px 12px 12px 12px;cursor:pointer}
+.tick{flex:0 0 26px;width:26px;height:26px;border-radius:50%;border:2px solid var(--line);
+  display:grid;place-items:center;color:transparent;transition:all .15s ease}
+.tick svg{width:14px;height:14px}
 .tick:active{transform:scale(.9)}
 .it.done .tick{background:var(--ok);border-color:var(--ok);color:#fff}
-.main{flex:1;min-width:0}
-.meta{display:flex;align-items:center;gap:8px;min-height:20px}
-.time{font-size:12.5px;font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums}
-.badge{font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:999px;letter-spacing:.02em}
+.ttl{flex:1;min-width:0}
+.ttl .tm{font-size:11.5px;color:var(--faint);font-weight:600;font-variant-numeric:tabular-nums;line-height:1.2}
+.ttl .tm b{color:var(--accent);font-weight:700}
+.it h3{font-size:15px;font-weight:650;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.it.open h3{white-space:normal}
+.it.done h3{color:var(--dim)}
+.am{font-size:15px;font-weight:750;font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right}
+.am.zero{color:var(--faint);font-weight:600}
+.chev{flex:0 0 16px;width:16px;height:16px;color:var(--faint);transition:transform .2s ease}
+.it.open .chev{transform:rotate(180deg)}
+.more{display:none;padding:0 12px 12px 49px}
+.it.open .more{display:block}
+.badge{display:inline-block;font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:999px;letter-spacing:.02em;color:var(--dim);background:var(--sunk)}
 .k-Breakfast .badge{color:var(--bf);background:var(--bf-bg)}
 .k-Lunch .badge{color:var(--lu);background:var(--lu-bg)}
 .k-Dinner .badge{color:var(--di);background:var(--di-bg)}
 .k-Snack .badge{color:var(--sn);background:var(--sn-bg)}
 .k-Purchase .badge{color:var(--pu);background:var(--pu-bg)}
-.it h3{font-size:15.5px;font-weight:650;line-height:1.3;margin-top:2px;word-wrap:break-word}
-.it .desc{margin:4px 0 0;font-size:13.5px;color:var(--dim);line-height:1.5}
+.it .desc{margin:6px 0 0;font-size:13.5px;color:var(--dim);line-height:1.5}
 .it .notes{margin:7px 0 0;font-size:13px;color:var(--ink);background:var(--surface2);
   border:1px solid var(--line);border-radius:10px;padding:7px 10px;white-space:pre-wrap}
 .it .notes:before{content:"Notes · ";color:var(--faint);font-weight:600}
 .it.k-Breakfast .notes:before,.it.k-Lunch .notes:before,.it.k-Dinner .notes:before,.it.k-Snack .notes:before{content:"We had · "}
 .it.k-Purchase .notes:before{content:"Bought · "}
 .it .hint{margin:6px 0 0;font-size:12.5px;color:var(--faint)}
-.it.done h3{color:var(--dim)}
-.it.done .desc,.it.done .hint{display:none}
-.it.open .desc{display:block}
-.foot{display:flex;align-items:center;gap:8px;margin-top:10px}
-.amt{display:flex;align-items:center;gap:2px;height:36px;padding:0 4px 0 11px;border-radius:10px;
-  background:var(--surface2);border:1px solid var(--line);width:128px}
-.amt span{color:var(--faint);font-weight:600}
+.foot{display:flex;align-items:center;gap:8px;margin-top:10px;flex-wrap:wrap}
+.amt{display:flex;align-items:center;gap:2px;height:38px;padding:0 4px 0 4px;border-radius:10px;
+  background:var(--surface2);border:1px solid var(--line);width:150px}
 .amt input{border:0;background:transparent;width:100%;height:100%;outline:0;font-size:15px;
-  font-weight:650;font-variant-numeric:tabular-nums;padding:0 4px}
+  font-weight:650;font-variant-numeric:tabular-nums;padding:0 4px;min-width:0}
 .amt:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.cx{flex:0 0 auto;height:28px;min-width:34px;padding:0 7px;border-radius:7px;background:var(--sunk);
+  color:var(--ink);font-size:12.5px;font-weight:750}
+.cx:active{transform:scale(.94)}
 .rm{font-size:12px;color:var(--faint);font-variant-numeric:tabular-nums;white-space:nowrap}
-.edit{margin-left:auto;height:34px;padding:0 12px;border-radius:10px;font-size:13px;font-weight:600;color:var(--dim)}
-.edit:active{background:var(--sunk)}
+.edit{margin-left:auto;height:34px;padding:0 12px;border-radius:10px;font-size:13px;font-weight:600;color:var(--dim);background:var(--sunk)}
+.edit:active{opacity:.7}
+.amtrow{display:flex;gap:6px;margin-top:5px}
+.amtrow input{flex:1;min-width:0;margin-top:0!important}
+.amtrow .cx{height:auto;min-width:48px;border-radius:11px;font-size:14px}
 .add{width:100%;margin-top:12px;height:50px;border-radius:var(--r);border:1.5px dashed var(--line);
   color:var(--dim);font-weight:650;font-size:14px;display:flex;align-items:center;justify-content:center;gap:8px}
 .add:active{background:var(--surface)}
@@ -174,6 +201,7 @@ input,textarea,select{font:inherit;color:var(--ink)}
 .bline.tot .l{color:var(--ink);font-weight:700}
 .bline.tot .r{font-weight:800}
 .bline .good{color:var(--ok)} .bline .bad{color:var(--accent)}
+.bline .r small.good{color:var(--ok)} .bline .r small.bad{color:var(--accent)}
 .hb{display:grid;grid-template-columns:70px 1fr auto;align-items:center;gap:10px;padding:8px 0;font-size:13px}
 .hb .lb{color:var(--dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .hb .t{height:10px;border-radius:6px;background:var(--sunk);overflow:hidden}
@@ -310,7 +338,7 @@ input,textarea,select{font:inherit;color:var(--ink)}
   </section>
 
   <section class="pane" id="p-budget">
-    <div class="wrap" id="budgetview"><div class="empty">Loading the budget…</div></div>
+    <div class="wrap" id="budgetview" style="padding-top:2px"><div class="empty">Loading the budget…</div></div>
   </section>
 
   <section class="pane" id="p-help">
@@ -365,7 +393,7 @@ input,textarea,select{font:inherit;color:var(--ink)}
   </div>
   <div class="row2">
     <label class="fl">Time<input id="edTime" placeholder="14:00" autocomplete="off"></label>
-    <label class="fl">Spent (<span id="edCcy">¥</span>)<input id="edAmt" inputmode="numeric" placeholder="0" autocomplete="off"></label>
+    <div class="fl">Spent<div class="amtrow"><input id="edAmt" inputmode="numeric" placeholder="0" autocomplete="off" aria-label="Amount spent"><button type="button" class="cx" id="edCcy" aria-label="Switch amount currency">¥</button></div></div>
   </div>
   <label class="fl">Title<input id="edName" placeholder="Where or what" autocomplete="off"></label>
   <label class="fl">Plan / details<textarea id="edDesc" rows="3" placeholder="Directions, tickets, tips"></textarea></label>
@@ -411,7 +439,7 @@ input,textarea,select{font:inherit;color:var(--ink)}
   <div class="fl">Paid before the trip (RM)</div>
   <div id="bdPre"></div>
   <button class="b ghost wide" id="bdAdd" style="height:40px;font-size:13.5px">Add paid item</button>
-  <label class="fl">Money in hand now (¥)<input id="bdCash" inputmode="numeric" autocomplete="off"></label>
+  <label class="fl">Money in hand now, the remaining budget (¥)<input id="bdCash" inputmode="numeric" autocomplete="off"></label>
   <p class="note">Enter cash plus card balances you hold right now. From then on, everything you log is taken off this figure.</p>
   <div class="btns">
     <button class="b ghost" id="bdCancel">Cancel</button>
@@ -685,21 +713,27 @@ function money(n){ return isRM() ? rm(n) : yen(n); }
 function alt(n){ return isRM() ? yen(n) : rm(n); }
 function sym(){ return isRM() ? "RM" : "¥"; }
 function parseAmt(v){ var n = parseInt(String(v).replace(/[^\d]/g, ""), 10); return isNaN(n) ? 0 : n; }
-function parseMoney(v){
-  if (!isRM()) return parseAmt(v);
+/* c = currency of the field being typed in ("RM" or "JPY"); defaults to the display currency */
+function parseMoney(v, c){
+  if ((c || ccy) !== "RM") return parseAmt(v);
   var x = parseFloat(String(v).replace(/[^\d.]/g, ""));
   return isNaN(x) ? 0 : Math.round(x * rate());
 }
-function fieldVal(n){ if (!n) return ""; return isRM() ? (n / rate()).toFixed(2) : Number(n).toLocaleString("en-US"); }
+function fieldVal(n, c){ if (!n) return ""; return (c || ccy) === "RM" ? (n / rate()).toFixed(2) : Number(n).toLocaleString("en-US"); }
+function symOf(c){ return c === "RM" ? "RM" : "¥"; }
+function otherOf(c){ return c === "RM" ? "JPY" : "RM"; }
+function inOther(n, c){ return c === "RM" ? yen(n) : rm(n); }
 function dayTotal(day){ return day.items.reduce(function(a, it){ return a + (it.amt || 0); }, 0); }
 function tripTotal(){ return doc ? doc.days.reduce(function(a, d){ return a + dayTotal(d); }, 0) : 0; }
+/* health 1 = plenty left (green), 0 = overspent (red); returned as a hue */
+function hue(health){ return Math.round(140 * Math.max(0, Math.min(1, health))); }
 function applyCcy(){
   $("ccyBtn").textContent = isRM() ? "RM" : "¥";
   $("ccyBtn").setAttribute("aria-label", isRM() ? "Showing ringgit. Switch to yen" : "Showing yen. Switch to ringgit");
 }
 $("ccyBtn").onclick = function(){
   var a = document.activeElement; if (a && a.blur) a.blur();
-  ccy = isRM() ? "JPY" : "RM"; LS.set("jp2_ccy", ccy); applyCcy();
+  ccy = isRM() ? "JPY" : "RM"; LS.set("jp2_ccy", ccy); applyCcy(); fieldCcy = {};
   pendingRender = false; render();
   toast(isRM() ? "Showing ringgit" : "Showing yen");
 };
@@ -730,7 +764,8 @@ function sorted(items){
 }
 
 var cur = null;   /* selected day id */
-var openDesc = {}; /* done cards expanded by tap */
+var openCard = {};  /* cards expanded by tap */
+var fieldCcy = {};  /* per card amount box currency, until the header toggle is used */
 var pendingRender = false;
 
 function render(){
@@ -768,37 +803,77 @@ function drawStrip(){
   var on = $("strip").querySelector(".chip.on"), st = $("strip");
   if (on) st.scrollLeft = on.offsetLeft - st.clientWidth / 2 + on.offsetWidth / 2;
 }
+/* One money model for both tabs.
+   Remaining budget = money in hand now (cash entered minus everything logged since).
+   Today's day budget = (remaining budget + anything already logged today or later) / days left,
+   so it is fixed at the start of the day and does not shrink as you spend. */
+function plan(){
+  var b = budget(), t = todayISO(), days = doc.days, trip = tripTotal();
+  var cashNow = b.cash - (trip - (b.cashBase || 0));
+  var last = days[days.length - 1].date;
+  var ahead = t > last ? [] : days.filter(function(d){ return d.date >= t; });
+  var spentAhead = ahead.reduce(function(a, d){ return a + dayTotal(d); }, 0);
+  var pool = cashNow + spentAhead;
+  var perDay = ahead.length ? pool / ahead.length : 0;
+  var japan = b.cash + (b.cashBase || 0);
+  var basePer = japan / days.length;
+  /* overall colour: what is left per remaining day against the planned daily average */
+  var health = cashNow <= 0 ? 0 : (basePer > 0 ? (ahead.length ? cashNow / ahead.length : cashNow) / basePer : 1);
+  return { b: b, t: t, trip: trip, cashNow: cashNow, nLeft: ahead.length, pool: pool, perDay: perDay, japan: japan, basePer: basePer, h: hue(health) };
+}
+function dayBudget(d, P){ return d.date >= P.t ? P.perDay : P.basePer; }
+function dayHue(spent, budgetY){ return budgetY > 0 ? hue(1 - spent / budgetY) : (spent > 0 ? 0 : 140); }
+
+var CHEV = '<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>';
+var TICK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+
 function drawDay(){
-  var d = findDay(doc, cur), dt = pd(d.date);
+  var d = findDay(doc, cur), dt = pd(d.date), P = plan();
   var items = sorted(d.items);
   var done = items.filter(function(x){ return x.done; }).length;
-  var tot = dayTotal(d);
-  var trip = doc.days.reduce(function(a, x){ return a + dayTotal(x); }, 0);
-  var h = '<div class="card dayhead" data-c="' + esc(d.city) + '">' +
+  var tot = dayTotal(d), A = dayBudget(d, P), left = A - tot;
+  var isToday = d.date === P.t, past = d.date < P.t;
+  var label = left < 0 ? (isToday ? "Over today's budget by" : "Over this day's budget by") :
+    (isToday ? "Left for today" : past ? "Left over that day" : "Budget for this day");
+
+  var h = '<div class="dhead" data-c="' + esc(d.city) + '">' +
     '<div class="dl">Day ' + d.n + ' · ' + DOW[dt.getDay()] + ' ' + dt.getDate() + ' ' + MON[dt.getMonth()] +
-    '<span class="city">' + esc(CITY[d.city] || d.city) + '</span></div>' +
-    '<h1>' + esc(d.title) + '</h1>' +
-    '<div class="prog"><div class="bar"><i style="width:' + (items.length ? Math.round(done / items.length * 100) : 0) + '%"></i></div>' +
-    done + ' of ' + items.length + ' done</div>' +
-    '<div class="stats"><div class="stat"><div class="k">Spent today</div><div class="v">' + money(tot) + '</div><div class="s">≈ ' + alt(tot) + '</div></div>' +
-    '<div class="stat"><div class="k">Whole trip</div><div class="v">' + money(trip) + '</div><div class="s">≈ ' + alt(trip) + '</div></div></div>' +
-    '</div>';
+    ' · ' + done + '/' + items.length + ' done<span class="city">' + esc(CITY[d.city] || d.city) + '</span></div>' +
+    '<h1>' + esc(d.title) + '</h1></div>';
+
+  h += '<div class="card money hc" style="--h:' + dayHue(tot, A) + '">' +
+    '<div class="k">' + label + '</div>' +
+    '<div class="big">' + money(Math.abs(left)) + '</div>' +
+    '<div class="sub2">≈ ' + alt(Math.abs(left)) + ' · day budget ' + money(A) + '</div>' +
+    '<div class="gauge"><i style="width:' + (A > 0 ? Math.min(100, Math.round(tot / A * 100)) : (tot ? 100 : 0)) + '%"></i></div>' +
+    '<div class="gscale"><span>Spent ' + money(tot) + '</span><span>' + (A > 0 ? Math.round(tot / A * 100) : 0) + '% of day budget</span></div>' +
+    '<div class="trio">' +
+      '<div><div class="k">Spent today</div><div class="v">' + money(tot) + '</div><div class="s">≈ ' + alt(tot) + '</div></div>' +
+      '<div><div class="k">Whole trip</div><div class="v">' + money(P.trip) + '</div><div class="s">≈ ' + alt(P.trip) + '</div></div>' +
+      '<div class="hc" style="--h:' + P.h + '"><div class="k">Remaining</div><div class="v hcol">' + money(P.cashNow) + '</div><div class="s">' + (P.nLeft ? P.nLeft + " day" + (P.nLeft === 1 ? "" : "s") + " left" : "≈ " + alt(P.cashNow)) + '</div></div>' +
+    '</div></div>';
+
   if (d.note) h += '<div class="callout"><b>Heads up.</b> ' + esc(d.note) + '</div>';
   h += '<div class="list">';
   if (!items.length) h += '<div class="card empty">No cards for this day yet.</div>';
   items.forEach(function(it){
-    var meal = it.kind && it.kind !== "Activity";
-    h += '<article class="card it k-' + esc(it.kind || "Activity") + (it.done ? " done" : "") + (openDesc[it.id] ? " open" : "") + '" data-i="' + esc(it.id) + '">' +
-      '<button class="tick" aria-label="' + (it.done ? "Mark not done" : "Mark done") + '" aria-pressed="' + !!it.done + '">' +
-      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></button>' +
-      '<div class="main">' +
-      '<div class="meta">' + (it.t ? '<span class="time">' + esc(it.t) + '</span>' : '') + (meal ? '<span class="badge">' + esc(it.kind) + '</span>' : '') + '</div>' +
-      '<h3>' + (it.title ? esc(it.title) : '<span style="color:var(--faint)">' + esc(it.kind || "Untitled") + '</span>') + '</h3>' +
-      (it.desc ? '<p class="desc">' + esc(it.desc) + '</p>' : '') +
-      (it.notes ? '<p class="notes">' + esc(it.notes) + '</p>' : (meal && !it.done ? '<p class="hint">' + (it.kind === "Purchase" ? "Tap to add what you bought" : "Tap to add what you ate") + '</p>' : '')) +
-      '<div class="foot"><label class="amt"><span>' + sym() + '</span><input inputmode="' + (isRM() ? "decimal" : "numeric") + '" placeholder="0" aria-label="Amount spent in ' + (isRM() ? "ringgit" : "yen") + '" value="' + fieldVal(it.amt) + '"></label>' +
-      '<span class="rm">' + (it.amt ? "≈ " + alt(it.amt) : "") + '</span>' +
-      '<button class="edit">Edit</button></div>' +
+    var kind = it.kind || "Activity", food = kind !== "Activity" && kind !== "Purchase";
+    var fc = fieldCcy[it.id] || ccy;
+    var tm = (it.t ? '<b>' + esc(it.t) + '</b>' : '') + (kind !== "Activity" ? (it.t ? ' · ' : '') + esc(kind) : '');
+    h += '<article class="card it k-' + esc(kind) + (it.done ? " done" : "") + (openCard[it.id] ? " open" : "") + '" data-i="' + esc(it.id) + '">' +
+      '<div class="row">' +
+        '<button class="tick" aria-label="' + (it.done ? "Mark not done" : "Mark done") + '" aria-pressed="' + !!it.done + '">' + TICK + '</button>' +
+        '<div class="ttl">' + (tm ? '<div class="tm">' + tm + '</div>' : '') +
+          '<h3>' + (it.title ? esc(it.title) : '<span style="color:var(--faint)">' + esc(kind) + '</span>') + '</h3></div>' +
+        '<div class="am' + (it.amt ? "" : " zero") + '">' + (it.amt ? money(it.amt) : "–") + '</div>' + CHEV +
+      '</div>' +
+      '<div class="more">' +
+        (it.desc ? '<p class="desc">' + esc(it.desc) + '</p>' : '') +
+        (it.notes ? '<p class="notes">' + esc(it.notes) + '</p>' : (food || kind === "Purchase" ? '<p class="hint">Use Edit to add what you ' + (kind === "Purchase" ? "bought" : "ate") + '</p>' : '')) +
+        '<div class="foot"><div class="amt"><input data-c="' + fc + '" inputmode="' + (fc === "RM" ? "decimal" : "numeric") + '" placeholder="0" aria-label="Amount spent" value="' + fieldVal(it.amt, fc) + '">' +
+        '<button class="cx" type="button" aria-label="Switch amount currency">' + symOf(fc) + '</button></div>' +
+        '<span class="rm">' + (it.amt ? "≈ " + inOther(it.amt, fc) : "") + '</span>' +
+        '<button class="edit">Edit</button></div>' +
       '</div></article>';
   });
   h += '</div><button class="add" id="addBtn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>Add card</button>';
@@ -808,7 +883,7 @@ function drawDay(){
 /* ---------------- interactions ---------------- */
 $("strip").addEventListener("click", function(e){
   var c = e.target.closest(".chip"); if (!c) return;
-  cur = c.dataset.d; LS.set("jp2_day", cur); openDesc = {};
+  cur = c.dataset.d; LS.set("jp2_day", cur); openCard = {};
   render(); window.scrollTo(0, 0);
 });
 $("dayview").addEventListener("click", function(e){
@@ -821,15 +896,24 @@ $("dayview").addEventListener("click", function(e){
     if (!it.done && navigator.vibrate) navigator.vibrate(15);
     return;
   }
-  if (e.target.closest(".amt")) return;
   if (e.target.closest(".edit")) { openEditor(it); return; }
-  if (it.done && it.desc && !openDesc[id]) { openDesc[id] = true; card.classList.add("open"); return; }
-  openEditor(it);
+  if (e.target.closest(".row")) { openCard[id] = !openCard[id]; card.classList.toggle("open", !!openCard[id]); }
+});
+/* currency switch on the amount box: runs on pointerdown so the field keeps focus while typing */
+$("dayview").addEventListener("pointerdown", function(e){
+  var bt = e.target.closest(".cx"); if (!bt) return;
+  e.preventDefault();
+  var card = bt.closest(".it"), id = card.dataset.i, inp = card.querySelector(".amt input");
+  var from = inp.dataset.c || ccy, to = otherOf(from), y = parseMoney(inp.value, from);
+  fieldCcy[id] = to; inp.dataset.c = to;
+  inp.value = fieldVal(y, to); inp.inputMode = to === "RM" ? "decimal" : "numeric";
+  bt.textContent = symOf(to);
+  card.querySelector(".rm").textContent = y ? "≈ " + inOther(y, to) : "";
 });
 $("dayview").addEventListener("change", function(e){
   if (!e.target.matches(".amt input")) return;
   var id = e.target.closest(".it").dataset.i, day = findDay(doc, cur), it = day.items[findItem(day, id)];
-  var v = parseMoney(e.target.value);
+  var v = parseMoney(e.target.value, e.target.dataset.c);
   if (it && v !== (it.amt || 0)) commit({ op: "set", d: cur, i: id, f: { amt: v } });
 });
 $("dayview").addEventListener("keydown", function(e){
@@ -840,7 +924,19 @@ $("dayview").addEventListener("focusout", function(){
 });
 
 /* ---------------- editor sheet ---------------- */
-var editing = null, edKind = "Activity", edAmtInit = "";
+var editing = null, edKind = "Activity", edAmtInit = "", edCcy = "JPY";
+function setEdCcy(){
+  $("edCcy").textContent = symOf(edCcy);
+  $("edAmt").setAttribute("inputmode", edCcy === "RM" ? "decimal" : "numeric");
+  $("edAmt").placeholder = edCcy === "RM" ? "0.00" : "0";
+}
+$("edCcy").addEventListener("pointerdown", function(e){ e.preventDefault(); });
+$("edCcy").onclick = function(){
+  var y = parseMoney($("edAmt").value, edCcy);
+  edCcy = otherOf(edCcy);
+  $("edAmt").value = y ? (edCcy === "RM" ? (y / rate()).toFixed(2) : y) : "";
+  setEdCcy();
+};
 function nowHM(){ var d = new Date(); return String(d.getHours()).padStart(2, "0") + ":" + String(d.getMinutes()).padStart(2, "0"); }
 function openSheet(id){
   $("scrim").classList.add("on"); $(id).classList.add("on"); $(id).scrollTop = 0;
@@ -867,10 +963,10 @@ function openEditor(it){
   $("edTitle").textContent = it ? "Edit card" : "New card";
   setKind(it ? (it.kind || "Activity") : "Activity");
   $("edTime").value = it ? (it.t || "") : nowHM();
-  $("edCcy").textContent = sym();
-  $("edAmt").setAttribute("inputmode", isRM() ? "decimal" : "numeric");
-  $("edAmt").value = it && it.amt ? (isRM() ? (it.amt / rate()).toFixed(2) : it.amt) : "";
-  edAmtInit = $("edAmt").value;
+  edCcy = ccy;
+  $("edAmt").value = it && it.amt ? (edCcy === "RM" ? (it.amt / rate()).toFixed(2) : it.amt) : "";
+  setEdCcy();
+  edAmtInit = $("edAmt").value + "|" + edCcy;
   $("edName").value = it ? (it.title || "") : "";
   $("edDesc").value = it ? (it.desc || "") : "";
   $("edNotes").value = it ? (it.notes || "") : "";
@@ -885,7 +981,7 @@ $("edSave").onclick = function(){
   if (/^\d{1,2}:\d{2}$/.test(t) && t.length === 4) t = "0" + t;
   var day = findDay(doc, cur), old = editing ? day.items[findItem(day, editing)] : null;
   /* untouched amount keeps its exact yen value, so switching currency never nudges it */
-  var amt = old && $("edAmt").value === edAmtInit ? (old.amt || 0) : parseMoney($("edAmt").value);
+  var amt = old && ($("edAmt").value + "|" + edCcy) === edAmtInit ? (old.amt || 0) : parseMoney($("edAmt").value, edCcy);
   var f = {
     kind: edKind, t: t, title: $("edName").value.trim(), desc: $("edDesc").value.trim(),
     notes: $("edNotes").value.trim(), amt: amt, done: $("edDone").checked
@@ -943,79 +1039,70 @@ $("setLock").onclick = function(){ LS.del("jp2_unlock"); location.reload(); };
    Budget amounts are kept in ringgit (that is how they were paid). Cash is kept in yen.
    cashBase is the logged trip total at the moment cash was entered, so anything
    logged afterwards comes off the cash figure automatically. */
-var BUDGET_DEFAULT = {
-  total: 17000,
-  prepaid: [
-    { l: "Flights for 2", rm: 4400 },
-    { l: "Hotels, all nights", rm: 5100 },
-    { l: "Tokyo DisneySea, RM550 × 2", rm: 1100 },
-    { l: "Mount Fuji, RM500 × 2", rm: 1000 },
-    { l: "Shinkansen, RM700 × 2", rm: 1400 }
-  ],
-  cash: 159000, cashBase: 106854, cashDate: "2026-11-23"
-};
-function budget(){ return doc && doc.budget && doc.budget.prepaid ? doc.budget : BUDGET_DEFAULT; }
+var PREPAID = [
+  { l: "Flights for 2", rm: 4400 },
+  { l: "Hotels, total", rm: 4100 },
+  { l: "Tokyo DisneySea for 2", rm: 545 },
+  { l: "Mount Fuji for 2", rm: 455 },
+  { l: "Shinkansen for 2", rm: 700 }
+];
+var BUDGET_DEFAULT = { v: 2, total: 17000, prepaid: PREPAID, cash: 159000, cashBase: 106854, cashDate: "2026-11-23" };
+/* older saved budgets keep their money in hand; paid items move to the corrected list */
+function budget(){
+  var b = doc && doc.budget;
+  if (!b || !b.prepaid) return BUDGET_DEFAULT;
+  if (b.v !== 2) { b = clone(b); b.prepaid = clone(PREPAID); b.v = 2; }
+  return b;
+}
 function prepaidRM(b){ return b.prepaid.reduce(function(a, p){ return a + (+p.rm || 0); }, 0); }
-function fmtRMv(v){ return "RM" + Math.round(v).toLocaleString("en-US"); }
+function fmtRMv(v){ return (v < 0 ? "−" : "") + "RM" + Math.abs(Math.round(v)).toLocaleString("en-US"); }
 function shortDate(iso){ var d = pd(iso); return d.getDate() + " " + MON[d.getMonth()]; }
 
 function drawBudget(){
   var el = $("budgetview"); if (!el || !doc) return;
-  var b = budget(), R = rate(), t = todayISO(), days = doc.days;
-  var trip = tripTotal();
+  var P = plan(), b = P.b, R = rate(), days = doc.days;
   var pre = prepaidRM(b);
-  var spendY = (b.total - pre) * R;                 /* yen available for spending in Japan */
-  var leftY = spendY - trip;
-  var left = days.filter(function(d){ return d.date >= t; }).length;
-  var gone = days.filter(function(d){ return d.date <= t; }).length || 1;
-  if (t > days[days.length - 1].date) left = 0;
-  var perDay = left ? leftY / left : 0;
-  var avg = trip / gone;
-  var cashNow = b.cash - (trip - (b.cashBase || 0));
-  var cashDay = left ? cashNow / left : 0;
-  var gap = cashNow - leftY;
-  var pct = spendY > 0 ? Math.round(trip / spendY * 100) : 0;
-  var bcls = pct >= 100 ? "over" : pct >= 85 ? "hot" : "";
+  var usedPct = P.japan > 0 ? Math.round(P.trip / P.japan * 100) : 0;
+  var td = days.filter(function(d){ return d.date === P.t; })[0];
+  var todayLeft = td ? P.perDay - dayTotal(td) : null;
+  var projected = pre + (P.trip + Math.max(0, P.cashNow)) / R;   /* RM, if every yen left gets spent */
+  var diff = projected - b.total;
 
-  var h = '<div class="card bhero">' +
-    '<div class="k">' + (leftY >= 0 ? "Budget left to spend" : "Over budget by") + '</div>' +
-    '<div class="big' + (leftY < 0 ? " neg" : "") + '">' + money(Math.abs(leftY)) + '</div>' +
-    '<div class="alt">≈ ' + alt(Math.abs(leftY)) + ' · of ' + money(spendY) + ' set aside for Japan</div>' +
-    '<div class="prog"><div class="bar"><i class="' + bcls + '" style="width:' + Math.min(100, Math.max(0, pct)) + '%"></i></div>' + pct + '% used</div>' +
-    '<div class="stats">' +
-      '<div class="stat"><div class="k">Allowed per day</div><div class="v">' + (left ? money(Math.max(0, perDay)) : "–") + '</div><div class="s">' + left + ' day' + (left === 1 ? "" : "s") + ' left, today included</div></div>' +
-      '<div class="stat"><div class="k">Average so far</div><div class="v">' + money(avg) + '</div><div class="s">per day over ' + gone + ' day' + (gone === 1 ? "" : "s") + '</div></div>' +
+  var h = '<div class="card money hc" style="--h:' + P.h + '">' +
+    '<div class="k">' + (P.cashNow >= 0 ? "Remaining budget" : "Overspent by") + '</div>' +
+    '<div class="big">' + money(Math.abs(P.cashNow)) + '</div>' +
+    '<div class="sub2">≈ ' + alt(Math.abs(P.cashNow)) + ' · money in hand, set ' + esc(shortDate(b.cashDate || P.t)) + '</div>' +
+    '<div class="gauge"><i style="width:' + Math.min(100, Math.max(0, usedPct)) + '%"></i></div>' +
+    '<div class="gscale"><span>Spent ' + money(P.trip) + '</span><span>' + usedPct + '% of ' + money(P.japan) + '</span></div>' +
+    '<div class="trio">' +
+      '<div><div class="k">Per day</div><div class="v">' + (P.nLeft ? money(Math.max(0, P.perDay)) : "–") + '</div><div class="s">' + P.nLeft + ' day' + (P.nLeft === 1 ? "" : "s") + ' left</div></div>' +
+      (td ? '<div class="hc" style="--h:' + dayHue(dayTotal(td), P.perDay) + '"><div class="k">Left today</div><div class="v hcol">' + money(todayLeft) + '</div><div class="s">of ' + money(P.perDay) + '</div></div>'
+          : '<div><div class="k">Left today</div><div class="v">–</div><div class="s">outside trip days</div></div>') +
+      '<div><div class="k">Planned avg</div><div class="v">' + money(P.basePer) + '</div><div class="s">whole trip</div></div>' +
     '</div></div>';
 
-  h += '<div class="sec"><h2>Money in hand</h2><span>set ' + esc(shortDate(b.cashDate || t)) + '</span></div><div class="card pad">' +
-    '<div class="bline"><div class="l">Holding now</div><div class="r">' + money(cashNow) + '<small>≈ ' + alt(cashNow) + '</small></div></div>' +
-    '<div class="bline"><div class="l">Spread over ' + left + ' day' + (left === 1 ? "" : "s") + '</div><div class="r">' + (left ? money(cashDay) : "–") + '<small>per day</small></div></div>' +
-    '<div class="bline"><div class="l">Against the budget</div><div class="r ' + (gap > 0 ? "bad" : "good") + '">' + (gap > 0 ? money(gap) + " more" : money(-gap) + " less") + '<small>' + (gap > 0 ? "spending it all goes over the plan" : "than the plan allows") + '</small></div></div>' +
-    '</div>';
-
-  h += '<div class="sec"><h2>The plan</h2><span>RM' + (+b.total).toLocaleString("en-US") + ' total</span></div><div class="card pad">' +
-    '<div class="bline"><div class="l">Total trip budget</div><div class="r">' + fmtRMv(b.total) + '<small>≈ ' + yen(b.total * R) + '</small></div></div>';
+  h += '<div class="sec"><h2>Against RM' + (+b.total).toLocaleString("en-US") + '</h2><span>if you spend what is left</span></div><div class="card pad">' +
+    '<div class="bline"><div class="l">Total trip budget</div><div class="r">' + fmtRMv(b.total) + '</div></div>';
   b.prepaid.forEach(function(p){
-    h += '<div class="bline"><div class="l">Paid · ' + esc(p.l) + '</div><div class="r">−' + fmtRMv(+p.rm || 0) + '</div></div>';
+    h += '<div class="bline"><div class="l">Paid · ' + esc(p.l) + '</div><div class="r">' + fmtRMv(+p.rm || 0) + '</div></div>';
   });
-  h += '<div class="bline tot"><div class="l">Set aside for Japan</div><div class="r">' + fmtRMv(b.total - pre) + '<small>≈ ' + yen(spendY) + '</small></div></div>' +
-    '<div class="bline"><div class="l">Logged so far</div><div class="r">−' + money(trip) + '<small>≈ ' + alt(trip) + '</small></div></div>' +
-    '<div class="bline tot"><div class="l">Left</div><div class="r ' + (leftY < 0 ? "bad" : "good") + '">' + money(leftY) + '<small>≈ ' + alt(leftY) + '</small></div></div>' +
+  h += '<div class="bline"><div class="l">Spent in Japan so far</div><div class="r">' + rm(P.trip) + '<small>' + yen(P.trip) + '</small></div></div>' +
+    '<div class="bline"><div class="l">Remaining budget</div><div class="r">' + rm(Math.max(0, P.cashNow)) + '<small>' + yen(Math.max(0, P.cashNow)) + '</small></div></div>' +
+    '<div class="bline tot"><div class="l">Trip total</div><div class="r">' + fmtRMv(projected) + '<small class="' + (diff > 0 ? "bad" : "good") + '">' + (Math.abs(diff) < 1 ? "on budget" : fmtRMv(Math.abs(diff)) + (diff > 0 ? " over plan" : " under plan")) + '</small></div></div>' +
     '</div>';
 
-  /* spending by day */
-  var shown = days.filter(function(d){ return d.date <= t || dayTotal(d) > 0; });
-  var maxD = Math.max.apply(null, shown.map(dayTotal).concat([1]));
-  h += '<div class="sec"><h2>By day</h2><span>allowance ' + (left ? money(Math.max(0, perDay)) : "–") + '</span></div><div class="card pad">';
+  /* spending by day, each bar coloured green to red against its own day budget */
+  var shown = days.filter(function(d){ return d.date <= P.t || dayTotal(d) > 0; });
+  var maxD = Math.max.apply(null, shown.map(function(d){ return Math.max(dayTotal(d), dayBudget(d, P)); }).concat([1]));
+  h += '<div class="sec"><h2>By day</h2><span>colour shows spend against day budget</span></div><div class="card pad">';
   if (!shown.length) h += '<div class="empty">Nothing logged yet.</div>';
   shown.forEach(function(d){
     var v = dayTotal(d);
-    h += '<div class="hb" data-c="' + esc(d.city) + '"><div class="lb">' + DOW[pd(d.date).getDay()] + ' ' + pd(d.date).getDate() + '</div>' +
+    h += '<div class="hb hc" style="--h:' + dayHue(v, dayBudget(d, P)) + ';--c:var(--hc)"><div class="lb">' + DOW[pd(d.date).getDay()] + ' ' + pd(d.date).getDate() + '</div>' +
       '<div class="t"><i style="width:' + Math.round(v / maxD * 100) + '%"></i></div><div class="n">' + money(v) + '</div></div>';
   });
   h += '</div>';
 
-  /* spending by type */
   var KINDS = [["Activity", "var(--tokyo)"], ["Purchase", "var(--pu)"], ["Breakfast", "var(--bf)"], ["Lunch", "var(--lu)"], ["Dinner", "var(--di)"], ["Snack", "var(--sn)"]];
   var byK = {}; KINDS.forEach(function(k){ byK[k[0]] = 0; });
   days.forEach(function(d){ d.items.forEach(function(it){ var k = byK.hasOwnProperty(it.kind) ? it.kind : "Activity"; byK[k] += it.amt || 0; }); });
@@ -1027,7 +1114,7 @@ function drawBudget(){
   });
   h += '</div>';
 
-  h += '<button class="add" id="bdEdit">Edit budget, paid items or money in hand</button>' +
+  h += '<button class="add" id="bdEdit">Update money in hand or paid items</button>' +
     '<div class="foottxt">Rate RM1 = ¥' + R + '. Change it from the sync pill.</div>';
   el.innerHTML = h;
 }
@@ -1061,7 +1148,7 @@ $("bdSave").onclick = function(){
     var l = r.querySelector(".bl").value.trim(), v = parseFloat(String(r.querySelector(".br").value).replace(/[^\d.]/g, ""));
     if (l || v > 0) pre.push({ l: l || "Paid item", rm: v > 0 ? v : 0 });
   });
-  var nb = { total: total, prepaid: pre, cash: b.cash, cashBase: b.cashBase || 0, cashDate: b.cashDate || todayISO() };
+  var nb = { v: 2, total: total, prepaid: pre, cash: b.cash, cashBase: b.cashBase || 0, cashDate: b.cashDate || todayISO() };
   if ($("bdCash").value !== $("bdCash").dataset.init) {
     nb.cash = parseAmt($("bdCash").value); nb.cashBase = tripTotal(); nb.cashDate = todayISO();
   }
