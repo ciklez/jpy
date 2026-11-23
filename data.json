@@ -869,6 +869,16 @@
      "amt": 640,
      "done": true,
      "id": "cmwsw02xnozd6"
+    },
+    {
+     "kind": "Activity",
+     "t": "",
+     "title": "Shopping",
+     "desc": "",
+     "notes": "",
+     "amt": 6379,
+     "done": true,
+     "id": "cmwsxm9nhhwjo"
     }
    ]
   },
