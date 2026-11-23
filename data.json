@@ -734,11 +734,11 @@
      "id": "d4-b",
      "kind": "Breakfast",
      "t": "07:45",
-     "title": "Coffee and breakfast in Higashiyama",
+     "title": "Coffee and breakfast in 7e",
      "desc": "Around Ninenzaka or a konbini on the way down.",
      "notes": "",
      "amt": 1021,
-     "done": false
+     "done": true
     },
     {
      "id": "d4-2",
