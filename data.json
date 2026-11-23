@@ -541,16 +541,6 @@
      "done": true
     },
     {
-     "id": "d3-6",
-     "kind": "Activity",
-     "t": "19:00",
-     "title": "Eikan-do lit up",
-     "desc": "Night illumination runs about 17:30 to 21:00, ¥600 to ¥700. Arrive around 19:30 rather than at opening; the first wave clears and the queue collapses.",
-     "notes": "",
-     "amt": 0,
-     "done": false
-    },
-    {
      "id": "d3-d",
      "kind": "Dinner",
      "t": "20:30",
