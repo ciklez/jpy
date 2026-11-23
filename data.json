@@ -751,16 +751,6 @@
      "done": true
     },
     {
-     "id": "d4-4",
-     "kind": "Activity",
-     "t": "10:30",
-     "title": "Tenryu-ji and the bamboo grove",
-     "desc": "Garden about ¥500. The Sogenchi pond against the autumn hillside, then out the north gate into the bamboo grove. Togetsukyo bridge after.",
-     "notes": "",
-     "amt": 0,
-     "done": false
-    },
-    {
      "id": "d4-l",
      "kind": "Lunch",
      "t": "12:00",
