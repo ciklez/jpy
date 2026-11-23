@@ -859,6 +859,16 @@
      "amt": 6379,
      "done": true,
      "id": "cmwsxm9nhhwjo"
+    },
+    {
+     "kind": "Activity",
+     "t": "18:47",
+     "title": "Train to Toji Michi",
+     "desc": "",
+     "notes": "",
+     "amt": 460,
+     "done": true,
+     "id": "cmwt316hilb9v"
     }
    ]
   },
