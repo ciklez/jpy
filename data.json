@@ -849,6 +849,16 @@
      "amt": 600,
      "done": true,
      "id": "cmwsnq55x3ctz"
+    },
+    {
+     "kind": "Snack",
+     "t": "",
+     "title": "Mochi Snack",
+     "desc": "",
+     "notes": "",
+     "amt": 250,
+     "done": true,
+     "id": "cmwsny7wqdswu"
     }
    ]
   },
