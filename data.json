@@ -809,6 +809,16 @@
      "notes": "",
      "amt": 0,
      "done": false
+    },
+    {
+     "kind": "Activity",
+     "t": "",
+     "title": "Tea",
+     "desc": "",
+     "notes": "",
+     "amt": 980,
+     "done": true,
+     "id": "cmwslem4uj5af"
     }
    ]
   },
