@@ -859,6 +859,16 @@
      "amt": 250,
      "done": true,
      "id": "cmwsny7wqdswu"
+    },
+    {
+     "kind": "Activity",
+     "t": "",
+     "title": "Train bck to Kyoto",
+     "desc": "",
+     "notes": "",
+     "amt": 640,
+     "done": true,
+     "id": "cmwsw02xnozd6"
     }
    ]
   },
