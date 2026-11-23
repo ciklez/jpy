@@ -784,11 +784,11 @@
      "id": "d4-d",
      "kind": "Dinner",
      "t": "18:30",
-     "title": "Dinner at Kyoto Station",
-     "desc": "Ramen Koji on the 10th floor, or Kyoto Tower.",
+     "title": "Dinner at AEON Kyoto",
+     "desc": "",
      "notes": "",
-     "amt": 0,
-     "done": false
+     "amt": 2661,
+     "done": true
     },
     {
      "kind": "Activity",
