@@ -839,6 +839,16 @@
      "amt": 470,
      "done": true,
      "id": "cmwsnpwzp05b6"
+    },
+    {
+     "kind": "Snack",
+     "t": "",
+     "title": "",
+     "desc": "",
+     "notes": "Sausage",
+     "amt": 600,
+     "done": true,
+     "id": "cmwsnq55x3ctz"
     }
    ]
   },
