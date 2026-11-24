@@ -1109,6 +1109,16 @@
      "amt": 172,
      "done": true,
      "id": "cmwuax8yr9uhi"
+    },
+    {
+     "kind": "Purchase",
+     "t": "16:00",
+     "title": "Plusta",
+     "desc": "",
+     "notes": "",
+     "amt": 1466,
+     "done": true,
+     "id": "cmwucipng14vj"
     }
    ]
   },
