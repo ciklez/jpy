@@ -1129,6 +1129,16 @@
      "amt": 343,
      "done": true,
      "id": "cmwumgt0jkydf"
+    },
+    {
+     "kind": "Dinner",
+     "t": "21:34",
+     "title": "Dinner at Sultan",
+     "desc": "",
+     "notes": "",
+     "amt": 1950,
+     "done": true,
+     "id": "cmwuog6edo4kr"
     }
    ]
   },
