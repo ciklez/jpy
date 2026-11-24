@@ -941,16 +941,6 @@
      "done": true
     },
     {
-     "id": "d5-2",
-     "kind": "Activity",
-     "t": "09:00",
-     "title": "Byodo-in Phoenix Hall",
-     "desc": "Opens 08:30, about ¥700. The interior tour of the Phoenix Hall is a separate timed ticket sold on site, so buy it first.",
-     "notes": "",
-     "amt": 0,
-     "done": false
-    },
-    {
      "id": "d5-3",
      "kind": "Activity",
      "t": "10:30",
