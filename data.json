@@ -981,16 +981,6 @@
      "done": true
     },
     {
-     "id": "d5-d",
-     "kind": "Dinner",
-     "t": "19:30",
-     "title": "Dinner at Ameyoko",
-     "desc": "Market under the tracks, five minutes from the hotel. Easy first Tokyo evening.",
-     "notes": "",
-     "amt": 0,
-     "done": false
-    },
-    {
      "kind": "Purchase",
      "t": "08:27",
      "title": "Umbrella",
