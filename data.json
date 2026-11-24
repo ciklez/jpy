@@ -1069,6 +1069,16 @@
      "amt": 7310,
      "done": true,
      "id": "cmwu6fwtxcsxo"
+    },
+    {
+     "kind": "Snack",
+     "t": "13:11",
+     "title": "Pastries",
+     "desc": "",
+     "notes": "",
+     "amt": 580,
+     "done": true,
+     "id": "cmwu6gv2s37n9"
     }
    ]
   },
