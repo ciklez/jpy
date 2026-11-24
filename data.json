@@ -1029,6 +1029,16 @@
      "amt": 2534,
      "done": true,
      "id": "cmwtz6hkqx1t2"
+    },
+    {
+     "kind": "Breakfast",
+     "t": "10:06",
+     "title": "Starbucks",
+     "desc": "",
+     "notes": "",
+     "amt": 886,
+     "done": true,
+     "id": "cmwtzvdb4g1jk"
     }
    ]
   },
