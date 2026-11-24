@@ -978,7 +978,7 @@
      "desc": "About 2 hours 15 minutes on a Nozomi. Then the Yamanote or Keihin-Tohoku line to Ueno, eight minutes. Check in at Four Points Flex by Sheraton Tokyo Ueno.",
      "notes": "",
      "amt": 0,
-     "done": false
+     "done": true
     },
     {
      "id": "d5-d",
@@ -1129,6 +1129,16 @@
      "amt": 398,
      "done": true,
      "id": "cmwuk4lqzrxec"
+    },
+    {
+     "kind": "Purchase",
+     "t": "20:38",
+     "title": "AEON Water + Mochi Ice Cream",
+     "desc": "",
+     "notes": "",
+     "amt": 343,
+     "done": true,
+     "id": "cmwumgt0jkydf"
     }
    ]
   },
