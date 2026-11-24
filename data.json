@@ -1049,6 +1049,16 @@
      "amt": 500,
      "done": true,
      "id": "cmwu2yai14lmn"
+    },
+    {
+     "kind": "Activity",
+     "t": "12:05",
+     "title": "Train back to Kyoto Std",
+     "desc": "",
+     "notes": "",
+     "amt": 480,
+     "done": true,
+     "id": "cmwu44jln3kp1"
     }
    ]
   },
