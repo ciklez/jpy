@@ -1039,6 +1039,16 @@
      "amt": 886,
      "done": true,
      "id": "cmwtzvdb4g1jk"
+    },
+    {
+     "kind": "Activity",
+     "t": "11:32",
+     "title": "Bus to JR Train Station",
+     "desc": "",
+     "notes": "",
+     "amt": 500,
+     "done": true,
+     "id": "cmwu2yai14lmn"
     }
    ]
   },
