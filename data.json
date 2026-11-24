@@ -978,7 +978,7 @@
      "desc": "Last browse at Kyoto Station (Porta, Isetan). Buy an ekiben for the train.",
      "notes": "",
      "amt": 0,
-     "done": false
+     "done": true
     },
     {
      "id": "d5-5",
