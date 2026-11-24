@@ -1099,6 +1099,16 @@
      "amt": 1056,
      "done": true,
      "id": "cmwu86q0r9wzf"
+    },
+    {
+     "kind": "Purchase",
+     "t": "15:16",
+     "title": "Isotonic Drink",
+     "desc": "",
+     "notes": "",
+     "amt": 172,
+     "done": true,
+     "id": "cmwuax8yr9uhi"
     }
    ]
   },
