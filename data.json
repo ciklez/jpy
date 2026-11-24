@@ -1029,6 +1029,16 @@
      "amt": 230,
      "done": true,
      "id": "cmwtwpf571cgc"
+    },
+    {
+     "kind": "Purchase",
+     "t": "09:47",
+     "title": "Macha @ Uji",
+     "desc": "",
+     "notes": "",
+     "amt": 2534,
+     "done": true,
+     "id": "cmwtz6hkqx1t2"
     }
    ]
   },
