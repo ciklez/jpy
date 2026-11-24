@@ -947,8 +947,8 @@
      "title": "To Uji",
      "desc": "JR Nara line from Kyoto Station, about 20 to 30 minutes, ¥240.",
      "notes": "",
-     "amt": 0,
-     "done": false
+     "amt": 480,
+     "done": true
     },
     {
      "id": "d5-2",
