@@ -953,12 +953,12 @@
     {
      "id": "d5-l",
      "kind": "Lunch",
-     "t": "11:45",
-     "title": "Matcha lunch in Uji",
-     "desc": "Matcha soba and a parfait. Ahead of the noon rush.",
+     "t": "15:52",
+     "title": "Heatable Bento for Shinkansen",
+     "desc": "",
      "notes": "",
-     "amt": 0,
-     "done": false
+     "amt": 3160,
+     "done": true
     },
     {
      "id": "d5-4",
