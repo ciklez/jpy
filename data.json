@@ -931,16 +931,6 @@
    "note": "Reserve the 16:30 Shinkansen ahead (Smart EX). Sunset is around 16:30, so Mount Fuji will be dark by the time you pass it.",
    "items": [
     {
-     "id": "d5-b",
-     "kind": "Breakfast",
-     "t": "07:30",
-     "title": "Breakfast near the hotel",
-     "desc": "Check out, leave the bags at the hotel or in a Kyoto Station locker.",
-     "notes": "",
-     "amt": 0,
-     "done": false
-    },
-    {
      "id": "d5-1",
      "kind": "Activity",
      "t": "08:30",
