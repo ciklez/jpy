@@ -1168,7 +1168,7 @@
      "desc": "Eat on the way or at Busta Shinjuku.",
      "notes": "",
      "amt": 0,
-     "done": false
+     "done": true
     },
     {
      "id": "d6-1",
