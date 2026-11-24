@@ -1069,6 +1069,16 @@
      "amt": 580,
      "done": true,
      "id": "cmwu6gv2s37n9"
+    },
+    {
+     "kind": "Snack",
+     "t": "13:20",
+     "title": "Onigiri",
+     "desc": "",
+     "notes": "",
+     "amt": 615,
+     "done": true,
+     "id": "cmwu6svqm82n3"
     }
    ]
   },
