@@ -1119,6 +1119,16 @@
      "amt": 1466,
      "done": true,
      "id": "cmwucipng14vj"
+    },
+    {
+     "kind": "Activity",
+     "t": "19:33",
+     "title": "Train",
+     "desc": "",
+     "notes": "",
+     "amt": 398,
+     "done": true,
+     "id": "cmwuk4lqzrxec"
     }
    ]
   },
