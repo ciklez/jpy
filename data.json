@@ -1221,16 +1221,6 @@
      "done": true
     },
     {
-     "id": "d6-d",
-     "kind": "Dinner",
-     "t": "20:30",
-     "title": "Dinner near Komagome or Ueno",
-     "desc": "Komagome to Ueno is about 10 minutes on the Yamanote line.",
-     "notes": "",
-     "amt": 0,
-     "done": false
-    },
-    {
      "kind": "Snack",
      "t": "09:58",
      "title": "Ice Cream",
