@@ -1269,6 +1269,16 @@
      "amt": 3000,
      "done": true,
      "id": "cmwvhip2l6pgm"
+    },
+    {
+     "kind": "Purchase",
+     "t": "11:22",
+     "title": "Fuji Beer",
+     "desc": "",
+     "notes": "",
+     "amt": 1000,
+     "done": true,
+     "id": "cmwvi0iu2r6wu"
     }
    ]
   },
