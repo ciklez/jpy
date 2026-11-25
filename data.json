@@ -1309,6 +1309,16 @@
      "amt": 1000,
      "done": true,
      "id": "cmwvp8bohkfx9"
+    },
+    {
+     "kind": "Activity",
+     "t": "14:55",
+     "title": "Telescope & Fortune Letter",
+     "desc": "",
+     "notes": "",
+     "amt": 200,
+     "done": true,
+     "id": "cmwvpme3sedqy"
     }
    ]
   },
