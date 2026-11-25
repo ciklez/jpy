@@ -1259,6 +1259,16 @@
      "amt": 715,
      "done": true,
      "id": "cmwvfg3ghgg9a"
+    },
+    {
+     "kind": "Lunch",
+     "t": "11:08",
+     "title": "Lunch with Tour",
+     "desc": "",
+     "notes": "",
+     "amt": 3000,
+     "done": true,
+     "id": "cmwvhip2l6pgm"
     }
    ]
   },
