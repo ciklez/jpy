@@ -1259,6 +1259,16 @@
      "amt": 1150,
      "done": true,
      "id": "cmwvf0ta3q0up"
+    },
+    {
+     "kind": "Purchase",
+     "t": "10:10",
+     "title": "Godzilla Keychain",
+     "desc": "",
+     "notes": "",
+     "amt": 715,
+     "done": true,
+     "id": "cmwvfg3ghgg9a"
     }
    ]
   },
