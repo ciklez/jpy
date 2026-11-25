@@ -1309,6 +1309,16 @@
      "amt": 356,
      "done": true,
      "id": "cmwvzdb5opgxg"
+    },
+    {
+     "kind": "Dinner",
+     "t": "19:33",
+     "title": "Spicy Ba Ramen",
+     "desc": "",
+     "notes": "",
+     "amt": 1580,
+     "done": true,
+     "id": "cmwvzks8af4ep"
     }
    ]
   },
