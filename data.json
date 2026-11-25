@@ -1289,6 +1289,16 @@
      "amt": 3600,
      "done": true,
      "id": "cmwvm66odgzkk"
+    },
+    {
+     "kind": "Snack",
+     "t": "13:33",
+     "title": "Coffee @ Costa",
+     "desc": "",
+     "notes": "",
+     "amt": 750,
+     "done": true,
+     "id": "cmwvmp8otxy32"
     }
    ]
   },
