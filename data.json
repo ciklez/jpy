@@ -1429,6 +1429,16 @@
      "notes": "",
      "amt": 0,
      "done": false
+    },
+    {
+     "kind": "Activity",
+     "t": "08:24",
+     "title": "Train to Mahima",
+     "desc": "",
+     "notes": "",
+     "amt": 682,
+     "done": true,
+     "id": "cmwwr3xda7305"
     }
    ]
   },
