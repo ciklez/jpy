@@ -1319,6 +1319,16 @@
      "amt": 200,
      "done": true,
      "id": "cmwvpme3sedqy"
+    },
+    {
+     "kind": "Activity",
+     "t": "19:28",
+     "title": "Train to see Godzilla",
+     "desc": "",
+     "notes": "",
+     "amt": 356,
+     "done": true,
+     "id": "cmwvzdb5opgxg"
     }
    ]
   },
