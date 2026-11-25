@@ -1279,6 +1279,16 @@
      "amt": 1000,
      "done": true,
      "id": "cmwvi0iu2r6wu"
+    },
+    {
+     "kind": "Purchase",
+     "t": "13:18",
+     "title": "Sourvenir at Mt Fuji",
+     "desc": "",
+     "notes": "",
+     "amt": 3600,
+     "done": true,
+     "id": "cmwvm66odgzkk"
     }
    ]
   },
