@@ -1299,6 +1299,16 @@
      "amt": 750,
      "done": true,
      "id": "cmwvmp8otxy32"
+    },
+    {
+     "kind": "Snack",
+     "t": "14:44",
+     "title": "Matcha Latte",
+     "desc": "",
+     "notes": "",
+     "amt": 1000,
+     "done": true,
+     "id": "cmwvp8bohkfx9"
     }
    ]
   },
