@@ -1158,7 +1158,7 @@
      "desc": "Check the Fujigoko webcams and the forecast at 21:00 on the 24th. Clear morning, go. Thick cloud, swap this day with Saturday and do Tokyo instead.",
      "notes": "",
      "amt": 0,
-     "done": false
+     "done": true
     },
     {
      "id": "d6-b",
@@ -1178,7 +1178,7 @@
      "desc": "The 07:25 highway bus reaches Kawaguchiko about 09:10 and is the last slot before expressway traffic builds. About ¥2,200 each way.",
      "notes": "",
      "amt": 0,
-     "done": false
+     "done": true
     },
     {
      "id": "d6-2",
