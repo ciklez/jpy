@@ -1349,6 +1349,16 @@
      "amt": 629,
      "done": true,
      "id": "cmww4lxke8koa"
+    },
+    {
+     "kind": "Purchase",
+     "t": "22:35",
+     "title": "Alcohol + Chips @ Lawson",
+     "desc": "",
+     "notes": "",
+     "amt": 1563,
+     "done": true,
+     "id": "cmww62o3p7nfv"
     }
    ]
   },
