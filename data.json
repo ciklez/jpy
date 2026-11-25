@@ -1201,16 +1201,6 @@
      "done": false
     },
     {
-     "id": "d6-l",
-     "kind": "Lunch",
-     "t": "12:00",
-     "title": "Hoto for lunch",
-     "desc": "The local hand-cut udon in miso broth.",
-     "notes": "",
-     "amt": 0,
-     "done": false
-    },
-    {
      "id": "d6-4",
      "kind": "Activity",
      "t": "13:30",
