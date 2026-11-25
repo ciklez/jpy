@@ -1218,7 +1218,7 @@
      "desc": "Arrives Shinjuku about 17:15 to 18:15 depending on traffic.",
      "notes": "",
      "amt": 0,
-     "done": false
+     "done": true
     },
     {
      "id": "d6-6",
