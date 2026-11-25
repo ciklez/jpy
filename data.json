@@ -1319,6 +1319,16 @@
      "amt": 2860,
      "done": true,
      "id": "cmwvzks8af4ep"
+    },
+    {
+     "kind": "Snack",
+     "t": "21:01",
+     "title": "Bar Drinks",
+     "desc": "",
+     "notes": "",
+     "amt": 1600,
+     "done": true,
+     "id": "cmww2pjdakthl"
     }
    ]
   },
