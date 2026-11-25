@@ -1339,6 +1339,16 @@
      "amt": 506,
      "done": true,
      "id": "cmww4gq568s33"
+    },
+    {
+     "kind": "Purchase",
+     "t": "21:54",
+     "title": "Water & Brulee",
+     "desc": "",
+     "notes": "",
+     "amt": 629,
+     "done": true,
+     "id": "cmww4lxke8koa"
     }
    ]
   },
