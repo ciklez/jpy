@@ -1569,6 +1569,16 @@
      "amt": 600,
      "done": true,
      "id": "cmwxlswyqm33x"
+    },
+    {
+     "kind": "Activity",
+     "t": "22:58",
+     "title": "Supper at Lawson",
+     "desc": "",
+     "notes": "",
+     "amt": 1366,
+     "done": true,
+     "id": "cmwxmc59n5z9j"
     }
    ]
   },
