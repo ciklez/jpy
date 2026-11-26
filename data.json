@@ -1549,6 +1549,16 @@
      "amt": 460,
      "done": true,
      "id": "cmwxklwm61ozw"
+    },
+    {
+     "kind": "Activity",
+     "t": "22:30",
+     "title": "Train to Ueno",
+     "desc": "",
+     "notes": "",
+     "amt": 682,
+     "done": true,
+     "id": "cmwxlbi7picyk"
     }
    ]
   },
