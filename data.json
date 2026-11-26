@@ -1439,6 +1439,16 @@
      "amt": 682,
      "done": true,
      "id": "cmwwr3xda7305"
+    },
+    {
+     "kind": "Activity",
+     "t": "08:43",
+     "title": "Train to DisneySea",
+     "desc": "",
+     "notes": "",
+     "amt": 600,
+     "done": true,
+     "id": "cmwwrs076uwt7"
     }
    ]
   },
