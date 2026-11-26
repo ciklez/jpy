@@ -1418,7 +1418,7 @@
      "desc": "Before you claim a spot for the night show.",
      "notes": "",
      "amt": 0,
-     "done": false
+     "done": true
     },
     {
      "id": "d7-3",
