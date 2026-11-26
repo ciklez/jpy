@@ -1499,6 +1499,16 @@
      "amt": 250,
      "done": true,
      "id": "cmwx2khtan8mh"
+    },
+    {
+     "kind": "Activity",
+     "t": "16:15",
+     "title": "Bottled drinks @ Vending Machine",
+     "desc": "",
+     "notes": "",
+     "amt": 250,
+     "done": true,
+     "id": "cmwx7wwe5psg3"
     }
    ]
   },
