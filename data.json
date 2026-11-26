@@ -1479,6 +1479,16 @@
      "amt": 4000,
      "done": true,
      "id": "cmwwy66xfry9z"
+    },
+    {
+     "kind": "Snack",
+     "t": "11:51",
+     "title": "Mickey Ice Bar Ice Cream",
+     "desc": "",
+     "notes": "",
+     "amt": 800,
+     "done": true,
+     "id": "cmwwyhrkqz91m"
     }
    ]
   },
