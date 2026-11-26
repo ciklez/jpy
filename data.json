@@ -1489,6 +1489,16 @@
      "amt": 800,
      "done": true,
      "id": "cmwwyhrkqz91m"
+    },
+    {
+     "kind": "Snack",
+     "t": "13:45",
+     "title": "Bottled drinks @ Vending Machine",
+     "desc": "",
+     "notes": "",
+     "amt": 250,
+     "done": true,
+     "id": "cmwx2khtan8mh"
     }
    ]
   },
