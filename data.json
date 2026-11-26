@@ -1459,6 +1459,16 @@
      "amt": 5200,
      "done": true,
      "id": "cmwwulpobsw46"
+    },
+    {
+     "kind": "Activity",
+     "t": "10:59",
+     "title": "Rapunzel Ride",
+     "desc": "",
+     "notes": "",
+     "amt": 4000,
+     "done": true,
+     "id": "cmwwwmllruerq"
     }
    ]
   },
