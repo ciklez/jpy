@@ -1509,6 +1509,16 @@
      "amt": 250,
      "done": true,
      "id": "cmwx7wwe5psg3"
+    },
+    {
+     "kind": "Activity",
+     "t": "17:59",
+     "title": "Churro @ Park",
+     "desc": "",
+     "notes": "",
+     "amt": 1000,
+     "done": true,
+     "id": "cmwxbn5kd1phr"
     }
    ]
   },
