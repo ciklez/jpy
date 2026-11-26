@@ -1449,6 +1449,16 @@
      "amt": 600,
      "done": true,
      "id": "cmwwrs076uwt7"
+    },
+    {
+     "kind": "Purchase",
+     "t": "10:02",
+     "title": "Hair Band",
+     "desc": "",
+     "notes": "",
+     "amt": 5200,
+     "done": true,
+     "id": "cmwwulpobsw46"
     }
    ]
   },
