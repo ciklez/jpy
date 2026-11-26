@@ -1559,6 +1559,16 @@
      "amt": 682,
      "done": true,
      "id": "cmwxlbi7picyk"
+    },
+    {
+     "kind": "Activity",
+     "t": "22:43",
+     "title": "Taxi to hotel",
+     "desc": "",
+     "notes": "",
+     "amt": 600,
+     "done": true,
+     "id": "cmwxlswyqm33x"
     }
    ]
   },
