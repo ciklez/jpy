@@ -1519,6 +1519,16 @@
      "amt": 1000,
      "done": true,
      "id": "cmwxbn5kd1phr"
+    },
+    {
+     "kind": "Snack",
+     "t": "20:13",
+     "title": "Popcorn",
+     "desc": "",
+     "notes": "",
+     "amt": 400,
+     "done": true,
+     "id": "cmwxgfpdunkqs"
     }
    ]
   },
