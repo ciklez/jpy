@@ -1529,6 +1529,16 @@
      "amt": 400,
      "done": true,
      "id": "cmwxgfpdunkqs"
+    },
+    {
+     "kind": "Activity",
+     "t": "21:25",
+     "title": "Train to Disney Resort Station",
+     "desc": "",
+     "notes": "",
+     "amt": 600,
+     "done": true,
+     "id": "cmwxj0peptmnh"
     }
    ]
   },
