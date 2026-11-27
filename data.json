@@ -1621,16 +1621,6 @@
      "done": true
     },
     {
-     "id": "d8-3",
-     "kind": "Activity",
-     "t": "14:00",
-     "title": "Shinjuku Gyoen",
-     "desc": "¥500, last entry about 15:30. Late November is when the ginkgo avenue and the maples peak here.",
-     "notes": "",
-     "amt": 0,
-     "done": false
-    },
-    {
      "id": "d8-4",
      "kind": "Activity",
      "t": "16:00",
