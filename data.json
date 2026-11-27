@@ -1739,6 +1739,16 @@
      "amt": 418,
      "done": true,
      "id": "cmwyk2yfo9w4u"
+    },
+    {
+     "kind": "Activity",
+     "t": "15:01",
+     "title": "Train to Asakusa",
+     "desc": "",
+     "notes": "",
+     "amt": 356,
+     "done": true,
+     "id": "cmwykpgxqzjpv"
     }
    ]
   },
