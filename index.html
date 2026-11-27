@@ -212,6 +212,19 @@ input,textarea,select{font:inherit;color:var(--ink)}
 .bdrow input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
 .bdrow button{border-radius:11px;background:var(--sunk);color:var(--dim);font-size:18px}
 .wide{width:100%;margin-top:14px}
+.bdrow.w{grid-template-columns:1fr 82px 66px 34px}
+.wcols{display:grid;grid-template-columns:1fr 82px 66px 34px;gap:8px;font-size:11px;color:var(--faint);font-weight:600;margin-top:2px}
+#bdSheet select{width:100%;margin-top:6px;background:var(--surface2);border:1px solid var(--line);border-radius:11px;padding:11px 10px;font-size:15px;color:var(--ink)}
+.wl{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:11px 0;border-bottom:1px solid var(--line)}
+.wl:last-child{border-bottom:0}
+.wl .n{font-size:14px;font-weight:650}
+.wl .d{font-size:12.5px;color:var(--dim);margin-top:2px}
+.wl .d.warn{color:var(--warn);font-weight:650}
+.wl .v{font-weight:700;font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.wl .v small{display:block;font-weight:500;font-size:12px;color:var(--faint)}
+.todo{margin-top:12px;padding:10px 12px;border-radius:12px;font-size:13px;line-height:1.45;color:var(--ink);
+  background:color-mix(in srgb,var(--warn) 14%,transparent);border:1px solid color-mix(in srgb,var(--warn) 35%,transparent)}
+.todo b{color:var(--warn)}
 
 /* ---------- help ---------- */
 .sec{display:flex;align-items:baseline;gap:8px;margin:24px 2px 10px}
@@ -434,13 +447,20 @@ input,textarea,select{font:inherit;color:var(--ink)}
 <!-- budget sheet -->
 <div class="sheet" id="bdSheet" role="dialog" aria-modal="true" aria-labelledby="bdTitle">
   <div class="grab"></div>
-  <h2 id="bdTitle">Edit budget</h2>
+  <h2 id="bdTitle">Wallets and budget</h2>
   <label class="fl">Total trip budget (RM)<input id="bdTotal" inputmode="decimal" autocomplete="off"></label>
   <div class="fl">Paid before the trip (RM)</div>
   <div id="bdPre"></div>
   <button class="b ghost wide" id="bdAdd" style="height:40px;font-size:13.5px">Add paid item</button>
-  <label class="fl">Money in hand now, the remaining budget (¥)<input id="bdCash" inputmode="numeric" autocomplete="off"></label>
-  <p class="note">Enter cash plus card balances you hold right now. From then on, everything you log is taken off this figure.</p>
+  <div class="fl">Wallets right now (¥)</div>
+  <div class="wcols"><span>Name</span><span>Balance</span><span>Keep</span><span></span></div>
+  <div id="bdW"></div>
+  <button class="b ghost wide" id="bdWAdd" style="height:40px;font-size:13.5px">Add wallet</button>
+  <p class="note">Balance is what each card, cash or coin purse holds now. Keep is what must stay on it after spending ends, such as the Narita train fare on each IC card.</p>
+  <div class="row2">
+    <label class="fl">Last spending day<select id="bdUntil"></select></label>
+    <label class="fl">Starts<select id="bdFrom"><option value="today">Today</option><option value="tomorrow">Tomorrow, today is done</option></select></label>
+  </div>
   <div class="btns">
     <button class="b ghost" id="bdCancel">Cancel</button>
     <button class="b primary" id="bdSave">Save</button>
@@ -811,17 +831,55 @@ function plan(){
   var b = budget(), t = todayISO(), days = doc.days, trip = tripTotal();
   var cashNow = b.cash - (trip - (b.cashBase || 0));
   var last = days[days.length - 1].date;
-  var ahead = t > last ? [] : days.filter(function(d){ return d.date >= t; });
+  var start = b.from && b.from > t ? b.from : t;          /* first day the money in hand is for */
+  var until = b.until || last;                              /* last day with free spending */
+  var ahead = start > last ? [] : days.filter(function(d){ return d.date >= start; });
+  var spendDays = ahead.filter(function(d){ return d.date <= until; });
+  var resDays = ahead.filter(function(d){ return d.date > until; });
+  var reserve = (b.wallets || []).reduce(function(a, w){ return a + (+w.keep || 0); }, 0);
   var spentAhead = ahead.reduce(function(a, d){ return a + dayTotal(d); }, 0);
+  var resSpent = resDays.reduce(function(a, d){ return a + dayTotal(d); }, 0);
   var pool = cashNow + spentAhead;
-  var perDay = ahead.length ? pool / ahead.length : 0;
+  var perDay = spendDays.length ? (pool - reserve) / spendDays.length : 0;
+  var resPer = resDays.length ? reserve / resDays.length : 0;
+  var resLeft = Math.max(0, reserve - resSpent);
+  var free = cashNow - resLeft;                              /* what can still be spent freely */
   var japan = b.cash + (b.cashBase || 0);
   var basePer = japan / days.length;
-  /* overall colour: what is left per remaining day against the planned daily average */
-  var health = cashNow <= 0 ? 0 : (basePer > 0 ? (ahead.length ? cashNow / ahead.length : cashNow) / basePer : 1);
-  return { b: b, t: t, trip: trip, cashNow: cashNow, nLeft: ahead.length, pool: pool, perDay: perDay, japan: japan, basePer: basePer, h: hue(health) };
+  var nLeft = spendDays.length;
+  var health = free <= 0 ? 0 : (basePer > 0 ? (nLeft ? free / nLeft : free) / basePer : 1);
+  return { b: b, t: t, start: start, until: until, trip: trip, cashNow: cashNow, nLeft: nLeft, nRes: resDays.length,
+    pool: pool, perDay: perDay, resPer: resPer, reserve: reserve, resLeft: resLeft, free: free,
+    japan: japan, basePer: basePer, h: hue(health) };
 }
-function dayBudget(d, P){ return d.date >= P.t ? P.perDay : P.basePer; }
+function dayBudget(d, P){
+  if (d.date >= P.start) return d.date <= P.until ? P.perDay : P.resPer;
+  return P.basePer;
+}
+function dayClosed(d, P){ return d.date >= P.t && d.date < P.start; }
+
+/* top up plan from the wallet balances entered: IC cards are charged in ¥1,000 steps from cash */
+function walletPlan(b){
+  var ws = (b.wallets || []).map(function(w){
+    var keep = +w.keep || 0, isIC = keep > 0, isCash = !isIC && /cash|note|coin/i.test(w.l || "");
+    return { l: w.l, y: +w.y || 0, keep: keep, ic: isIC, cash: isCash, coin: /coin/i.test(w.l || ""), charge: 0, take: 0 };
+  });
+  var needTotal = 0;
+  ws.forEach(function(w){ if (w.ic && w.y < w.keep) { w.need = w.keep - w.y; w.charge = Math.ceil(w.need / 1000) * 1000; needTotal += w.charge; } });
+  var owed = needTotal;
+  ws.filter(function(w){ return w.cash && !w.coin; }).concat(ws.filter(function(w){ return w.cash && w.coin; })).forEach(function(w){
+    var t = Math.min(owed, w.y); w.take = t; owed -= t;
+  });
+  ws.forEach(function(w){ w.spare = w.ic ? w.y + w.charge - w.keep : w.y - w.take; });
+  return { ws: ws, charge: needTotal, short: owed };
+}
+function topupLine(b){
+  var wp = walletPlan(b), todo = wp.ws.filter(function(w){ return w.charge > 0; });
+  if (!todo.length) return "";
+  return '<div class="todo"><b>Before spending ends:</b> ' + todo.map(function(w){
+    return 'top up ' + esc(w.l) + ' by ' + yen(w.charge) + ' (needs ' + yen(w.need) + ' more to keep ' + yen(w.keep) + ')';
+  }).join("; ") + (wp.short > 0 ? '. Cash is short by ' + yen(wp.short) + ', so use another card for this top up.' : ', paid from cash.') + '</div>';
+}
 function dayHue(spent, budgetY){ return budgetY > 0 ? hue(1 - spent / budgetY) : (spent > 0 ? 0 : 140); }
 
 var CHEV = '<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>';
@@ -832,26 +890,35 @@ function drawDay(){
   var items = sorted(d.items);
   var done = items.filter(function(x){ return x.done; }).length;
   var tot = dayTotal(d), A = dayBudget(d, P), left = A - tot;
-  var isToday = d.date === P.t, past = d.date < P.t;
+  var isToday = d.date === P.t, past = d.date < P.t, closed = dayClosed(d, P), resDay = d.date >= P.start && d.date > P.until;
   var label = left < 0 ? (isToday ? "Over today's budget by" : "Over this day's budget by") :
-    (isToday ? "Left for today" : past ? "Left over that day" : "Budget for this day");
+    (resDay ? (isToday ? "Left for the airport train" : "Kept for the airport train") :
+    isToday ? "Left for today" : past ? "Left over that day" : "Budget for this day");
 
   var h = '<div class="dhead" data-c="' + esc(d.city) + '">' +
     '<div class="dl">Day ' + d.n + ' · ' + DOW[dt.getDay()] + ' ' + dt.getDate() + ' ' + MON[dt.getMonth()] +
     ' · ' + done + '/' + items.length + ' done<span class="city">' + esc(CITY[d.city] || d.city) + '</span></div>' +
     '<h1>' + esc(d.title) + '</h1></div>';
 
+  if (closed) {
+    h += '<div class="card money hc" style="--h:' + P.h + '">' +
+      '<div class="k">Today is closed · next spending day has</div>' +
+      '<div class="big">' + money(P.perDay) + '</div>' +
+      '<div class="sub2">≈ ' + alt(P.perDay) + ' · anything logged today comes off it</div>';
+  } else {
   h += '<div class="card money hc" style="--h:' + dayHue(tot, A) + '">' +
     '<div class="k">' + label + '</div>' +
     '<div class="big">' + money(Math.abs(left)) + '</div>' +
     '<div class="sub2">≈ ' + alt(Math.abs(left)) + ' · day budget ' + money(A) + '</div>' +
     '<div class="gauge"><i style="width:' + (A > 0 ? Math.min(100, Math.round(tot / A * 100)) : (tot ? 100 : 0)) + '%"></i></div>' +
-    '<div class="gscale"><span>Spent ' + money(tot) + '</span><span>' + (A > 0 ? Math.round(tot / A * 100) : 0) + '% of day budget</span></div>' +
+    '<div class="gscale"><span>Spent ' + money(tot) + '</span><span>' + (A > 0 ? Math.round(tot / A * 100) : 0) + '% of day budget</span></div>';
+  }
+  h += '' +
     '<div class="trio">' +
       '<div><div class="k">Spent today</div><div class="v">' + money(tot) + '</div><div class="s">≈ ' + alt(tot) + '</div></div>' +
       '<div><div class="k">Whole trip</div><div class="v">' + money(P.trip) + '</div><div class="s">≈ ' + alt(P.trip) + '</div></div>' +
-      '<div class="hc" style="--h:' + P.h + '"><div class="k">Remaining</div><div class="v hcol">' + money(P.cashNow) + '</div><div class="s">' + (P.nLeft ? P.nLeft + " day" + (P.nLeft === 1 ? "" : "s") + " left" : "≈ " + alt(P.cashNow)) + '</div></div>' +
-    '</div></div>';
+      '<div class="hc" style="--h:' + P.h + '"><div class="k">Free to spend</div><div class="v hcol">' + money(P.free) + '</div><div class="s">' + (P.resLeft ? "+ " + money(P.resLeft) + " kept" : P.nLeft ? P.nLeft + " day" + (P.nLeft === 1 ? "" : "s") + " left" : "≈ " + alt(P.free)) + '</div></div>' +
+    '</div>' + (d.date >= P.t && d.date <= P.until ? topupLine(P.b) : '') + '</div>';
 
   if (d.note) h += '<div class="callout"><b>Heads up.</b> ' + esc(d.note) + '</div>';
   h += '<div class="list">';
@@ -1046,12 +1113,21 @@ var PREPAID = [
   { l: "Mount Fuji for 2", rm: 455 },
   { l: "Shinkansen for 2", rm: 700 }
 ];
-var BUDGET_DEFAULT = { v: 2, total: 17000, prepaid: PREPAID, cash: 159000, cashBase: 106854, cashDate: "2026-11-23" };
-/* older saved budgets keep their money in hand; paid items move to the corrected list */
+/* Balances checked on Fri 27 Nov, after the day's spending was logged (trip total then ¥208,925).
+   Spending ends Sat 28; each IC card keeps ¥2,600 for the Skyliner from Ueno on Sun 29. */
+var WALLETS = [
+  { l: "Jaya's ICOCA", y: 1248, keep: 2600 },
+  { l: "Santhiya's Suica", y: 4869, keep: 2600 },
+  { l: "Wise card", y: 39327, keep: 0 },
+  { l: "Cash notes", y: 9000, keep: 0 },
+  { l: "Coins", y: 591, keep: 0 }
+];
+var BUDGET_DEFAULT = { v: 3, total: 17000, prepaid: PREPAID, wallets: WALLETS, cash: 55035, cashBase: 208925,
+  cashDate: "2026-11-27", from: "2026-11-28", until: "2026-11-28" };
+/* budgets saved before wallets existed are replaced by the balances above */
 function budget(){
   var b = doc && doc.budget;
-  if (!b || !b.prepaid) return BUDGET_DEFAULT;
-  if (b.v !== 2) { b = clone(b); b.prepaid = clone(PREPAID); b.v = 2; }
+  if (!b || b.v !== 3 || !b.wallets) { b = clone(BUDGET_DEFAULT); if (doc && doc.budget && doc.budget.v === 3) b.prepaid = clone(doc.budget.prepaid); }
   return b;
 }
 function prepaidRM(b){ return b.prepaid.reduce(function(a, p){ return a + (+p.rm || 0); }, 0); }
@@ -1064,22 +1140,41 @@ function drawBudget(){
   var pre = prepaidRM(b);
   var usedPct = P.japan > 0 ? Math.round(P.trip / P.japan * 100) : 0;
   var td = days.filter(function(d){ return d.date === P.t; })[0];
-  var todayLeft = td ? P.perDay - dayTotal(td) : null;
-  var projected = pre + (P.trip + Math.max(0, P.cashNow)) / R;   /* RM, if every yen left gets spent */
+  var tdClosed = td && dayClosed(td, P);
+  var todayLeft = td && !tdClosed ? dayBudget(td, P) - dayTotal(td) : null;
+  var projected = pre + (P.trip + Math.max(0, P.cashNow)) / R;
   var diff = projected - b.total;
+  var since = P.trip - (b.cashBase || 0);
 
   var h = '<div class="card money hc" style="--h:' + P.h + '">' +
-    '<div class="k">' + (P.cashNow >= 0 ? "Remaining budget" : "Overspent by") + '</div>' +
-    '<div class="big">' + money(Math.abs(P.cashNow)) + '</div>' +
-    '<div class="sub2">≈ ' + alt(Math.abs(P.cashNow)) + ' · money in hand, set ' + esc(shortDate(b.cashDate || P.t)) + '</div>' +
+    '<div class="k">' + (P.free >= 0 ? "Free to spend" : "Overspent by") + '</div>' +
+    '<div class="big">' + money(Math.abs(P.free)) + '</div>' +
+    '<div class="sub2">≈ ' + alt(Math.abs(P.free)) + (P.resLeft ? ' · plus ' + money(P.resLeft) + ' kept for Narita' : '') + '</div>' +
     '<div class="gauge"><i style="width:' + Math.min(100, Math.max(0, usedPct)) + '%"></i></div>' +
     '<div class="gscale"><span>Spent ' + money(P.trip) + '</span><span>' + usedPct + '% of ' + money(P.japan) + '</span></div>' +
     '<div class="trio">' +
-      '<div><div class="k">Per day</div><div class="v">' + (P.nLeft ? money(Math.max(0, P.perDay)) : "–") + '</div><div class="s">' + P.nLeft + ' day' + (P.nLeft === 1 ? "" : "s") + ' left</div></div>' +
-      (td ? '<div class="hc" style="--h:' + dayHue(dayTotal(td), P.perDay) + '"><div class="k">Left today</div><div class="v hcol">' + money(todayLeft) + '</div><div class="s">of ' + money(P.perDay) + '</div></div>'
-          : '<div><div class="k">Left today</div><div class="v">–</div><div class="s">outside trip days</div></div>') +
-      '<div><div class="k">Planned avg</div><div class="v">' + money(P.basePer) + '</div><div class="s">whole trip</div></div>' +
-    '</div></div>';
+      '<div><div class="k">Per spending day</div><div class="v">' + (P.nLeft ? money(Math.max(0, P.perDay)) : "–") + '</div><div class="s">' + P.nLeft + ' day' + (P.nLeft === 1 ? "" : "s") + ', ends ' + esc(shortDate(P.until)) + '</div></div>' +
+      (td && !tdClosed ? '<div class="hc" style="--h:' + dayHue(dayTotal(td), dayBudget(td, P)) + '"><div class="k">Left today</div><div class="v hcol">' + money(todayLeft) + '</div><div class="s">of ' + money(dayBudget(td, P)) + '</div></div>'
+          : '<div><div class="k">Left today</div><div class="v">–</div><div class="s">' + (tdClosed ? "today is closed" : "outside trip days") + '</div></div>') +
+      '<div><div class="k">Kept for Narita</div><div class="v">' + money(P.resLeft) + '</div><div class="s">on IC cards</div></div>' +
+    '</div>' + topupLine(b) + '</div>';
+
+  /* wallets: where tomorrow's money is and how to use it */
+  var wp = walletPlan(b);
+  h += '<div class="sec"><h2>Wallets</h2><span>balances on ' + esc(shortDate(b.cashDate || P.t)) + '</span></div><div class="card pad">';
+  wp.ws.forEach(function(w){
+    var d;
+    if (w.ic) d = w.charge ? '<div class="d warn">Top up ' + yen(w.charge) + ', then ' + yen(w.spare) + ' free, keep ' + yen(w.keep) + '</div>'
+                           : '<div class="d">' + yen(w.spare) + ' free to spend, keep ' + yen(w.keep) + '</div>';
+    else if (w.take) d = '<div class="d">' + yen(w.take) + ' goes to top ups, ' + yen(w.spare) + ' free</div>';
+    else d = '<div class="d">' + (w.cash ? (w.coin ? "Use at konbini and vending machines" : "Cash only places") : "Use first wherever cards are taken") + '</div>';
+    h += '<div class="wl"><div><div class="n">' + esc(w.l) + '</div>' + d + '</div><div class="v">' + yen(w.y) + '<small>' + yen(w.spare) + ' free</small></div></div>';
+  });
+  var freeAtSet = wp.ws.reduce(function(a, w){ return a + w.spare; }, 0);
+  h += '<div class="bline tot"><div class="l">Free to spend at check</div><div class="r">' + yen(freeAtSet) + '<small>' + rm(freeAtSet) + '</small></div></div>' +
+    (since ? '<div class="bline"><div class="l">Logged since the check</div><div class="r">−' + yen(since) + '</div></div>' +
+             '<div class="bline tot"><div class="l">Free to spend now</div><div class="r ' + (P.free < 0 ? "bad" : "good") + '">' + yen(P.free) + '</div></div>' : '') +
+    '</div>';
 
   h += '<div class="sec"><h2>Against RM' + (+b.total).toLocaleString("en-US") + '</h2><span>if you spend what is left</span></div><div class="card pad">' +
     '<div class="bline"><div class="l">Total trip budget</div><div class="r">' + fmtRMv(b.total) + '</div></div>';
@@ -1087,7 +1182,7 @@ function drawBudget(){
     h += '<div class="bline"><div class="l">Paid · ' + esc(p.l) + '</div><div class="r">' + fmtRMv(+p.rm || 0) + '</div></div>';
   });
   h += '<div class="bline"><div class="l">Spent in Japan so far</div><div class="r">' + rm(P.trip) + '<small>' + yen(P.trip) + '</small></div></div>' +
-    '<div class="bline"><div class="l">Remaining budget</div><div class="r">' + rm(Math.max(0, P.cashNow)) + '<small>' + yen(Math.max(0, P.cashNow)) + '</small></div></div>' +
+    '<div class="bline"><div class="l">Money left, all wallets</div><div class="r">' + rm(Math.max(0, P.cashNow)) + '<small>' + yen(Math.max(0, P.cashNow)) + '</small></div></div>' +
     '<div class="bline tot"><div class="l">Trip total</div><div class="r">' + fmtRMv(projected) + '<small class="' + (diff > 0 ? "bad" : "good") + '">' + (Math.abs(diff) < 1 ? "on budget" : fmtRMv(Math.abs(diff)) + (diff > 0 ? " over plan" : " under plan")) + '</small></div></div>' +
     '</div>';
 
@@ -1114,7 +1209,7 @@ function drawBudget(){
   });
   h += '</div>';
 
-  h += '<button class="add" id="bdEdit">Update money in hand or paid items</button>' +
+  h += '<button class="add" id="bdEdit">Update wallet balances or paid items</button>' +
     '<div class="foottxt">Rate RM1 = ¥' + R + '. Change it from the sync pill.</div>';
   el.innerHTML = h;
 }
@@ -1127,33 +1222,51 @@ function bdRow(p){
   r.querySelector("button").onclick = function(){ r.remove(); };
   return r;
 }
+function wRow(w){
+  var r = document.createElement("div"); r.className = "bdrow w";
+  r.innerHTML = '<input class="wl1" placeholder="Wallet" autocomplete="off" value="' + esc(w.l) + '">' +
+    '<input class="wy" inputmode="numeric" placeholder="¥" autocomplete="off" value="' + (w.y === "" ? "" : Number(w.y).toLocaleString("en-US")) + '">' +
+    '<input class="wk" inputmode="numeric" placeholder="0" autocomplete="off" value="' + (+w.keep ? Number(w.keep).toLocaleString("en-US") : "") + '">' +
+    '<button aria-label="Remove wallet">×</button>';
+  r.querySelector("button").onclick = function(){ r.remove(); };
+  return r;
+}
 $("budgetview").addEventListener("click", function(e){
   if (!e.target.closest("#bdEdit")) return;
-  var b = budget();
+  var b = budget(), t = todayISO();
   $("bdTotal").value = b.total;
   $("bdPre").innerHTML = "";
   b.prepaid.forEach(function(p){ $("bdPre").appendChild(bdRow(p)); });
-  $("bdCash").value = Math.round(b.cash - (tripTotal() - (b.cashBase || 0))).toLocaleString("en-US");
-  $("bdCash").dataset.init = $("bdCash").value;
+  $("bdW").innerHTML = "";
+  b.wallets.forEach(function(w){ $("bdW").appendChild(wRow(w)); });
+  $("bdUntil").innerHTML = doc.days.map(function(d){
+    return '<option value="' + d.date + '"' + (d.date === (b.until || "") ? " selected" : "") + '>' + DOW[pd(d.date).getDay()] + ' ' + shortDate(d.date) + '</option>';
+  }).join("");
+  $("bdFrom").value = b.from && b.from > t ? "tomorrow" : "today";
   openSheet("bdSheet");
 });
 $("bdAdd").onclick = function(){ var r = bdRow({ l: "", rm: "" }); $("bdPre").appendChild(r); r.querySelector("input").focus(); };
+$("bdWAdd").onclick = function(){ var r = wRow({ l: "", y: "", keep: 0 }); $("bdW").appendChild(r); r.querySelector("input").focus(); };
 $("bdCancel").onclick = closeSheets;
 $("bdSave").onclick = function(){
-  var b = budget();
   var total = parseFloat(String($("bdTotal").value).replace(/[^\d.]/g, ""));
   if (!(total > 0)) { $("bdTotal").focus(); toast("Enter the total budget"); return; }
-  var pre = [];
+  var pre = [], ws = [];
   $("bdPre").querySelectorAll(".bdrow").forEach(function(r){
     var l = r.querySelector(".bl").value.trim(), v = parseFloat(String(r.querySelector(".br").value).replace(/[^\d.]/g, ""));
     if (l || v > 0) pre.push({ l: l || "Paid item", rm: v > 0 ? v : 0 });
   });
-  var nb = { v: 2, total: total, prepaid: pre, cash: b.cash, cashBase: b.cashBase || 0, cashDate: b.cashDate || todayISO() };
-  if ($("bdCash").value !== $("bdCash").dataset.init) {
-    nb.cash = parseAmt($("bdCash").value); nb.cashBase = tripTotal(); nb.cashDate = todayISO();
-  }
+  $("bdW").querySelectorAll(".bdrow").forEach(function(r){
+    var l = r.querySelector(".wl1").value.trim(), y = parseAmt(r.querySelector(".wy").value), k = parseAmt(r.querySelector(".wk").value);
+    if (l || y) ws.push({ l: l || "Wallet", y: y, keep: k });
+  });
+  var t = todayISO(), tm = pd(t); tm.setDate(tm.getDate() + 1);
+  var tomorrow = tm.getFullYear() + "-" + String(tm.getMonth() + 1).padStart(2, "0") + "-" + String(tm.getDate()).padStart(2, "0");
+  var nb = { v: 3, total: total, prepaid: pre, wallets: ws,
+    cash: ws.reduce(function(a, w){ return a + w.y; }, 0), cashBase: tripTotal(), cashDate: t,
+    from: $("bdFrom").value === "tomorrow" ? tomorrow : t, until: $("bdUntil").value };
   commit({ op: "budget", v: nb });
-  closeSheets(); toast("Budget saved");
+  closeSheets(); toast("Balances saved");
 };
 
 /* ---------------- help content ---------------- */
