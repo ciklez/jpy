@@ -1789,6 +1789,16 @@
      "amt": 590,
      "done": true,
      "id": "cmwymphartsqv"
+    },
+    {
+     "kind": "Purchase",
+     "t": "16:35",
+     "title": "Liquor and Chocolate",
+     "desc": "",
+     "notes": "",
+     "amt": 6091,
+     "done": true,
+     "id": "cmwyo2nhg4e7c"
     }
    ]
   },
