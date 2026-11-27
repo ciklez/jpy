@@ -1679,6 +1679,16 @@
      "amt": 522,
      "done": true,
      "id": "cmwyb60v3uo0x"
+    },
+    {
+     "kind": "Activity",
+     "t": "10:38",
+     "title": "Bus to Fujiko F Fujio Museum",
+     "desc": "",
+     "notes": "",
+     "amt": 440,
+     "done": true,
+     "id": "cmwybc7yekild"
     }
    ]
   },
