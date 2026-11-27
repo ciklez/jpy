@@ -1659,6 +1659,16 @@
      "amt": 356,
      "done": true,
      "id": "cmwy96zooupd1"
+    },
+    {
+     "kind": "Activity",
+     "t": "10:08",
+     "title": "Train to Shinjiku",
+     "desc": "",
+     "notes": "",
+     "amt": 418,
+     "done": true,
+     "id": "cmwya9qcpn82y"
     }
    ]
   },
