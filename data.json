@@ -1749,6 +1749,16 @@
      "amt": 356,
      "done": true,
      "id": "cmwykpgxqzjpv"
+    },
+    {
+     "kind": "Snack",
+     "t": "15:19",
+     "title": "Snack at Asakusa",
+     "desc": "",
+     "notes": "",
+     "amt": 1200,
+     "done": true,
+     "id": "cmwyldu11wu37"
     }
    ]
   },
