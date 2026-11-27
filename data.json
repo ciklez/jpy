@@ -1601,16 +1601,6 @@
      "done": true
     },
     {
-     "id": "d8-1",
-     "kind": "Activity",
-     "t": "08:30",
-     "title": "To Kawasaki",
-     "desc": "JR to Shinjuku, Odakyu line to Noborito about 18 minutes, then the shuttle bus, ¥220 and ten minutes. About 70 minutes door to door. Noborito is itself a Doraemon-themed station.",
-     "notes": "",
-     "amt": 0,
-     "done": false
-    },
-    {
      "id": "d8-2",
      "kind": "Activity",
      "t": "10:00",
