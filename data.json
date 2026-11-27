@@ -1659,6 +1659,16 @@
      "notes": "",
      "amt": 0,
      "done": false
+    },
+    {
+     "kind": "Activity",
+     "t": "09:38",
+     "title": "Train to Kanda",
+     "desc": "",
+     "notes": "",
+     "amt": 356,
+     "done": true,
+     "id": "cmwy96zooupd1"
     }
    ]
   },
