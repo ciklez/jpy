@@ -1779,6 +1779,16 @@
      "amt": 1200,
      "done": true,
      "id": "cmwymowl1unjt"
+    },
+    {
+     "kind": "Activity",
+     "t": "15:30",
+     "title": "Tully Coffee",
+     "desc": "",
+     "notes": "",
+     "amt": 590,
+     "done": true,
+     "id": "cmwymphartsqv"
     }
    ]
   },
