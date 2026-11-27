@@ -1819,6 +1819,16 @@
      "amt": 9307,
      "done": true,
      "id": "cmwyxezrxipzq"
+    },
+    {
+     "kind": "Snack",
+     "t": "21:19",
+     "title": "Wendy's Supper",
+     "desc": "",
+     "notes": "",
+     "amt": 1460,
+     "done": true,
+     "id": "cmwyy8btepxpb"
     }
    ]
   },
