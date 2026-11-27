@@ -1709,6 +1709,16 @@
      "amt": 750,
      "done": true,
      "id": "cmwyej3vkabiu"
+    },
+    {
+     "kind": "Activity",
+     "t": "12:41",
+     "title": "Bus to Noborito",
+     "desc": "",
+     "notes": "",
+     "amt": 440,
+     "done": true,
+     "id": "cmwyfq5pdl7tg"
     }
    ]
   },
