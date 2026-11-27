@@ -1689,6 +1689,16 @@
      "amt": 440,
      "done": true,
      "id": "cmwybc7yekild"
+    },
+    {
+     "kind": "Activity",
+     "t": "11:16",
+     "title": "Tikam @ Doraemon",
+     "desc": "",
+     "notes": "",
+     "amt": 1000,
+     "done": true,
+     "id": "cmwycobshmig9"
     }
    ]
   },
