@@ -1621,16 +1621,6 @@
      "done": true
     },
     {
-     "id": "d8-d",
-     "kind": "Dinner",
-     "t": "18:00",
-     "title": "Dinner in Shibuya or Harajuku",
-     "desc": "Or Omoide Yokocho back in Shinjuku for grilled skewers in a lane of tiny bars.",
-     "notes": "",
-     "amt": 0,
-     "done": false
-    },
-    {
      "kind": "Activity",
      "t": "09:38",
      "title": "Train to Kanda",
