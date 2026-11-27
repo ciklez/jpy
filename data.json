@@ -1789,6 +1789,16 @@
      "amt": 356,
      "done": true,
      "id": "cmwyp7qkef4ue"
+    },
+    {
+     "kind": "Dinner",
+     "t": "18:00",
+     "title": "Ueno Curry",
+     "desc": "",
+     "notes": "",
+     "amt": 2300,
+     "done": true,
+     "id": "cmwyr3qj2jpr9"
     }
    ]
   },
