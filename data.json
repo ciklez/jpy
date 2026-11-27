@@ -1621,16 +1621,6 @@
      "done": true
     },
     {
-     "id": "d8-4",
-     "kind": "Activity",
-     "t": "16:00",
-     "title": "Shibuya Sky",
-     "desc": "Scramble crossing first, then your booked slot, about ¥3,000. 16:00 gets daylight, the 16:30 sunset and the lit city on one ticket.",
-     "notes": "",
-     "amt": 0,
-     "done": false
-    },
-    {
      "id": "d8-d",
      "kind": "Dinner",
      "t": "18:00",
