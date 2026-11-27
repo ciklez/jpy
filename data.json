@@ -1829,6 +1829,16 @@
      "amt": 1460,
      "done": true,
      "id": "cmwyy8btepxpb"
+    },
+    {
+     "kind": "Activity",
+     "t": "21:28",
+     "title": "Snack at Familymart",
+     "desc": "",
+     "notes": "",
+     "amt": 338,
+     "done": true,
+     "id": "cmwyyjws9djrv"
     }
    ]
   },
