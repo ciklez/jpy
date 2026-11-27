@@ -1759,6 +1759,16 @@
      "amt": 1200,
      "done": true,
      "id": "cmwyldu11wu37"
+    },
+    {
+     "kind": "Purchase",
+     "t": "15:48",
+     "title": "Kit kat",
+     "desc": "",
+     "notes": "",
+     "amt": 1201,
+     "done": true,
+     "id": "cmwyme7pj0dim"
     }
    ]
   },
