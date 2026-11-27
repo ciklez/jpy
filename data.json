@@ -1719,6 +1719,16 @@
      "amt": 440,
      "done": true,
      "id": "cmwyfq5pdl7tg"
+    },
+    {
+     "kind": "Activity",
+     "t": "12:50",
+     "title": "Pastry",
+     "desc": "",
+     "notes": "",
+     "amt": 560,
+     "done": true,
+     "id": "cmwyg1w6pr1uj"
     }
    ]
   },
