@@ -1699,6 +1699,16 @@
      "amt": 1000,
      "done": true,
      "id": "cmwycobshmig9"
+    },
+    {
+     "kind": "Activity",
+     "t": "12:08",
+     "title": "Drink @ Fujiko Museum",
+     "desc": "",
+     "notes": "",
+     "amt": 750,
+     "done": true,
+     "id": "cmwyej3vkabiu"
     }
    ]
   },
