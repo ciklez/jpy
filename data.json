@@ -1799,6 +1799,16 @@
      "amt": 2300,
      "done": true,
      "id": "cmwyr3qj2jpr9"
+    },
+    {
+     "kind": "Activity",
+     "t": "19:26",
+     "title": "Laundry",
+     "desc": "",
+     "notes": "",
+     "amt": 500,
+     "done": true,
+     "id": "cmwyu77pye55w"
     }
    ]
   },
