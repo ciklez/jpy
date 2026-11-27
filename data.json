@@ -1669,6 +1669,16 @@
      "amt": 418,
      "done": true,
      "id": "cmwya9qcpn82y"
+    },
+    {
+     "kind": "Activity",
+     "t": "10:33",
+     "title": "Train to Noborito",
+     "desc": "",
+     "notes": "",
+     "amt": 522,
+     "done": true,
+     "id": "cmwyb60v3uo0x"
     }
    ]
   },
