@@ -1613,12 +1613,12 @@
     {
      "id": "d8-l",
      "kind": "Lunch",
-     "t": "13:00",
-     "title": "Lunch at the museum cafe or in Shinjuku",
+     "t": "13:36",
+     "title": "Lunch at Noborito Station",
      "desc": "",
      "notes": "",
-     "amt": 0,
-     "done": false
+     "amt": 1941,
+     "done": true
     },
     {
      "id": "d8-3",
