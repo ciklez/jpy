@@ -1909,6 +1909,16 @@
      "amt": 356,
      "done": true,
      "id": "cmwzrxr7zv283"
+    },
+    {
+     "kind": "Breakfast",
+     "t": "11:42",
+     "title": "Manneken",
+     "desc": "",
+     "notes": "",
+     "amt": 380,
+     "done": true,
+     "id": "cmwzt2cwllkmi"
     }
    ]
   },
