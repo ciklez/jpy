@@ -1959,6 +1959,16 @@
      "amt": 4235,
      "done": true,
      "id": "cmx03eu0qslvr"
+    },
+    {
+     "kind": "Purchase",
+     "t": "16:48",
+     "title": "Shopping",
+     "desc": "",
+     "notes": "",
+     "amt": 1800,
+     "done": true,
+     "id": "cmx03zr3xmynu"
     }
    ]
   },
