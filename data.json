@@ -1959,6 +1959,16 @@
      "amt": 900,
      "done": true,
      "id": "cmx0230xy7qkj"
+    },
+    {
+     "kind": "Dinner",
+     "t": "16:32",
+     "title": "Sushi",
+     "desc": "",
+     "notes": "",
+     "amt": 4235,
+     "done": true,
+     "id": "cmx03eu0qslvr"
     }
    ]
   },
