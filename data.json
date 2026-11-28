@@ -1851,16 +1851,6 @@
    "note": "Deliberately central and low commitment so it can absorb a swap if Fuji has to move. Reserve the Skyliner for tomorrow morning today.",
    "items": [
     {
-     "id": "d9-1",
-     "kind": "Activity",
-     "t": "07:00",
-     "title": "Asakusa",
-     "desc": "Senso-ji and the Kaminarimon gate. Nakamise is deserted before 08:30 and unwalkable by 11:00. Photograph first, shop later.",
-     "notes": "",
-     "amt": 0,
-     "done": false
-    },
-    {
      "id": "d9-b",
      "kind": "Breakfast",
      "t": "08:30",
