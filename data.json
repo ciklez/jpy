@@ -1929,6 +1929,16 @@
      "amt": 3010,
      "done": true,
      "id": "cmwzvms0vb9uh"
+    },
+    {
+     "kind": "Purchase",
+     "t": "13:56",
+     "title": "Cigarette + Drink",
+     "desc": "",
+     "notes": "",
+     "amt": 631,
+     "done": true,
+     "id": "cmwzxuecjydkn"
     }
    ]
   },
