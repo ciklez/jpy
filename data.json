@@ -1949,6 +1949,16 @@
      "amt": 6910,
      "done": true,
      "id": "cmx01xgroq6cy"
+    },
+    {
+     "kind": "Snack",
+     "t": "15:55",
+     "title": "Kebab",
+     "desc": "",
+     "notes": "",
+     "amt": 900,
+     "done": true,
+     "id": "cmx0230xy7qkj"
     }
    ]
   },
