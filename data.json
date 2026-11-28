@@ -1868,7 +1868,7 @@
      "desc": "Weigh both bags, lay out tomorrow's clothes and passports, set two alarms. You are up at 04:45.",
      "notes": "",
      "amt": 0,
-     "done": false
+     "done": true
     },
     {
      "kind": "Activity",
