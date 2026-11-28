@@ -1999,6 +1999,16 @@
      "amt": 1480,
      "done": true,
      "id": "cmx062ekpswam"
+    },
+    {
+     "kind": "Snack",
+     "t": "17:55",
+     "title": "Snack",
+     "desc": "",
+     "notes": "",
+     "amt": 1760,
+     "done": false,
+     "id": "cmx06dq9gd672"
     }
    ]
   },
