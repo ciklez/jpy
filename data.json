@@ -1939,6 +1939,16 @@
      "amt": 418,
      "done": true,
      "id": "cmwzzcunt81sf"
+    },
+    {
+     "kind": "Purchase",
+     "t": "15:50",
+     "title": "Shopping at Mega Don Donkey",
+     "desc": "",
+     "notes": "",
+     "amt": 6910,
+     "done": true,
+     "id": "cmx01xgroq6cy"
     }
    ]
   },
