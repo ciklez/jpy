@@ -1929,6 +1929,16 @@
      "notes": "",
      "amt": 0,
      "done": false
+    },
+    {
+     "kind": "Activity",
+     "t": "11:10",
+     "title": "Train to Ginza",
+     "desc": "",
+     "notes": "",
+     "amt": 13172,
+     "done": true,
+     "id": "cmwzrxr7zv283"
     }
    ]
   },
