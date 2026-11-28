@@ -1851,16 +1851,6 @@
    "note": "Deliberately central and low commitment so it can absorb a swap if Fuji has to move. Reserve the Skyliner for tomorrow morning today.",
    "items": [
     {
-     "id": "d9-3",
-     "kind": "Activity",
-     "t": "13:00",
-     "title": "One district only",
-     "desc": "Akihabara, Ginza, or Tokyo Station Character Street. Saturday crowds mean one, not three.",
-     "notes": "",
-     "amt": 0,
-     "done": false
-    },
-    {
      "id": "d9-4",
      "kind": "Activity",
      "t": "15:30",
