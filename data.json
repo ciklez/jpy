@@ -1851,16 +1851,6 @@
    "note": "Deliberately central and low commitment so it can absorb a swap if Fuji has to move. Reserve the Skyliner for tomorrow morning today.",
    "items": [
     {
-     "id": "d9-l",
-     "kind": "Lunch",
-     "t": "11:30",
-     "title": "Lunch at Solamachi",
-     "desc": "",
-     "notes": "",
-     "amt": 0,
-     "done": false
-    },
-    {
      "id": "d9-3",
      "kind": "Activity",
      "t": "13:00",
