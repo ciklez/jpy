@@ -2028,7 +2028,7 @@
      "desc": "Final sweep of the room: safe, bathroom, charger, under the bed.",
      "notes": "",
      "amt": 0,
-     "done": false
+     "done": true
     },
     {
      "id": "d10-2",
