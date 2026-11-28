@@ -1919,6 +1919,16 @@
      "amt": 3280,
      "done": true,
      "id": "cmwztat7r1yew"
+    },
+    {
+     "kind": "Activity",
+     "t": "12:54",
+     "title": "Shopping @ GU",
+     "desc": "",
+     "notes": "",
+     "amt": 3010,
+     "done": true,
+     "id": "cmwzvms0vb9uh"
     }
    ]
   },
