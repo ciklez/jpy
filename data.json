@@ -1909,6 +1909,16 @@
      "amt": 380,
      "done": true,
      "id": "cmwzt2cwllkmi"
+    },
+    {
+     "kind": "Lunch",
+     "t": "11:48",
+     "title": "Lunch Tendon @ Ginza",
+     "desc": "",
+     "notes": "",
+     "amt": 3280,
+     "done": true,
+     "id": "cmwztat7r1yew"
     }
    ]
   },
