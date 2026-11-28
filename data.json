@@ -1969,6 +1969,16 @@
      "amt": 1800,
      "done": true,
      "id": "cmx03zr3xmynu"
+    },
+    {
+     "kind": "Purchase",
+     "t": "17:01",
+     "title": "Keychain",
+     "desc": "",
+     "notes": "",
+     "amt": 660,
+     "done": true,
+     "id": "cmx04fpd8tdbl"
     }
    ]
   },
