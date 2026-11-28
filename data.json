@@ -1929,6 +1929,16 @@
      "amt": 631,
      "done": true,
      "id": "cmwzxuecjydkn"
+    },
+    {
+     "kind": "Activity",
+     "t": "14:38",
+     "title": "Train to Shibuya",
+     "desc": "",
+     "notes": "",
+     "amt": 418,
+     "done": true,
+     "id": "cmwzzcunt81sf"
     }
    ]
   },
